@@ -1,5 +1,7 @@
 # datastructures-js
-Javascript implementation of the main data structures. Each data structure is represented by a function that returns an object with the main functions of the data structure. All the data structures are well tested.
+(https://travis-ci.org/eyas-ranjous/datastructures-js.svg?branch=master)
+
+Javascript implementation of the main data structures. Each data structure is represented by a function that returns an object the data structure operations. All the data structures are well tested.
 
 ## Install
 ```
@@ -493,11 +495,11 @@ var diGraph = ds.directedGraph();
 ```
 **.addVertex(vertex)** adds a vertex to the graph
 ```javascript
-bst.addVertex('v1');
-bst.addVertex('v2');
-bst.addVertex('v3');
-bst.addVertex('v4');
-bst.addVertex('v5');
+diGraph.addVertex('v1');
+diGraph.addVertex('v2');
+diGraph.addVertex('v3');
+diGraph.addVertex('v4');
+diGraph.addVertex('v5');
 ```
 **.hasVertex(vertex)** returns true if the graph contains the vertex or false if not
 ```javascript
@@ -510,13 +512,13 @@ var count = diGraph.countVertices(); // 5
 ```
 **.addDirection(v1, v2, weight)** adds a direction from v1 to v2 with a weight
 ```javascript
-bst.addDirection('v1', 'v2', 5);
-bst.addDirection('v1', 'v5', 1);
-bst.addDirection('v2', 'v4', 2);
-bst.addDirection('v3', 'v5', 4);
-bst.addDirection('v4', 'v1', 7);
-bst.addDirection('v4', 'v3', 4);
-bst.addDirection('v5', 'v4', 2);
+diGraph.addDirection('v1', 'v2', 5);
+diGraph.addDirection('v1', 'v5', 1);
+diGraph.addDirection('v2', 'v4', 2);
+diGraph.addDirection('v3', 'v5', 4);
+diGraph.addDirection('v4', 'v1', 7);
+diGraph.addDirection('v4', 'v3', 4);
+diGraph.addDirection('v5', 'v4', 2);
 ```
 **.hasDirection(v1, v2)** returns true there's a direction from v1 to v2
 ```javascript
