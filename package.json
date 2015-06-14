@@ -1,0 +1,36 @@
+{
+  "name": "datastructures-js",
+  "version": "1.0.0",
+  "description": "data structures implementation in javascript",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test"
+  },
+  "keywords": [
+    "javascript",
+    "data structures",
+    "stack",
+    "queue",
+    "priority queue",
+    "set",
+    "linked list",
+    "doubly linked list",
+    "hashtable",
+    "binary search tree",
+    "graph"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eyas-ranjous/datastructures-js.git"
+  },
+  "author": "Eyas Ranjous <eyas@eyasranjous.info>",
+  "license": "MIT",
+  "homepage": "https://github.com/eyas-ranjous/datastructures-js#readme",
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "mocha": "^2.2.5"
+  }
+}
