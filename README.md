@@ -1,5 +1,5 @@
 # datastructures-js
-(https://travis-ci.org/eyas-ranjous/datastructures-js.svg?branch=master)
+![](https://travis-ci.org/eyas-ranjous/datastructures-js.svg?branch=master)
 
 Javascript implementation of the main data structures. Each data structure is represented by a function that returns an object the data structure operations. All the data structures are well tested.
 
