@@ -1,9 +1,10 @@
 /**
  * BinarySearchTree factory function
  *
+ * returns an object with the main BST operations
+ *
  * @author Eyas Ranjous <eyas@eyasranjous.info>
  *
- * @return {object} representing a binarySearchTree
  */
 
 'use strict';
@@ -16,6 +17,8 @@ function binarySearchTree() {
                 right = right_,
                 value = value_,
 
+                // converts a node object to read-only by returning 
+                // an object with the get methods
                 toReadOnly = function(n) {
                     return function() {
                         if (n !== null) {
@@ -48,34 +51,34 @@ function binarySearchTree() {
                 getValue: function() {
                     return value;
                 },
-                // used to return a node object to the client
+                // used to return a read-only node object
                 toReadOnly: function() {
-                    var that = this; // the node's return object
+                    var that = this; // the node object
                     return { // implements a read only interface
-                        getLeft: toReadOnly(that.getLeft()),
-                        getRight: toReadOnly(that.getRight()),
+                        getLeft: toReadOnly(that.getLeft()), // converts left to read-only
+                        getRight: toReadOnly(that.getRight()), // converts right to read-only
                         getValue: that.getValue
                     }
                 }
             }
         },
 
-        // get min value in tree. aka last left node
+        // get min value node in tree. aka last left node
         getMin = function(node) {
             var currentNode = node;
             while (currentNode.getLeft()) {
                 currentNode = currentNode.getLeft();
             }
-            return currentNode.toReadOnly();
+            return currentNode;
         },
 
-        // get mmax value in tree. aka last right node
+        // get mmax value node in tree. aka last right node
         getMax = function(node) {
             var currentNode = node;
             while (currentNode.getRight()) {
                 currentNode = currentNode.getRight();
             }
-            return currentNode.toReadOnly();
+            return currentNode;
         },
 
         // removing a node is not an easy task
@@ -119,6 +122,7 @@ function binarySearchTree() {
         root = null,
         count = 0;
 
+    // return an object with the BST operations
     return {
 
         insert: function(value) {

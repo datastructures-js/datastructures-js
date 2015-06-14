@@ -1,9 +1,10 @@
 /**
  * Stack factory function
  *
+ * returns an object with the main Set operations 
+ *
  * @author Eyas Ranjous <eyas@eyasranjous.info>
  *
- * @return {object} representing a stack
  */
 
 'use strict';

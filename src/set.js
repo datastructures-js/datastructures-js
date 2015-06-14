@@ -1,9 +1,10 @@
 /**
  * Set factory function
  *
+ * returns an object with the main Set operations 
+ *
  * @author Eyas Ranjous <eyas@eyasranjous.info>
  *
- * @return {object} representing a mathematical set
  */
 
 'use strict';
@@ -14,6 +15,7 @@ function set() {
     var elements = [],
         currentIndex = null;
 
+    // return an object with the Set operations
     return {
 
         add: function(el) {

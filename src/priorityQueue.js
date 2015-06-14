@@ -1,9 +1,10 @@
 /**
  * PriorityQueue factory function
  *
+ * returns an object with the main PriorityQueue operations
+ *
  * @author Eyas Ranjous <eyas@eyasranjous.info>
  *
- * @return {object} representing a priorityQueue
  */
 
 'use strict';
@@ -29,6 +30,7 @@ function priorityQueue() {
             return null;
         };
 
+    // return an object with the PriorityQueue operations
     return {
 
         isEmpty: function() {

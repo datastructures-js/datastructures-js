@@ -1,9 +1,10 @@
 /**
  * Hashtable factory function
  *
+ * returns an object with the main HashTable operations
+ *
  * @author Eyas Ranjous <eyas@eyasranjous.info>
  *
- * @return {object} representing a hashtable
  */
 
 'use strict';
@@ -66,6 +67,7 @@ function hashtable(length) {
     //init the hashtable with length
     init(length);
 
+    // return an object with the HashTable operations
     return {
 
         put: function(key, data) {

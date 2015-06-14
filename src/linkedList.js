@@ -1,9 +1,10 @@
 /**
  * LinkedList factory function
  *
+ * returns an object with the main LinkedList operations
+ *
  * @author Eyas Ranjous <eyas@eyasranjous.info>
  *
- * @return {object} representing a linkedList
  */
 
 'use strict';
@@ -90,7 +91,7 @@ function linkedList() {
     // init the linked list
     init();
 
-    // return object with linkedList operations
+    // return an object with LinkedList operations
     return {
         
         addFirst: function(val) {

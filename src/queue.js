@@ -1,9 +1,10 @@
 /**
  * Queue factory function
  *
+ * returns an object with the main PriorityQueue operations
+ *
  * @author Eyas Ranjous <eyas@eyasranjous.info>
  *
- * @return {object} representing a queue
  */
 
 'use strict';
@@ -12,6 +13,7 @@ function queue() {
 
     var elements = [];
 
+    // return an object with the Queue operations
     return {
 
         isEmpty: function() {

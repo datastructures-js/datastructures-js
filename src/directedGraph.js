@@ -1,9 +1,10 @@
 /**
  * DirectedGraph factory function
  *
+ * returns an object with the main DiGraph operations
+ *
  * @author Eyas Ranjous <eyas@eyasranjous.info>
  *
- * @return {object} representing a directedGraph
  */
 
 'use strict';
@@ -23,6 +24,7 @@ function directedGraph() {
             }
         }
 
+    // return an object with DiGraph operations
     return {
 
         addVertex: function(v) {

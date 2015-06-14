@@ -1,16 +1,17 @@
 /**
  * DoublyLinkedList factory function
  *
+ * returns an object with the main DoublyLinkedList operations
+ *
  * @author Eyas Ranjous <eyas@eyasranjous.info>
  *
- * @return {object} representing a doublyLinkedList
  */
 
 'use strict';
 
 function doublyLinkedList() {
 
-    // local variables (private properties)
+    // local variables
     var head,
         count,
 
@@ -82,7 +83,7 @@ function doublyLinkedList() {
     // init the doubly linked list
     init();
 
-    // return object with doublyLinkedList operations
+    // return an object with DoublyLinkedList operations
     return {
         
         addFirst: function(val) {
