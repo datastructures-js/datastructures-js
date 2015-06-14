@@ -451,9 +451,10 @@ console.log(root.getValue()); // 50
 ```
 **.remove(element)** removes an element's node from the tree
 ```javascript
-bst.insert(30);
+bst.remove(30);
+
 var n50 = bst.find(50);
-var n40 = bst.find(50);
+var n40 = bst.find(40);
 console.log(n50.getLeft().getValue()); // 40
 console.log(n40.getLeft().getValue()); // 20
 
