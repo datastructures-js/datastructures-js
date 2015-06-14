@@ -1,5 +1,5 @@
 # datastructures-js
-[![build:?](https://travis-ci.org/eyas-ranjous/datastructures-js.svg?branch=master)](https://travis-ci.org/eyas-ranjous/datastructures-js)
+[![build:?](https://travis-ci.org/eyas-ranjous/datastructures-js.svg?branch=master)](https://travis-ci.org/eyas-ranjous/datastructures-js) [![npm](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/datastructures-js)
 
 Javascript implementation of the main data structures. Each data structure is represented by a function that returns an object with the data structure operations. All the data structures are well tested.
 
