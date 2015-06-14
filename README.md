@@ -192,7 +192,7 @@ var s = set.clone(); // s contains A, B, D
 ## LinkedList
 ![LinkedList](http://i.imgur.com/ZyD3HJL.jpg "LinkedList")
 
-node value data type: number, string, boolean or null
+node element data type: number, string, boolean or null
 ```javascript
 var linkedList = ds.linkedList();
 ```
@@ -204,7 +204,7 @@ linkedList.addFirst('n1');
 ```javascript
 linkedList.addLast('n4');
 ```
-**.addAfter(element, newElement)** add an new node with element value after an existing element's node, throws exception if element is not found in the list
+**.addAfter(element, newElement)** add a new node with element value after an existing element's node, throws exception if element's node is not found in the list
 ```javascript
 linkedList.addAfter('n1', 'n2');
 
@@ -219,26 +219,26 @@ catch (e) {
 ```javascript
 linkedList.addBefore('n4', 'n3');
 ```
-**.find(element)** returns a node object or null if not found, the node object contains two functions:
+**.find(element)** returns a read-only node object or null if not found, the read-only node object contains two functions:
 
-* .getNext() returns the next node object or null if it's the last node.
+* .getNext() returns the next read-only node object or null if it's the last node.
 * .getValue() returns the node value.
 ```javascript
 var n3 = linkedList.find('n3');
 console.log(n3.getValue()); // n3
 console.log(n3.getNext().getValue()); // n4
 ```
-**.findFirst()** returns the first node object in the list
+**.findFirst()** returns the first read-only node object in the list
 ```javascript
 var first = linkedList.findFirst();
 console.log(first.getValue()); // n1
 ```
-**.findLast()** returns the last node object in the list
+**.findLast()** returns the last read-only node object in the list
 ```javascript
 var last = linkedList.findLast();
 console.log(last.getValue()); // n4
 ```
-**.findBefore(element)** returns the node object before the specified element's node or null if not found
+**.findBefore(element)** returns the read-only node object before the specified element's node or null if not found
 ```javascript
 var n2 = linkedList.findBefore('n3');
 console.log(n2.getValue()); // n2
@@ -252,7 +252,7 @@ linkedList.removeFirst();
 ```javascript
 linkedList.removeLast();
 ```
-**.remove(element)** remove the element's node or throw an exception if element not found
+**.remove(element)** remove the element's node or throw an exception if element's node is not found
 ```javascript
 linkedList.remove('n2');
 ```
@@ -269,7 +269,7 @@ console.log(linkedList.length()); // 0
 ## DoublyLinkedList
 ![DoublyLinkedList](http://i.imgur.com/p7ZeBUE.jpg "DoublyLinkedList")
 
-node value data type: number, string, boolean or null
+node element data type: number, string, boolean or null
 ```javascript
 var dList = ds.doublyLinkedList();
 ```
@@ -277,11 +277,11 @@ var dList = ds.doublyLinkedList();
 ```javascript
 dList.addFirst('n1');
 ```
-**.addLast(element)** add node with element value to the end of the list
+**.addLast(element)** add a node with element value to the end of the list
 ```javascript
 dList.addLast('n4');
 ```
-**.addAfter(element, newElement)** add an new node with element value after an existing element's node, throws exception if element's node is not found in the list
+**.addAfter(element, newElement)** add a new node with element value after an existing element's node, throws exception if element's node is not found in the list
 ```javascript
 dList.addAfter('n1', 'n2');
 
@@ -292,14 +292,14 @@ catch (e) {
     console.log(e.message); // node n33 not found
 }
 ```
-**.addBefore(element, newElement)** add an new element before an existing element, throws exception if element is not found in the list
+**.addBefore(element, newElement)** add a new element before an existing element, throws exception if element is not found in the list
 ```javascript
 dList.addBefore('n4', 'n3');
 ```
-**.find(element)** returns a node object or null if not found, the node object contains three functions:
+**.find(element)** returns the element's read-only node object or null if not found, the read-only node object contains three functions:
 
-* .getNext() returns the next node object or null if it's the last node.
-* .getPrev() returns the previous node object or null if it's the first node.
+* .getNext() returns the next read-only node object or null if it's the last node.
+* .getPrev() returns the previous read-only node object or null if it's the first node.
 * .getValue() returns the node value.
 ```javascript
 var n3 = dList.find('n3');
@@ -307,12 +307,12 @@ console.log(n3.getValue()); // n3
 console.log(n3.getNext().getValue()); // n4
 console.log(n3.getPrev().getValue()); // n2
 ```
-**.findFirst()** returns the first node object in the list
+**.findFirst()** returns the first read-only node object in the list
 ```javascript
 var first = dList.findFirst();
 console.log(first.getValue()); // n1
 ```
-**.findLast()** returns the last node object in the list
+**.findLast()** returns the last read-only node object in the list
 ```javascript
 var last = dList.findLast();
 console.log(last.getValue()); // n4
@@ -325,7 +325,7 @@ dList.removeFirst();
 ```javascript
 dList.removeLast();
 ```
-**.remove(element)** remove the element's node from the list or throw an exception if element not found
+**.remove(element)** remove the element's node from the list or throw an exception if element's node is not found
 ```javascript
 dList.remove('n2');
 ```
@@ -413,7 +413,7 @@ node value data type: string, number
 ```javascript
 var bst = ds.binarySearchTree();
 ```
-**.insert(element)** inserts a node with element's value into the tree
+**.insert(element)** inserts a node with element value into the tree
 ```javascript
 bst.insert(50);
 bst.insert(80);
@@ -431,11 +431,10 @@ var min = bst.getMinValue(); // 20
 ```javascript
 var max = bst.getMaxValue(); // 90
 ```
-**.find(element)** returns a node object or null if not found, the node object contains 
-three functions:
+**.find(element)** returns a read-only node object or null if not found, the read-only node object contains three functions:
 
-* .getRight() returns the right child node object or null if it has no right.
-* .getLeft() returns the left child node object or null if it has no left.
+* .getRight() returns the right child read-only node object or null if it has no right.
+* .getLeft() returns the left child read-only node object or null if it has no left.
 * .getValue() returns the node value.
 ```javascript
 var n = bst.find(30);
@@ -443,7 +442,7 @@ console.log(n.getValue()); // 30
 console.log(n.getRight().getValue()); // 40
 console.log(n.getLeft().getValue()); // 20
 ```
-**.getRoot()** returns the tree root node object.
+**.getRoot()** returns the tree root read-only node object.
 ```javascript
 var root = bst.getRoot();
 console.log(root.getLeft().getValue()); // 30
@@ -525,7 +524,7 @@ diGraph.addDirection('v5', 'v4', 2);
 var hasDi1 = diGraph.hasDirection('v3', 'v5'); // true
 var hasDi2 = diGraph.hasDirection('v3', 'v1'); // false
 ```
-**.getDirection(v1, v2)** returns direction weight between v1 & v2 or null if no direction exists.
+**.getDirectionWeight(v1, v2)** returns direction weight between v1 & v2 or null if no direction exists.
 ```javascript
 var weight = diGraph.getDirectionWeight('v4', 'v1'); // 7
 ```
