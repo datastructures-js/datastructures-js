@@ -76,5 +76,4 @@ describe('binary search tree test', function() {
         expect(bst.getMaxValue()).to.be.equal(90);
     });
 
-
-})
+});

@@ -71,7 +71,7 @@ describe('doubly linked list test', function() {
         var n4 = dll.find('n4');
         expect(n4).not.to.be.equal(null);
         expect(n4.getValue()).to.be.equal('n4');
-        expect(n4.getPrev().getValue()).to.be.equal('n3')
+        expect(n4.getPrev().getValue()).to.be.equal('n3');
         expect(n4.getNext().getValue()).to.be.equal('n5');
     });
 

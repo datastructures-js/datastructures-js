@@ -7,9 +7,9 @@
  *
  */
 
-'use strict';
-
 function queue() {
+
+    'use strict';
 
     var elements = [];
 
@@ -36,7 +36,7 @@ function queue() {
             return !this.isEmpty() ? elements[elements.length - 1] : null;
         } 
         
-    }
+    };
 }
 
 module.exports = queue;

@@ -23,7 +23,7 @@ describe('priority queue test', function() {
     it('should retreive front and back elements', function(){
         expect(pq.front()).to.be.equal('john');
         expect(pq.back()).to.be.equal('rose');
-    })
+    });
 
     it('should dequeue an element', function() {
         expect(pq.dequeue()).to.be.equal('samantha');

@@ -38,7 +38,7 @@ describe('hashtable test', function() {
         });
 
         it('should iterate over the hashtable', function(){
-            var iterator = ht.iterator();
+            var iterator = ht.iterator(),
                 keys = [],
                 values = [];
 
@@ -67,7 +67,7 @@ describe('hashtable test', function() {
         });
 
         it('should iterate over the hashtable', function(){
-            var iterator = ht.iterator();
+            var iterator = ht.iterator(),
                 keys = [],
                 values = [];
 
@@ -105,4 +105,4 @@ describe('hashtable test', function() {
 
     });
 
-})
+});

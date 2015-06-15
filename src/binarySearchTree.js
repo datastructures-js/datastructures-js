@@ -7,9 +7,9 @@
  *
  */
 
-'use strict';
-
 function binarySearchTree() {
+
+    'use strict';
 
     // tree node object
     var node = function(value_, left_, right_) {
@@ -26,11 +26,11 @@ function binarySearchTree() {
                                 getLeft: n.toReadOnly().getLeft,
                                 getRight: n.toReadOnly().getRight,
                                 getValue: n.getValue
-                            }
+                            };
                         }
                         return null;
-                    }
-                }
+                    };
+                };
 
             return {
                 setLeft: function(l) {
@@ -58,9 +58,9 @@ function binarySearchTree() {
                         getLeft: toReadOnly(that.getLeft()), // converts left to read-only
                         getRight: toReadOnly(that.getRight()), // converts right to read-only
                         getValue: that.getValue
-                    }
+                    };
                 }
-            }
+            };
         },
 
         // get min value node in tree. aka last left node
@@ -225,7 +225,7 @@ function binarySearchTree() {
         count: function() {
             return count;
         }
-    }
+    };
 }
 
 module.exports = binarySearchTree;

@@ -7,9 +7,9 @@
  *
  */
 
-'use strict';
-
 function directedGraph() {
+
+    'use strict';
 
     var vertices = [], // graph nodes
         directions = [], // two dimensions array [][]
@@ -22,7 +22,7 @@ function directedGraph() {
             else {
                 arr.splice(v, 1);
             }
-        }
+        };
 
     // return an object with DiGraph operations
     return {
@@ -76,7 +76,7 @@ function directedGraph() {
                         }
                     }
                 }
-            }
+            };
             visit(directions, [], func);
         },
 
@@ -113,8 +113,8 @@ function directedGraph() {
         },
 
         hasDirection: function(v1, v2) {
-            if (this.hasVertex(v1) && this.hasVertex(v2) 
-                && directions[v1] && directions[v1][v2] !== undefined) {
+            if (this.hasVertex(v1) && this.hasVertex(v2) && 
+                directions[v1] && directions[v1][v2] !== undefined) {
                 return true;
             }
             return false;
@@ -199,12 +199,12 @@ function directedGraph() {
                             }
                         }
                     }
-                }
+                };
 
             findShortestPath(v1, v2, [], []);
             return shortestPaths;
         }
-    }
+    };
 }
 
 module.exports = directedGraph;

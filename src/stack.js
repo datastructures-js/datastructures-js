@@ -7,9 +7,9 @@
  *
  */
 
-'use strict';
-
 function stack() {
+
+    'use strict';
 
     // local variables (private properties)
     var top = 0,
@@ -22,7 +22,7 @@ function stack() {
         },
 
         pop: function() {
-            return top > 0 ? elements.splice(--top, 1)[0] : null
+            return top > 0 ? elements.splice(--top, 1)[0] : null;
         },
 
         peek: function() {
@@ -32,7 +32,7 @@ function stack() {
         length: function() {
             return top;
         }
-    }
+    };
 }
 
 module.exports = stack;

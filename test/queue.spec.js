@@ -19,7 +19,7 @@ describe('queue test', function() {
     it('should retreive front and back elements', function(){
         expect(q.front()).to.be.equal(1);
         expect(q.back()).to.be.equal(45);
-    })
+    });
 
     it('should dequeue an element', function() {
         expect(q.dequeue()).to.be.equal(1);

@@ -7,9 +7,9 @@
  *
  */
 
-'use strict';
-
 function priorityQueue() {
+
+    'use strict';
 
     var elements = [],
 
@@ -42,7 +42,7 @@ function priorityQueue() {
             if (isNaN(p)) {
                 throw {
                     message: 'priority should be an integer'
-                }
+                };
             }
 
             elements.push({ // element is pushed as an object with a priority
@@ -64,7 +64,7 @@ function priorityQueue() {
             return !this.isEmpty() ? elements[elements.length - 1].element : null;
         }
 
-    }
+    };
 }
 
 module.exports = priorityQueue;

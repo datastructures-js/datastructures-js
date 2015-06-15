@@ -46,7 +46,7 @@ describe('directed graph test', function() {
         });
 
         it('should find the shortest path', function() {    
-            var v1v4 = diGraph.findShortestPath('v1', 'v4');
+            var v1v4 = diGraph.findShortestPath('v1', 'v4'),
                 v2v3 = diGraph.findShortestPath('v2', 'v3'),
                 v5v2 = diGraph.findShortestPath('v5', 'v2');
 
@@ -221,4 +221,4 @@ describe('directed graph test', function() {
         });
 
     });
-})
+});

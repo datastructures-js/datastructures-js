@@ -7,9 +7,9 @@
  *
  */
 
-'use strict';
-
 function set() {
+
+    'use strict';
 
     // local variables (private properties)
     var elements = [],
@@ -51,7 +51,7 @@ function set() {
                         return true;
                     }
                 }
-            }
+            };
         },
 
         isEmpty: function() {
@@ -120,7 +120,7 @@ function set() {
             return s;
         }
 
-    }
+    };
 }
 
 module.exports = set;

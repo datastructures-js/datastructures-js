@@ -7,10 +7,10 @@
  *
  */
 
-'use strict';
-
 function hashtable(length) {
 
+    'use strict';
+    
     var H = 31, // primary number
 
         elements = null,
@@ -21,12 +21,12 @@ function hashtable(length) {
 
         isPrimary = function(num) {
             if (isNaN(num) || !isFinite(num) || num % 1 || num < 2) {
-                return false
+                return false;
             }
 
             var sqrt = Math.sqrt(num);
             for (var i = 2; i <= sqrt; i++) {
-                if (num%i == 0) {
+                if (num % i === 0) {
                     return false;
                 }
             }
@@ -59,7 +59,7 @@ function hashtable(length) {
             if (!isPrimary(length)) {
                 throw {
                     message: 'hashtable must have a prime number length'
-                }
+                };
             }
             elements = new Array(length);
         };
@@ -123,7 +123,7 @@ function hashtable(length) {
                         return {
                             key: key.length == 1 ? key[0] : key,
                             value: value.length == 1 ? value[0] : value
-                        }
+                        };
                     }
                     return null;
                 },
@@ -143,7 +143,7 @@ function hashtable(length) {
                         return true;
                     }
                 }
-            }
+            };
         },
 
         getCollidedKeys: function() {
@@ -161,7 +161,7 @@ function hashtable(length) {
             return Object.keys(elements).length;
         }
 
-    }
+    };
 }
 
 module.exports = hashtable;

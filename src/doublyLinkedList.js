@@ -7,9 +7,9 @@
  *
  */
 
-'use strict';
-
 function doublyLinkedList() {
+
+    'use strict';
 
     // local variables
     var head,
@@ -27,11 +27,11 @@ function doublyLinkedList() {
                                 getPrev: n.toReadOnly().getPrev,
                                 getNext: n.toReadOnly().getNext,
                                 getValue: n.getValue
-                            }
+                            };
                         }
                         return null;
-                    }
-                }
+                    };
+                };
 
             return {
                 setPrev: function(p) {
@@ -59,9 +59,9 @@ function doublyLinkedList() {
                         getPrev: toReadOnly(that.getPrev()),
                         getNext: toReadOnly(that.getNext()),
                         getValue: that.getValue
-                    }
+                    };
                 }
-            }
+            };
         },
 
         find = function(val) {
@@ -116,7 +116,7 @@ function doublyLinkedList() {
             if (node_ === null) {
                 throw {
                     message: 'node ' + val + ' not found'
-                }
+                };
             }
             if (node_ !== null) {
                 var recentNext = node_.getNext();
@@ -134,7 +134,7 @@ function doublyLinkedList() {
             if (node_ === null) {
                 throw {
                     message: 'node ' + val + ' not found'
-                }
+                };
             }
             var recentBefore = node_.getPrev();
             var newNode = node(recentBefore, node_, newVal);
@@ -199,7 +199,7 @@ function doublyLinkedList() {
             if (node_ === null) {
                 throw {
                     message: 'node ' + val + ' not found'
-                }
+                };
             }
 
             if (node_ === head) {
@@ -227,7 +227,7 @@ function doublyLinkedList() {
             init();
         }
 
-    }
+    };
 }
 
 module.exports = doublyLinkedList;

@@ -50,7 +50,7 @@ describe('linked list test', function() {
     it('should throw exception when trying to add after a non existing node', function(){
         expect(ll.addAfter.bind(ll, 'n11', 'n9')).to.throw({
             message: 'node n11 not found'
-        })
+        });
     });
 
 
@@ -69,7 +69,7 @@ describe('linked list test', function() {
     it('should throw exception when trying to add before a non existing node', function(){
         expect(ll.addBefore.bind(ll, 'n11', 'n9')).to.throw({
             message: 'node n11 not found'
-        })
+        });
     });
 
     it('should find last node', function(){
@@ -104,7 +104,7 @@ describe('linked list test', function() {
     it('should throw exception when trying to remove a non existing node', function(){
         expect(ll.remove.bind(ll, 'n11')).to.throw({
             message: 'node n11 not found'
-        })
+        });
     });
 
     it('should contain the node n5', function(){

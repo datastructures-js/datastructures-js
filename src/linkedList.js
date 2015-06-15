@@ -7,9 +7,9 @@
  *
  */
 
-'use strict';
-
 function linkedList() {
+
+    'use strict';
 
     // local variables (private properties)
     var head,
@@ -26,11 +26,11 @@ function linkedList() {
                             return {
                                 getNext: n.toReadOnly().getNext,
                                 getValue: n.getValue
-                            }
+                            };
                         }
                         return null;
-                    }
-                }
+                    };
+                };
 
             return {
                 setNext: function(n) {
@@ -51,9 +51,9 @@ function linkedList() {
                     return { // implements a read only interface
                         getNext: toReadOnly(that.getNext()),
                         getValue: that.getValue
-                    }
+                    };
                 }
-            }
+            };
         },
 
         find = function(val) {
@@ -106,7 +106,7 @@ function linkedList() {
             else {
                 var lastNode = head;
                 while (lastNode.getNext()) {
-                    lastNode = lastNode.getNext()
+                    lastNode = lastNode.getNext();
                 } 
                 lastNode.setNext(node(null, val));
             }
@@ -118,7 +118,7 @@ function linkedList() {
             if (node_ === null) {
                 throw {
                     message: 'node ' + val + ' not found'
-                }
+                };
             }
 
             if (node_.getNext() === null) {
@@ -138,7 +138,7 @@ function linkedList() {
             if (node_ === null) {
                 throw {
                     message: 'node ' + val + ' not found'
-                }
+                };
             }
 
             if (node_ === head) {
@@ -212,7 +212,7 @@ function linkedList() {
             if (node_ === null) {
                 throw {
                     message: 'node ' + val + ' not found'
-                }
+                };
             }
 
             if (node_ === head) {
@@ -239,7 +239,7 @@ function linkedList() {
             init();
         }
 
-    }
+    };
 }
 
 module.exports = linkedList;
