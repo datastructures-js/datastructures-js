@@ -581,7 +581,7 @@ Install grunt-cli
 ```
 npm install -g grunt-cli
 ```
-create a branch with a name indication the fix/feature
+create a branch with a name indicatig the fix/feature
 ```
 git checkout -b fix-branch
 ```
@@ -605,9 +605,9 @@ if you want to build individual file, install jshint.
 ```
 npm install -g jshint
 ```
-then run a specific test
+then build a specific file
 ```
-jshint test/someFile.js
+jshint someFile.js
 ```
 
 if you want to run individual tests, install mocha.
@@ -620,3 +620,4 @@ mocha test/someTest.spec.js
 ```
 
 ## License
+The MIT License. Full License is here ![](https://github.com/eyas-ranjous/datastructures-js/blob/master/LICENSE "License")
