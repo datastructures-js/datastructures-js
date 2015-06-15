@@ -160,7 +160,7 @@ function binarySearchTree() {
 
         traverse: function(order, func) {
 
-                inOrder = function(node, func) {
+            var inOrder = function(node, func) {
                     if (node !== null) {
                         inOrder(node.getLeft(), func);
                         func.call(func, node.getValue());
