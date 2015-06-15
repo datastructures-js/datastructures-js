@@ -3,9 +3,15 @@
 
 Javascript implementation of the main data structures. Each data structure is represented by a function that returns an object with the data structure operations. All the data structures are well tested.
 
-## Contents
-- [Install](#install)
-- [Usage](#usage)
+## Install
+```
+npm install datastructures-js
+```
+
+## Usage
+```javascript
+var ds = require('datastructures-js');
+```
 
 Implemented Data Structures
 - [Stack](#stack)
@@ -18,19 +24,9 @@ Implemented Data Structures
 - [BinarySearchTree](#binarysearchtree)
 - [DirectedGraph](#directedgraph)
 
+Contribution & License
 - [Contribution](#contribution)
 - [License](#license)
-
-## Install
-```
-npm install datastructures-js
-```
-
-## Usage
-```javascript
-var ds = require('datastructures-js');
-```
-
 
 ## Implemented Data Structures:
 
