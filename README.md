@@ -573,7 +573,7 @@ diGraph.removeVertex('v3');
 
 
 ## Contribution
-Clone the repo:
+Clone (or fork) the repo:
 ```
 git clone https://github.com/eyas-ranjous/datastructures-js
 ```
