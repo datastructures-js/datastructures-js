@@ -1,7 +1,25 @@
 # datastructures-js
-[![build:?](https://travis-ci.org/eyas-ranjous/datastructures-js.svg?branch=master)](https://travis-ci.org/eyas-ranjous/datastructures-js) [![npm](https://img.shields.io/npm/v/datastructures-js.svg)](https://www.npmjs.com/package/datastructures-js)
+[![build:?](https://travis-ci.org/eyas-ranjous/datastructures-js.svg?branch=master)](https://travis-ci.org/eyas-ranjous/datastructures-js) [![npm](https://img.shields.io/npm/v/datastructures-js.svg)](https://www.npmjs.com/package/datastructures-js) [![Code Climate](https://codeclimate.com/repos/557e16c66956806a3105503a/badges/f0ca33a131f4df037533/gpa.svg)](https://codeclimate.com/repos/557e16c66956806a3105503a/feed)
 
 Javascript implementation of the main data structures. Each data structure is represented by a function that returns an object with the data structure operations. All the data structures are well tested.
+
+## Contents
+- [Install](#install)
+- [Usage](#usage)
+
+Implemented Data Structures
+- [Stack](#stack)
+- [Queue](#queue)
+- [PriorityQueue](#priorityqueue)
+- [Set](#set)
+- [LinkedList](#linkedlist)
+- [DoublyLinkedList](#doublylinkedlist)
+- [HashTable](#hashtable)
+- [BinarySearchTree](#binarysearchtree)
+- [DirectedGraph](#directedgraph)
+
+- [Contribution](#contribution)
+- [License](#license)
 
 ## Install
 ```
@@ -15,16 +33,6 @@ var ds = require('datastructures-js');
 
 
 ## Implemented Data Structures:
-
-- [Stack](#stack)
-- [Queue](#queue)
-- [PriorityQueue](#priorityqueue)
-- [Set](#set)
-- [LinkedList](#linkedlist)
-- [DoublyLinkedList](#doublylinkedlist)
-- [HashTable](#hashtable)
-- [BinarySearchTree](#binarysearchtree)
-- [DirectedGraph](#directedgraph)
 
 ## Stack
 elements data type: object, number, string, boolean or null
@@ -566,3 +574,53 @@ var sepV = diGraph.getSeparatedVertices(); // ['v3']
 ```javascript
 diGraph.removeVertex('v3');
 ```
+
+
+## Contribution
+Clone the repo:
+```
+git clone https://github.com/eyas-ranjous/datastructures-js
+```
+Install grunt-cli
+```
+npm install -g grunt-cli
+```
+create a branch with a name indication the fix/feature
+```
+git checkout -b fix-branch
+```
+when you finish writing your code and tests, run build and test
+```
+grunt build
+```
+
+```
+grunt test
+```
+If everything is OK then push the changes to the same branch
+```
+git push origin fix-branch
+```
+then create a pull request.
+
+changes are review then merged if all is ok.
+
+if you want to build individual file, install jshint.
+```
+npm install -g jshint
+```
+then run a specific test
+```
+jshint test/someFile.js
+```
+
+if you want to run individual tests, install mocha.
+```
+npm install -g mocha
+```
+then run a specific test
+```
+mocha test/someTest.spec.js
+```
+
+## License
