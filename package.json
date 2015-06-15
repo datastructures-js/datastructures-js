@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha test"
+    "test": "grunt test"
   },
   "keywords": [
     "javascript",
@@ -30,7 +30,11 @@
   "license": "MIT",
   "homepage": "https://github.com/eyas-ranjous/datastructures-js#readme",
   "devDependencies": {
-    "chai": "^3.0.0",
-    "mocha": "^2.2.5"
+    "chai": "~3.0.0",
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.11.2",
+    "grunt-mocha-test": "~0.12.7",
+    "jshint-stylish": "~2.0.0",
+    "mocha": "~2.2.5"
   }
 }
