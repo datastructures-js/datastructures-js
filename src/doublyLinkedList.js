@@ -155,7 +155,7 @@ function doublyLinkedList() {
             return head;
         },
 
-        findLast: function(val) {
+        findLast: function() {
             var currentNode = head;
             while (currentNode && currentNode.getNext()) {
                 currentNode = currentNode.getNext();

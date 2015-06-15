@@ -48,7 +48,7 @@ function directedGraph() {
 
             // remove the directions to vertex
             for (var vertex in directions) {
-                if (directions[vertex][v] && Object.keys(directions[vertex]).length == 1) {
+                if (directions[vertex][v] && Object.keys(directions[vertex]).length === 1) {
                     removeElementFromArray(directions, vertex);
                 }
                 else {
@@ -127,7 +127,7 @@ function directedGraph() {
 
         removeDirection: function(v1, v2) {
             if (this.hasDirection(v1, v2)) {
-                if (Object.keys(directions[v1]).length == 1) {
+                if (Object.keys(directions[v1]).length === 1) {
                     removeElementFromArray(directions, v1);
                 }
                 else {
@@ -151,7 +151,7 @@ function directedGraph() {
 
                 findShortestPath = function(v1, v2, path, visited) {
 
-                    if (visited.indexOf(v1) == -1) {
+                    if (visited.indexOf(v1) === -1) {
                         // visit the starting vertex
                         visited.push(v1);
 
@@ -187,7 +187,7 @@ function directedGraph() {
                         }
 
                         // we haven't arrived to the destination and we still have directions
-                        else if (directions[v1] && (v1 != v2)) {
+                        else if (directions[v1] && (v1 !== v2)) {
                             for (var vertex in directions[v1]) {
 
                                 // depth-first appraoch

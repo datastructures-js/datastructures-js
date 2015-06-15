@@ -159,7 +159,6 @@ function binarySearchTree() {
         },
 
         traverse: function(order, func) {
-            var elements = [],
 
                 inOrder = function(node, func) {
                     if (node !== null) {

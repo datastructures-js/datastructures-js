@@ -90,7 +90,7 @@ function hashtable(length) {
             var h = hash(key);
 
             if (elements[h] !== undefined) {
-                return elements[h].length == 1 ? 
+                return elements[h].length === 1 ? 
                     elements[h][0] : elements[h];
             }
             
@@ -121,8 +121,8 @@ function hashtable(length) {
                         var key = hashes[hashesKeys[currentHashIndex]],
                             value = elements[hashesKeys[currentHashIndex]];
                         return {
-                            key: key.length == 1 ? key[0] : key,
-                            value: value.length == 1 ? value[0] : value
+                            key: key.length === 1 ? key[0] : key,
+                            value: value.length === 1 ? value[0] : value
                         };
                     }
                     return null;

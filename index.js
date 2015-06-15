@@ -10,4 +10,4 @@ module.exports = {
     hashtable: require(src + '/hashtable.js'),
     binarySearchTree: require(src + '/binarySearchTree.js'),
     directedGraph: require(src + '/directedGraph.js')
-}
+};
