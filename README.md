@@ -601,23 +601,5 @@ then create a pull request.
 
 changes are review then merged if all is ok.
 
-if you want to build individual file, install jshint.
-```
-npm install -g jshint
-```
-then build a specific file
-```
-jshint someFile.js
-```
-
-if you want to run individual tests, install mocha.
-```
-npm install -g mocha
-```
-then run a specific test
-```
-mocha test/someTest.spec.js
-```
-
 ## License
 The MIT License. Full License is here ![](https://github.com/eyas-ranjous/datastructures-js/blob/master/LICENSE "License")
