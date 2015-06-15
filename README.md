@@ -602,4 +602,4 @@ then create a pull request.
 changes are review then merged if all is ok.
 
 ## License
-The MIT License. Full License is here ![](https://github.com/eyas-ranjous/datastructures-js/blob/master/LICENSE "License")
+The MIT License. Full License is here [License](https://github.com/eyas-ranjous/datastructures-js/blob/master/LICENSE)
