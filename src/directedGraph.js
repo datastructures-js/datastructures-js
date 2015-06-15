@@ -12,7 +12,7 @@ function directedGraph() {
     'use strict';
 
     var vertices = [], // graph nodes
-        directions = [], // two dimensions array [][]
+        directions = [], // graph directions [][]
         verticesCount = 0,
 
         removeElementFromArray = function(arr, v) {
@@ -68,7 +68,7 @@ function directedGraph() {
         visit: function(func) {
             var visit = function(dirs, visited, func) {
                 for (var vertex in dirs) {
-                    if (!visited[vertex]) {
+                    if (dirs.hasOwnProperty(vertex) && !visited[vertex]) {
                         func.call(func, vertex);
                         visited[vertex] = true;
                         if (directions[vertex]) {
@@ -88,7 +88,7 @@ function directedGraph() {
             });
 
             for (var v in vertices) {
-                if (!directionsVertices[v]) {
+                if (vertices.hasOwnProperty(v) && !directionsVertices[v]) {
                     separated.push(v);
                 }
             }
@@ -189,13 +189,14 @@ function directedGraph() {
                         // we haven't arrived to the destination and we still have directions
                         else if (directions[v1] && (v1 !== v2)) {
                             for (var vertex in directions[v1]) {
-
-                                // depth-first appraoch
-                                findShortestPath(vertex, v2, path, visited);
-   
-                                // slice path and visited arrays to allow to push the other directions of v1
-                                path = path.slice(0, path.indexOf(v1) + 1);
-                                visited = visited.slice(0, path.indexOf(v1) + 1);
+                                if (directions[v1].hasOwnProperty(vertex)) {
+                                    // depth-first appraoch
+                                    findShortestPath(vertex, v2, path, visited);
+       
+                                    // slice path and visited arrays to allow to push the other directions of v1
+                                    path = path.slice(0, path.indexOf(v1) + 1);
+                                    visited = visited.slice(0, path.indexOf(v1) + 1);
+                                }
                             }
                         }
                     }
