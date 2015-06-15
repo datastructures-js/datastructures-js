@@ -533,7 +533,7 @@ var hasDi2 = diGraph.hasDirection('v3', 'v1'); // false
 ```javascript
 var weight = diGraph.getDirectionWeight('v4', 'v1'); // 7
 ```
-**.visit(func)** visit all the vertices in the graph using the depth-first approach and apply func on the reached vertex
+**.visit(func)** visit all the connected vertices in the graph using the depth-first approach and apply func on the reached vertex
 ```javascript
 var visitFunc = function(vertex) {
     console.log(vertex);
@@ -573,7 +573,7 @@ diGraph.removeVertex('v3');
 
 
 ## Contribution
-fork and then clone the repo:
+Fork and then clone the repo:
 ```
 git clone https://github.com/[your-username]/datastructures-js
 ```
@@ -581,11 +581,11 @@ Install grunt-cli
 ```
 npm install -g grunt-cli
 ```
-create a branch with a name indicatig the fix/feature
+Create a branch with a name indicatig the fix/feature you want to add
 ```
 git checkout -b fix-branch
 ```
-when you finish writing your code and tests, run build and test
+When you finish writing your code and tests, run build and test
 ```
 grunt build
 ```
@@ -597,9 +597,11 @@ If everything is OK then push the changes to the same branch
 ```
 git push origin fix-branch
 ```
-then create a pull request.
+Then create a pull request.
 
-changes are review then merged if all is ok.
+Changes are reviewed then merged if all is ok.
+
+Thanks.
 
 ## License
 The MIT License. Full License is [here](https://github.com/eyas-ranjous/datastructures-js/blob/master/LICENSE)
