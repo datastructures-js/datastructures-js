@@ -549,13 +549,11 @@ diGraph.visit(visitFunc);
 ```
 **.findShortestPath(v1, v2)** returns an array of all the shortest paths between two vertices based on the sum of weights.
 ```javascript
-var sp1 = diGraph.findShortestPath('v1', 'v3');
-console.log(shortestPath);
-//[['v1', ' v5', 'v4', 'v3']]
+var sp1 = diGraph.findShortestPath('v1', 'v3'); 
+// [['v1', ' v5', 'v4', 'v3']]
 
 var sp2 = diGraph.findShortestPath('v4', 'v5');
-console.log(shortestPath);
-//[['v4', 'v1', 'v5'], ['v4', 'v3', 'v5']]
+// [['v4', 'v1', 'v5'], ['v4', 'v3', 'v5']]
 ```
 **.removeDirection(v1, v2)** removes an existing direction between v1 and v2
 ```javascript
@@ -564,7 +562,7 @@ diGraph.removeDirection('v3', 'v5');
 ```
 **.getSeparatedVertices()** returns an array of all the vertices that are separated from the graph.
 ```javascript
-var sepV = diGraph.getSeparatedVertices(); // ['v3']
+var s = diGraph.getSeparatedVertices(); // ['v3']
 ```
 **.removeVertex(v1)** removes an existing vertex and all its directions (the incoming and outgoing)
 ```javascript
