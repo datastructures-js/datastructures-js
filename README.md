@@ -581,6 +581,10 @@ Install grunt-cli
 ```
 npm install -g grunt-cli
 ```
+install dev dependencies
+```
+npm install
+```
 Create a branch with a name indicatig the fix/feature you want to add
 ```
 git checkout -b fix-branch
