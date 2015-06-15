@@ -573,9 +573,9 @@ diGraph.removeVertex('v3');
 
 
 ## Contribution
-Clone (or fork) the repo:
+fork and then clone the repo:
 ```
-git clone https://github.com/eyas-ranjous/datastructures-js
+git clone https://github.com/[your-username]/datastructures-js
 ```
 Install grunt-cli
 ```
