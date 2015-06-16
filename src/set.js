@@ -13,7 +13,7 @@ function set() {
 
     // local variables (private properties)
     var elements = [],
-        currentIndex = null;
+        iterator = require('./iterators/iterator')(elements);
 
     // return an object with the Set operations
     return {
@@ -32,26 +32,7 @@ function set() {
         },
 
         iterator: function() {
-            return {
-                current: function() {
-                    return (currentIndex !== null ? elements[currentIndex] : null);
-                },
-
-                next: function() {
-                    if (currentIndex === null && elements.length > 0) {
-                        currentIndex = 0;
-                        return true;
-                    }
-                    else if (currentIndex >= elements.length - 1) {
-                        currentIndex = null;
-                        return false;
-                    }
-                    else {
-                        currentIndex++;
-                        return true;
-                    }
-                }
-            };
+            return iterator.toReadOnly();
         },
 
         isEmpty: function() {
