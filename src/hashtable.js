@@ -17,7 +17,7 @@ function hashtable(length) {
 
         hashes = [],
 
-        currentHashIndex= null,
+        iterator = require('./iterators/hashtableIterator'),
 
         isPrimary = function(num) {
             if (isNaN(num) || !isFinite(num) || num % 1 || num < 2) {
@@ -114,36 +114,8 @@ function hashtable(length) {
         },
 
         iterator: function() {
-            var hashesKeys = Object.keys(hashes);
-            return {
-                current: function() {
-                    if (currentHashIndex !== null) {
-                        var key = hashes[hashesKeys[currentHashIndex]],
-                            value = elements[hashesKeys[currentHashIndex]];
-                        return {
-                            key: key.length === 1 ? key[0] : key,
-                            value: value.length === 1 ? value[0] : value
-                        };
-                    }
-                    return null;
-                },
-
-                next: function() {
-                    var elementsKeys = Object.keys(elements);
-                    if (currentHashIndex === null && elementsKeys.length > 0) {
-                        currentHashIndex = 0;
-                        return true;
-                    }
-                    else if (currentHashIndex >= elementsKeys.length - 1) {
-                        currentHashIndex = null;
-                        return false;
-                    }
-                    else {
-                        currentHashIndex++;
-                        return true;
-                    }
-                }
-            };
+            var itr = iterator(elements, hashes);
+            return itr.toReadOnly();
         },
 
         getCollidedKeys: function() {
