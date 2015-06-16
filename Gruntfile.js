@@ -6,11 +6,11 @@ module.exports = function(grunt) {
             options: {
                 reporter: require('jshint-stylish')
             },
-            files: ['./src/*.js', './test/*.spec.js']
+            files: ['./src/**/*.js', './test/**/*.spec.js']
         },
 
         mochaTest: {
-            files: ['./test/*.spec.js']
+            files: ['./test/**/*.spec.js']
         }
     });
 
@@ -19,4 +19,5 @@ module.exports = function(grunt) {
 
     grunt.registerTask('build', ['jshint']);
     grunt.registerTask('test', ['mochaTest']);
+    grunt.registerTask('default', ['build', 'test']);
 }
