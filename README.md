@@ -13,7 +13,7 @@ npm install datastructures-js
 var ds = require('datastructures-js');
 ```
 
-Implemented Data Structures
+## Implemented Data Structures
 - [Stack](#stack)
 - [Queue](#queue)
 - [PriorityQueue](#priorityqueue)
@@ -24,11 +24,10 @@ Implemented Data Structures
 - [BinarySearchTree](#binarysearchtree)
 - [DirectedGraph](#directedgraph)
 
-Contribution & License
+## Contribution & License
 - [Contribution](#contribution)
 - [License](#license)
 
-## Implemented Data Structures:
 
 ## Stack
 elements data type: object, number, string, boolean or null
@@ -579,7 +578,7 @@ Install grunt-cli
 ```
 npm install -g grunt-cli
 ```
-install dev dependencies
+install dependencies
 ```
 npm install
 ```
@@ -587,13 +586,9 @@ Create a branch with a name indicatig the fix/feature you want to add
 ```
 git checkout -b fix-branch
 ```
-When you finish writing your code and tests, run build and test
+When you finish writing your code and tests, run grunt to build and test the project.
 ```
-grunt build
-```
-
-```
-grunt test
+grunt
 ```
 If everything is OK then push the changes to the same branch
 ```
