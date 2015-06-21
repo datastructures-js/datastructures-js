@@ -594,21 +594,34 @@ install dependencies
 ```
 npm install
 ```
-Create a branch with a name indicatig the fix/feature you want to add
+Create a branch with a name indicatig the fix/feature
 ```
 git checkout -b fix-branch
 ```
-When you finish writing your code and tests, run grunt to build and test the project.
+run all tasks
 ```
 grunt
 ```
-If everything is OK then push the changes to the same branch
+to run build only
+```
+grunt build
+```
+to run tests only
+```
+grunt test
+```
+to run test coverage only
+```
+grunt test-coverage
+```
+
+when everything is OK, push the changes to the same branch
 ```
 git push origin fix-branch
 ```
-Then create a pull request.
+and create a pull request.
 
-Changes are reviewed then merged if all is ok.
+Changes are reviewed and merged if all is ok.
 
 Thanks.
 
