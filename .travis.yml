@@ -8,3 +8,8 @@ install:
     - npm install
 script:
     - grunt
+after_success:
+	- codeclimate < ./coverage/lcov.info
+addons:
+code_climate:
+    repo_token: b7a5acc3dc8f3d8e43648baf83d77d9954f6077e55032dbd763fbe30d7924140
