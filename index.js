@@ -3,7 +3,7 @@ var src = './src';
 // export objects api
 var getObject = function(ds, args) {
     return require(src + '/' + ds + '.js').apply(this, args).export();
-}
+};
 
 module.exports = {
 
