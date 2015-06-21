@@ -320,6 +320,13 @@ console.log(first.getValue()); // n1
 var last = dList.findLast();
 console.log(last.getValue()); // n4
 ```
+**.findBefore(element)** returns the read-only node object before the specified element's node or null if not found
+```javascript
+var n2 = linkedList.findBefore('n3');
+console.log(n2.getValue()); // n2
+console.log(n2.getNext().getValue()); // n3
+console.log(n2.getPrev().getValue()); // n1
+```
 **.removeFirst()** removes the first node from the list
 ```javascript
 dList.removeFirst();
@@ -487,6 +494,11 @@ var postOrderTravFunc = function(nodeVal) {
 bst.traverse('postOrder', postOrderTravFunc);
 console.log(values); // [20, 40, 60, 90, 80, 50]
 ```
+**.count()** return the number of nodes in the tree
+```javascript
+var count = bst.count() // 6
+```
+
 
 
 ## DirectedGraph
