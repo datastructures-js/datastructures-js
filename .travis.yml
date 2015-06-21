@@ -3,13 +3,13 @@ node_js:
     - "0.10"
     - "0.11"
     - "0.12"
+addons:
+	code_climate:
+    	repo_token: b7a5acc3dc8f3d8e43648baf83d77d9954f6077e55032dbd763fbe30d7924140
 install:
     - npm install -g grunt-cli
     - npm install
 script:
     - grunt
-after_success:
+after_script:
 	- codeclimate < ./coverage/lcov.info
-addons:
-code_climate:
-    repo_token: b7a5acc3dc8f3d8e43648baf83d77d9954f6077e55032dbd763fbe30d7924140
