@@ -31,18 +31,19 @@ function hashtable(length) {
                 }
             }
             return true;
-        },
+        };
 
-        init = function(length) {
-            // length should be a primary number bigger than H
-            // to guarantee hashes to be between 1 to length-1
-            if (!isPrimary(length)) {
-                throw {
-                    message: 'hashtable must have a prime number length'
-                };
-            }
-            elements = new Array(length);
-        }(length); //init the hashtable with length
+    // immediate invocation, verify length and create elements array
+    (function(length) {
+        // length should be a primary number bigger than H
+        // to guarantee hashes to be between 1 to length-1
+        if (!isPrimary(length)) {
+            throw {
+                message: 'hashtable must have a prime number length'
+            };
+        }
+        elements = new Array(length);
+    }(length)); //init the hashtable with length
 
     // calculate a numberic hash of a value
     self.hash = function(value) {
