@@ -1,5 +1,5 @@
 var expect = require('chai').expect,
-    stack = require('../src/stack');
+    stack = require('../lib/stack');
 
 describe('stack test', function() {
 

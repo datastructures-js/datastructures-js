@@ -1,5 +1,5 @@
 var expect = require('chai').expect,
-    directedGraph = require('../src/directedGraph');
+    directedGraph = require('../lib/directedGraph');
 
 describe('directedGraph test', function() {
 

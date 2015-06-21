@@ -1,5 +1,5 @@
 var expect = require('chai').expect,
-    queue = require('../src/queue');
+    queue = require('../lib/queue');
 
 describe('queue test', function() {
 

@@ -1,4 +1,4 @@
-var src = './src';
+var src = './lib';
 
 // export objects api
 var getObject = function(ds, args) {

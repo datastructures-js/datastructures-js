@@ -1,5 +1,5 @@
 var expect = require('chai').expect,
-    linkedList = require('../src/linkedList');
+    linkedList = require('../lib/linkedList');
 
 describe('linkedList test', function() {
 

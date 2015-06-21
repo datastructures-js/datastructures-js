@@ -1,5 +1,5 @@
 var expect = require('chai').expect,
-    binaryTreeNode = require('../../src/nodes/binaryTreeNode');
+    binaryTreeNode = require('../../lib/nodes/binaryTreeNode');
 
 describe('binaryTreeNode test', function() {
 

@@ -1,5 +1,5 @@
 var expect = require('chai').expect,
-    priorityQueue = require('../src/priorityQueue');
+    priorityQueue = require('../lib/priorityQueue');
 
 describe('priorityQueue test', function() {
 

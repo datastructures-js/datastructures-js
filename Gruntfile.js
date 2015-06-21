@@ -6,7 +6,7 @@ module.exports = function(grunt) {
             options: {
                 reporter: require('jshint-stylish')
             },
-            files: ['./src/**/*.js', './test/**/*.spec.js']
+            files: ['./lib/**/*.js', './test/**/*.spec.js']
         },
 
         mochaTest: {

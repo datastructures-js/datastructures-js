@@ -1,5 +1,5 @@
 var expect = require('chai').expect,
-    hashtableIterator = require('../../src/iterators/hashtableIterator');
+    hashtableIterator = require('../../lib/iterators/hashtableIterator');
 
 describe('hashtableIterator test', function() {
 

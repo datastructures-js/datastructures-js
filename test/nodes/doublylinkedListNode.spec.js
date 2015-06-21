@@ -1,5 +1,5 @@
 var expect = require('chai').expect,
-    doublyLinkedListNode = require('../../src/nodes/doublyLinkedListNode');
+    doublyLinkedListNode = require('../../lib/nodes/doublyLinkedListNode');
 describe('doublyLinkedListNode test', function() {
 
     var n3 = doublyLinkedListNode(null, null, 'n3'),

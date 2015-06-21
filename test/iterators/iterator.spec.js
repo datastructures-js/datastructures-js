@@ -1,5 +1,5 @@
 var expect = require('chai').expect,
-    iterator = require('../../src/iterators/iterator');
+    iterator = require('../../lib/iterators/iterator');
 
 describe('iterator test', function() {
 

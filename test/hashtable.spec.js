@@ -1,5 +1,5 @@
 var expect = require('chai').expect,
-    hashtable = require('../src/hashtable');
+    hashtable = require('../lib/hashtable');
 
 describe('hashtable test', function() {
 
