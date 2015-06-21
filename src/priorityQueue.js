@@ -12,7 +12,7 @@ function priorityQueue() {
     var prototype = require('./queue')(), // queue object as the prototype
         self = Object.create(prototype);
 
-    // add a method to determine the top priority element
+    // determine the top priority element
     self.getTopPriorityIndex = function() {
         var  length = this.elements.length;
         if (length > 0) {
@@ -31,7 +31,6 @@ function priorityQueue() {
         return null;      
     };
 
-    // override enqueue
     self.enqueue = function(el, p) {
         p = parseInt(p);
         if (isNaN(p)) {
@@ -45,18 +44,15 @@ function priorityQueue() {
         });
     };
 
-    // override dequeue
     self.dequeue = function() {
         var pIndex = self.getTopPriorityIndex();
         return this.elements.splice(pIndex, 1)[0].element;
     };
 
-    // override front
     self.front = function() {
         return !this.isEmpty() ? this.elements[0].element : null;
     };
 
-    // override back
     self.back = function() {
         return !self.isEmpty() ? this.elements[this.elements.length - 1].element : null;
     };
