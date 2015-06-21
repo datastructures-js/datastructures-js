@@ -40,16 +40,16 @@ function doublyLinkedList() {
     };
 
     self.addAfter = function(val, newVal) {
-        var node_ = this.findNode(val);
-        if (node_ === null) {
+        var foundNode = this.findNode(val);
+        if (foundNode === null) {
             throw {
                 message: 'node ' + val + ' not found'
             };
         }
-        if (node_ !== null) {
-            var recentNext = node_.getNext();
-            var newNode = node(node_, recentNext, newVal);
-            node_.setNext(newNode);
+        if (foundNode !== null) {
+            var recentNext = foundNode.getNext();
+            var newNode = node(foundNode, recentNext, newVal);
+            foundNode.setNext(newNode);
             if (recentNext !== null) {
                 recentNext.setPrev(newNode);
             }
@@ -58,15 +58,15 @@ function doublyLinkedList() {
     };
 
     self.addBefore = function(val, newVal) {
-        var node_ = this.findNode(val);
-        if (node_ === null) {
+        var foundNode = this.findNode(val);
+        if (foundNode === null) {
             throw {
                 message: 'node ' + val + ' not found'
             };
         }
-        var recentBefore = node_.getPrev();
-        var newNode = node(recentBefore, node_, newVal);
-        node_.setPrev(newNode);
+        var recentBefore = foundNode.getPrev();
+        var newNode = node(recentBefore, foundNode, newVal);
+        foundNode.setPrev(newNode);
         if (recentBefore !== null) {
             recentBefore.setNext(newNode);
         }
@@ -109,20 +109,20 @@ function doublyLinkedList() {
     };
 
     self.remove = function(val) {
-        var node_ = this.findNode(val);
-        if (node_ === null) {
+        var foundNode = this.findNode(val);
+        if (foundNode === null) {
             throw {
                 message: 'node ' + val + ' not found'
             };
         }
 
-        if (node_ === this.head) {
+        if (foundNode === this.head) {
             this.removeFirst();
             return;
         }
 
-        var prev = node_.getPrev(),
-            next = node_.getNext();
+        var prev = foundNode.getPrev(),
+            next = foundNode.getNext();
             
         prev.setNext(next);
         if (next !== null) {

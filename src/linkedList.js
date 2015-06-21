@@ -63,19 +63,19 @@ function linkedList() {
     };
 
     self.addAfter = function(val, newVal) {
-        var n = self.findNode(val);
-        if (n === null) {
+        var foundNode = self.findNode(val);
+        if (foundNode === null) {
             throw {
                 message: 'node ' + val + ' not found'
             };
         }
 
-        if (n.getNext() === null) {
-            n.setNext(node(null, newVal));
+        if (foundNode.getNext() === null) {
+            foundNode.setNext(node(null, newVal));
         }
         else {
-            var newNode = node(n.getNext(), newVal);
-            n.setNext(newNode);
+            var newNode = node(foundNode.getNext(), newVal);
+            foundNode.setNext(newNode);
         }
 
        this.count++;   
@@ -83,21 +83,21 @@ function linkedList() {
     };
 
     self.addBefore = function(val, newVal) {
-        var node = self.findNode(val);
-        if (node === null) {
+        var foundNode = self.findNode(val);
+        if (foundNode === null) {
             throw {
                 message: 'node ' + val + ' not found'
             };
         }
 
-        if (node === this.head) {
+        if (foundNode === this.head) {
             this.addFirst(newVal);
             return;
         }
 
         var before = this.head;
         while (before.getNext()) {
-            if (before.getNext() === node) {
+            if (before.getNext() === foundNode) {
                 this.addAfter(before.getValue(), newVal);
                 return;
             }
@@ -156,26 +156,26 @@ function linkedList() {
     };
 
     self.remove = function(val) {
-        var node = this.findNode(val);
+        var foundNode = this.findNode(val);
 
-        if (node === null) {
+        if (foundNode === null) {
             throw {
                 message: 'node ' + val + ' not found'
             };
         }
 
-        if (node === this.head) {
+        if (foundNode === this.head) {
             this.removeFirst();
             return;
         }
 
-        if (node.getNext() === null) {
+        if (foundNode.getNext() === null) {
             this.removeLast();
             return;
         }
 
         var beforeNode = this.findBeforeNode(val);
-        beforeNode.setNext(node.getNext()); // link before to next which detaches node from list
+        beforeNode.setNext(foundNode.getNext()); // link before to next which detaches node from list
         this.count--;
         
     };
