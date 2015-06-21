@@ -1,107 +1,120 @@
-/**
- * Set factory function
- *
- * returns an object with the main Set operations 
- *
- * @author Eyas Ranjous <eyas@eyasranjous.info>
- *
+/*!
+ * datastructures-js
+ * set
+ * Copyright(c) 2015 Eyas Ranjous <eyas@eyasranjous.info>
+ * MIT Licensed
  */
 
 function set() {
 
     'use strict';
 
-    // local variables (private properties)
-    var elements = [],
+    var self = {},
+        elements = [],
         iterator = require('./iterators/iterator')(elements);
 
-    // return an object with the Set operations
-    return {
+    self.add = function(el) {
+        if (elements.indexOf(el) === -1) {
+            elements.push(el);
+        }
+    };
 
-        add: function(el) {
-            if (elements.indexOf(el) === -1) {
-                elements.push(el);
-            }
-        },
+    self.remove = function(el){ 
+        var index = elements.indexOf(el);
+        if (index !== -1) {
+            elements.splice(index, 1);
+        }
+    };
 
-        remove: function(el){ 
-            var index = elements.indexOf(el);
-            if (index !== -1) {
-                elements.splice(index, 1);
-            }
-        },
+    self.iterator = function() {
+        return iterator.export();
+    };
 
-        iterator: function() {
-            return iterator.toReadOnly();
-        },
+    self.isEmpty =function() {
+        return elements.length > 0 ? false : true;
+    };
 
-        isEmpty: function() {
-            return elements.length > 0 ? false : true;
-        },
+    self.size = function(){
+        return elements.length;
+    };
 
-        size: function(){
-            return elements.length;
-        },
+    self.contains = function(el) {
+        return elements.indexOf(el) !== -1 ? true : false;
+    };
 
-        contains: function(el) {
-            return elements.indexOf(el) !== -1 ? true : false;
-        },
+    self.union = function(s) {
+        var resultSet = s.clone();
 
-        union: function(s) {
-            var resultSet = s.clone();
-
-            for (var i = 0; i < elements.length; i++) {
-                resultSet.add(elements[i]);
-            }
-
-            return resultSet;
-        },
-
-        intersect: function(s) {
-            var resultSet = set();
-
-            for (var i = 0; i < elements.length; i++) {
-                if (s.contains(elements[i])) {
-                    resultSet.add(elements[i]);
-                }
-            }
-
-            return resultSet;
-        },
-
-        difference: function(s) {
-            var resultSet = set();
-
-            for (var i = 0; i < elements.length; i++) {
-                if (!s.contains(elements[i])) {
-                    resultSet.add(elements[i]);
-                }
-            }
-
-            return resultSet;  
-        },
-
-        isSubset: function(s) {
-            if (elements.length <= s.size()) {
-                for (var i = 0; i < elements.length; i++) {
-                    if (!s.contains(elements[i])) {
-                        return false;
-                    }
-                }
-                return true;
-            }
-            return false;
-        },
-
-        clone: function() {
-            var s = set();
-            for (var i = 0; i < elements.length; i++) {
-                s.add(elements[i]);
-            }
-            return s;
+        for (var i = 0; i < elements.length; i++) {
+            resultSet.add(elements[i]);
         }
 
+        return resultSet;
     };
+
+    self.intersect = function(s) {
+        var resultSet = set();
+
+        for (var i = 0; i < elements.length; i++) {
+            if (s.contains(elements[i])) {
+                resultSet.add(elements[i]);
+            }
+        }
+
+        return resultSet;
+    };
+
+    self.difference = function(s) {
+        var resultSet = set();
+
+        for (var i = 0; i < elements.length; i++) {
+            if (!s.contains(elements[i])) {
+                resultSet.add(elements[i]);
+            }
+        }
+
+        return resultSet;  
+    };
+
+    self.isSubset = function(s) {
+        if (elements.length <= s.size()) {
+            for (var i = 0; i < elements.length; i++) {
+                if (!s.contains(elements[i])) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        return false;
+    };
+
+    self.clone = function() {
+        var s = set();
+        for (var i = 0; i < elements.length; i++) {
+            s.add(elements[i]);
+        }
+        return s;
+    };
+
+    // export the set api
+    self.export = function() {
+        var that = this; // becasue context change in the return object
+        return {
+            add: that.add,
+            remove: that.remove,
+            iterator: that.iterator,
+            isEmpty: that.isEmpty,
+            size: that.size,
+            contains: that.contains,
+            union: that.union,
+            intersect: that.intersect,
+            difference: that.difference,
+            isSubset: that.isSubset,
+            clone: that.clone
+        };
+    };
+
+    return self;
 }
 
 module.exports = set;

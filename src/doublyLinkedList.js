@@ -1,233 +1,140 @@
-/**
- * DoublyLinkedList factory function
- *
- * returns an object with the main DoublyLinkedList operations
- *
- * @author Eyas Ranjous <eyas@eyasranjous.info>
- *
+/*!
+ * datastructures-js
+ * doublyLinkedList
+ * Copyright(c) 2015 Eyas Ranjous <eyas@eyasranjous.info>
+ * MIT Licensed
  */
 
 function doublyLinkedList() {
 
     'use strict';
 
-    // local variables
-    var head,
-        count,
+    var node = require('./nodes/doublyLinkedListNode'),
+        prototype = require('./linkedList')(),
+        self = Object.create(prototype);
 
-        node = function(prev_, next_, value_) {
-            var prev = prev_,
-                next = next_,
-                value = value_,
-
-                toReadOnly = function(n) {
-                    return function() {
-                        if (n !== null) {
-                            return {
-                                getPrev: n.toReadOnly().getPrev,
-                                getNext: n.toReadOnly().getNext,
-                                getValue: n.getValue
-                            };
-                        }
-                        return null;
-                    };
-                };
-
-            return {
-                setPrev: function(p) {
-                    prev = p;
-                },
-                setNext: function(n) {
-                    next = n;
-                },
-                setValue: function(v) {
-                    value = v;
-                },
-                getPrev: function() {
-                    return prev;
-                },
-                getNext: function() {
-                    return next;
-                },
-                getValue: function() {
-                    return value;
-                },
-                // used to return a node object to the client
-                toReadOnly: function() {
-                    var that = this; // the node's return object
-                    return { // implements a read only interface
-                        getPrev: toReadOnly(that.getPrev()),
-                        getNext: toReadOnly(that.getNext()),
-                        getValue: that.getValue
-                    };
-                }
-            };
-        },
-
-        find = function(val) {
-            var currentNode = head;
-            while (currentNode) {
-                if (currentNode.getValue() === val) {
-                    return currentNode;
-                }
-                currentNode = currentNode.getNext();
-            }
-            return null;
-        },
-
-        init = function() {
-            head = null;
-            count = 0;
-        };
-
-    // init the doubly linked list
-    init();
-
-    // return an object with DoublyLinkedList operations
-    return {
         
-        addFirst: function(val) {
-            if (head === null) {
-                head = node(null, null, val);
+    self.addFirst = function(val) {
+        if (this.head === null) {
+            this.head = node(null, null, val);
+        }
+        else {
+            this.head.setPrev(node(null, this.head, val));
+            this.head = this.head.getPrev();
+        }
+        this.count++;
+    };
+
+    self.addLast = function(val) {
+        if (this.head === null) {
+            this.head = node(null, null, val);
+        }
+        else {
+            var lastNode = this.head;
+            while (lastNode.getNext()) {
+                lastNode = lastNode.getNext();
+            } 
+            lastNode.setNext(node(lastNode, null, val));
+        }
+        this.count++;
+    };
+
+    self.addAfter = function(val, newVal) {
+        var node_ = this.findNode(val);
+        if (node_ === null) {
+            throw {
+                message: 'node ' + val + ' not found'
+            };
+        }
+        if (node_ !== null) {
+            var recentNext = node_.getNext();
+            var newNode = node(node_, recentNext, newVal);
+            node_.setNext(newNode);
+            if (recentNext !== null) {
+                recentNext.setPrev(newNode);
+            }
+            this.count++;
+        }
+    };
+
+    self.addBefore = function(val, newVal) {
+        var node_ = this.findNode(val);
+        if (node_ === null) {
+            throw {
+                message: 'node ' + val + ' not found'
+            };
+        }
+        var recentBefore = node_.getPrev();
+        var newNode = node(recentBefore, node_, newVal);
+        node_.setPrev(newNode);
+        if (recentBefore !== null) {
+            recentBefore.setNext(newNode);
+        }
+        this.count++;
+        
+    };
+
+    self.findBefore = function(node) {
+        return node.getPrev();
+    };
+
+    self.removeFirst = function() {
+        if (this.head !== null) {
+            if (this.head.getNext() === null) {
+                this.head = null;
             }
             else {
-                head.setPrev(node(null, head, val));
-                head = head.getPrev();
+                var second = this.head.getNext();
+                second.setPrev(null);
+                this.head = second;
             }
-            count++;
-        },
+            this.count--;
+        }
+    };
 
-        addLast: function(val) {
-            if (head === null) {
-                head = node(null, null, val);
+    self.removeLast = function() {
+        if (this.head !== null) {
+            if (this.head.getNext() === null) {
+                this.head = null;
             }
             else {
-                var lastNode = head;
-                while (lastNode.getNext()) {
-                    lastNode = lastNode.getNext();
-                } 
-                lastNode.setNext(node(lastNode, null, val));
-            }
-            count++;
-        },
-
-        addAfter: function(val, newVal) {
-            var node_ = find(val);
-            if (node_ === null) {
-                throw {
-                    message: 'node ' + val + ' not found'
-                };
-            }
-            if (node_ !== null) {
-                var recentNext = node_.getNext();
-                var newNode = node(node_, recentNext, newVal);
-                node_.setNext(newNode);
-                if (recentNext !== null) {
-                    recentNext.setPrev(newNode);
+                var currentNode = this.head;
+                while (currentNode.getNext()) {
+                    currentNode = currentNode.getNext();
                 }
-                count++;
+                currentNode.getPrev().setNext(null); //separate last node
             }
-        },
+            this.count--;
+        }
+    };
 
-        addBefore: function(val, newVal) {
-            var node_ = find(val);
-            if (node_ === null) {
-                throw {
-                    message: 'node ' + val + ' not found'
-                };
-            }
-            var recentBefore = node_.getPrev();
-            var newNode = node(recentBefore, node_, newVal);
-            node_.setPrev(newNode);
-            if (recentBefore !== null) {
-                recentBefore.setNext(newNode);
-            }
-            count++;
-            
-        },
-
-        find: function(val) {
-            var foundNode = find(val);
-            return foundNode !== null ? foundNode.toReadOnly() : null;
-        },
-
-        findFirst: function() {
-            return head;
-        },
-
-        findLast: function() {
-            var currentNode = head;
-            while (currentNode && currentNode.getNext()) {
-                currentNode = currentNode.getNext();
-            }
-
-            return currentNode !== null ? currentNode.toReadOnly() : null;
-        },
-
-        removeFirst: function() {
-            if (head !== null) {
-                if (head.getNext() === null) {
-                    head = null;
-                }
-                else {
-                    var second = head.getNext();
-                    second.setPrev(null);
-                    head = second;
-                }
-                count--;
-            }
-        },
-
-        removeLast: function() {
-            if (head !== null) {
-                if (head.getNext() === null) {
-                    head = null;
-                }
-                else {
-                    var currentNode = head;
-                    while (currentNode.getNext()) {
-                        currentNode = currentNode.getNext();
-                    }
-                    currentNode.getPrev().setNext(null); //separate last node
-                }
-                count--;
-            }
-        },
-
-        remove: function(val) {
-            var node_ = find(val);
-            if (node_ === null) {
-                throw {
-                    message: 'node ' + val + ' not found'
-                };
-            }
-
-            if (node_ === head) {
-                this.removeFirst();
-                return;
-            }
-
-            var prev = node_.getPrev(),
-                next = node_.getNext();
-                
-            prev.setNext(next);
-            if (next !== null) {
-                next.setPrev(prev);
-            }
-
-            count--;
-            
-        },
-
-        length: function() {
-            return count;
-        },
-
-        clear: function() {
-            init();
+    self.remove = function(val) {
+        var node_ = this.findNode(val);
+        if (node_ === null) {
+            throw {
+                message: 'node ' + val + ' not found'
+            };
         }
 
+        if (node_ === this.head) {
+            this.removeFirst();
+            return;
+        }
+
+        var prev = node_.getPrev(),
+            next = node_.getNext();
+            
+        prev.setNext(next);
+        if (next !== null) {
+            next.setPrev(prev);
+        }
+
+        this.count--;
+        
     };
+
+    return self;
+
 }
 
 module.exports = doublyLinkedList;

@@ -1,11 +1,8 @@
-    /**
- * Hashtable Iterator factory function
- *
- * returns hashtable iterator object
- * extends iterator object
- *
- * @author Eyas Ranjous <eyas@eyasranjous.info>
- *
+/*!
+ * datastructures-js
+ * hashtableIterator
+ * Copyright(c) 2015 Eyas Ranjous <eyas@eyasranjous.info>
+ * MIT Licensed
  */
 
 function hashtableIterator(elements, hashes) {
@@ -15,17 +12,17 @@ function hashtableIterator(elements, hashes) {
     var getKeys = function(elements) {
             return Object.keys(elements);
         },
-
-        iterator = require('./iterator')(getKeys(elements)), // get parent object
-
-        htIterator = Object.create(iterator); // create an object with iterator as prototype
+        elements_ = elements,
+        prototype = require('./iterator')(getKeys(elements)), // create iterator object
+        self = Object.create(prototype); // use iterator as prototype
         
-    // override current method to return a key-value object
-    htIterator.current = function() {
-        var hashesKeys = Object.keys(hashes);
-        if (htIterator.getIndex() !== null) {
-            var key = hashes[hashesKeys[iterator.getIndex()]],
-                value = elements[hashesKeys[iterator.getIndex()]];
+    // override `current` method in prototype to return a key-value object
+    self.current = function() {
+        var hashesKeys = getKeys(hashes);
+
+        if (this.index !== null) {
+            var key = hashes[hashesKeys[this.index]],
+                value = elements_[hashesKeys[this.index]];
             return {
                 key: key.length === 1 ? key[0] : key,
                 value: value.length === 1 ? value[0] : value
@@ -35,13 +32,12 @@ function hashtableIterator(elements, hashes) {
     };
 
     // decorate next method to refresh the elements keys
-    htIterator.next = function() {
-        iterator.setElements(getKeys(elements)); // refresh the keys
-        return iterator.next(); // reuse next of iterator
+    self.next = function() {
+        this.elements = getKeys(elements_); // refresh elements
+        return prototype.next.call(this); // reuse the prototype method
     };
     
-
-    return htIterator;
+    return self;
 }
 
 module.exports = hashtableIterator;
