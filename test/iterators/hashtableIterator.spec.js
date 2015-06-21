@@ -1,11 +1,11 @@
 var expect = require('chai').expect,
     hashtableIterator = require('../../src/iterators/hashtableIterator');
 
-describe('iterator test', function() {
+describe('hashtableIterator test', function() {
 
     var elements = [],
         hashes = [],
-        itr = hashtableIterator(elements, hashes);
+        itr = hashtableIterator(elements, hashes).export();
 
     it('should have a null current first', function() {
         expect(itr.current()).to.be.equal(null);

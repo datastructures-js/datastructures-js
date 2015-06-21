@@ -1,9 +1,9 @@
 var expect = require('chai').expect,
-    priorityQueue = require('../src/priorityQueue.js');
+    priorityQueue = require('../src/priorityQueue');
 
-describe('priority queue test', function() {
+describe('priorityQueue test', function() {
 
-    var pq = priorityQueue();
+    var pq = priorityQueue().export();
     
     it('should be empty initially', function() {
         expect(pq.isEmpty()).to.be.equal(true);

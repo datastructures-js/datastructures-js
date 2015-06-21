@@ -1,9 +1,9 @@
 var expect = require('chai').expect,
-    stack = require('../src/stack.js');
+    stack = require('../src/stack');
 
 describe('stack test', function() {
 
-    var s = stack();
+    var s = stack().export();
 
     it('should have length of 0', function() {
         expect(s.length()).to.be.equal(0);

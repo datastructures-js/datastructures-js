@@ -1,10 +1,10 @@
 var expect = require('chai').expect,
-    set = require('../src/set.js');
+    set = require('../src/set');
 
 describe('set test', function() {
 
-    var s1 = set(),
-        s2 = set();
+    var s1 = set().export(),
+        s2 = set().export();
 
     it('should add elements to the set', function() {
         s1.add(1);

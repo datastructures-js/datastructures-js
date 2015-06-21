@@ -1,5 +1,5 @@
 var expect = require('chai').expect,
-    hashtable = require('../src/hashtable.js');
+    hashtable = require('../src/hashtable');
 
 describe('hashtable test', function() {
 
@@ -11,7 +11,7 @@ describe('hashtable test', function() {
             });
         });
 
-        var ht = hashtable(3571);
+        var ht = hashtable(3571).export();
 
         it('should put elements', function(){
             ht.put('john', 4456);

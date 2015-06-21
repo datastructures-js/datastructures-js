@@ -1,11 +1,11 @@
 var expect = require('chai').expect,
-    directedGraph = require('../src/directedGraph.js');
+    directedGraph = require('../src/directedGraph');
 
-describe('directed graph test', function() {
+describe('directedGraph test', function() {
 
     describe('simple graph', function() {
 
-        var diGraph = directedGraph();
+        var diGraph = directedGraph().export();
 
         it('should add vertices', function() {
             diGraph.addVertex('v1');

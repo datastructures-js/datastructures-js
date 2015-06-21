@@ -1,15 +1,16 @@
 var expect = require('chai').expect,
-    binarySearchTree = require('../src/binarySearchTree.js');
+    binarySearchTree = require('../src/binarySearchTree');
 
-describe('binary search tree test', function() {
+describe('binarySearchTree test', function() {
 
-    var bst = binarySearchTree(),
+    var bst = binarySearchTree().export(),
 
         values = [],
 
         traverseFunc = function(nodeVal) {
             values.push(nodeVal);
         };
+
 
     beforeEach(function(){
         values = [];

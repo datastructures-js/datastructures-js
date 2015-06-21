@@ -1,9 +1,9 @@
 var expect = require('chai').expect,
-    queue = require('../src/queue.js');
+    queue = require('../src/queue');
 
 describe('queue test', function() {
 
-    var q = queue();
+    var q = queue().export();
     
     it('should be empty initially', function() {
         expect(q.isEmpty()).to.be.equal(true);

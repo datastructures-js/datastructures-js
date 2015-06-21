@@ -1,9 +1,9 @@
 var expect = require('chai').expect,
-    doublyLinkedList = require('../src/doublyLinkedList.js');
+    doublyLinkedList = require('../src/doublyLinkedList');
 
-describe('doubly linked list test', function() {
+describe('doublyLinkedList test', function() {
 
-    var dll = doublyLinkedList();
+    var dll = doublyLinkedList().export();
 
     it('should have initial length of 0', function(){
         expect(dll.length()).to.be.equal(0);
@@ -12,7 +12,6 @@ describe('doubly linked list test', function() {
     it('should add 2 nodes at first n1 and n2', function(){
         dll.addFirst('n2');
         dll.addFirst('n1');
-        expect(dll.length()).to.be.equal(2);
     });
 
     it('should find the first node n1', function(){

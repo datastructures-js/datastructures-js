@@ -4,7 +4,7 @@ var expect = require('chai').expect,
 describe('iterator test', function() {
 
 	var elements = [1, 2, 3];
-		itr = iterator(elements);
+		itr = iterator(elements).export();
 
 	it('should have a null current first', function() {
 		expect(itr.current()).to.be.equal(null);

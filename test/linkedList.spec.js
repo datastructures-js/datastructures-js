@@ -1,9 +1,9 @@
 var expect = require('chai').expect,
-    linkedList = require('../src/linkedList.js');
+    linkedList = require('../src/linkedList');
 
-describe('linked list test', function() {
+describe('linkedList test', function() {
 
-    var ll = linkedList();
+    var ll = linkedList().export();
 
     it('should have initial length of 0', function(){
         expect(ll.length()).to.be.equal(0);
