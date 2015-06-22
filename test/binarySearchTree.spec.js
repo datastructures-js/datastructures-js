@@ -72,10 +72,19 @@ describe('binarySearchTree test', function() {
         expect(bst.getMinValue()).to.be.equal(30);
     });
 
-    it('should remove a node with one child', function(){
+    it('should remove a node with a right child only', function(){
         bst.remove(30);
         expect(bst.count()).to.be.equal(5);
         expect(bst.getMinValue()).to.be.equal(40);
+    });
+
+    it('should remove a node with a left child only', function(){
+        bst.insert(30); // 30 is now left child for 40
+
+        bst.remove(40);
+
+        expect(bst.count()).to.be.equal(5);
+        expect(bst.getMinValue()).to.be.equal(30);
     });
 
     it('should remove a node with two children', function(){
