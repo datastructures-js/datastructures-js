@@ -94,6 +94,14 @@ describe('linkedList test', function() {
         expect(beforeNode2.getValue()).to.be.equal('n3');
     });
 
+    it('should remove last node for a list with one node', function(){
+        var oneNodeList = linkedList().export();
+        oneNodeList.addFirst('n1');
+        expect(oneNodeList.count()).to.be.equal(1);
+        oneNodeList.removeLast();
+        expect(oneNodeList.count()).to.be.equal(0);
+    });
+
     it('should remove last node', function(){
         ll.removeLast();
         var last = ll.findLast();
@@ -108,13 +116,23 @@ describe('linkedList test', function() {
         expect(n1).to.be.equal(null);
     });
 
-    it('should remove the node n4', function(){
+    it('should remove a node', function(){
         ll.remove('n4');
         var n4 = ll.find('n4');
         var n3 = ll.find('n3');
         expect(ll.count()).to.be.equal(5);
         expect(n4).to.be.equal(null);
         expect(n3.getNext().getValue()).to.be.equal('n5');
+
+        ll.remove('n1');
+        var n1 = ll.find('n1');
+        expect(ll.count()).to.be.equal(4);
+        expect(n1).to.be.equal(null);
+    
+        ll.remove('n6');
+        var n6 = ll.find('n6');
+        expect(ll.count()).to.be.equal(3);
+        expect(n6).to.be.equal(null);
     });
 
     it('should throw exception when trying to remove a non existing node', function(){
