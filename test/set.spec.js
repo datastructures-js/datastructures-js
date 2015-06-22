@@ -83,7 +83,13 @@ describe('set test', function() {
 
     it('should check if a set is a subset of another one', function() {
         s1.remove(2);
+
         expect(s1.isSubset(s2)).to.be.equal(true);
+        expect(s2.isSubset(s1)).to.be.equal(false);
+
+        s2.remove(3);
+        s2.remove(4);
+
         expect(s2.isSubset(s1)).to.be.equal(false);
     });
 
