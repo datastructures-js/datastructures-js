@@ -5,38 +5,49 @@ describe('stack test', function() {
 
     var s = stack().export();
 
-    it('should have length of 0', function() {
-        expect(s.length()).to.be.equal(0);
+    describe('when the stack is empty', function() {
+
+        it('.isEmpty() should return true', function() {
+            expect(s.isEmpty()).to.be.equal(true);
+        });
+
+        it('.length() should return 0', function() {
+            expect(s.length()).to.be.equal(0);
+        });
+
+        it('.peek() and .pop() should return null', function() {
+            expect(s.peek()).to.be.equal(null);
+            expect(s.pop()).to.be.equal(null);
+        });
+
+        it('.push() should push elements', function() {
+            s.push(5);
+            s.push(7);
+            s.push(12);
+        });
+
     });
 
-    it('sould return null when peek or pop on empty stack', function() {
-        expect(s.peek()).to.be.equal(null);
-        expect(s.pop()).to.be.equal(null);
-    });
-    
-    it('should push elements', function() {
-        s.push(5);
-        s.push(7);
-        s.push(12);
-        expect(s.length()).to.be.equal(3);
-    });
+    describe('when the stack is not empty', function() {
 
-    it('should peek on top element', function() {
-        expect(s.peek()).to.be.equal(12);
-    });
+        it('.isEmpty() should return false', function() {
+            expect(s.isEmpty()).to.be.equal(false);
+        });
 
-    it('should pop elements', function() {
-        expect(s.pop()).to.be.equal(12);
-        expect(s.pop()).to.be.equal(7);
-        expect(s.pop()).to.be.equal(5);
-    });
+        it('.length() should return a number bigger than 0', function() {
+            expect(s.length()).to.be.equal(3);
+        });
 
-    it('should have different length after pop', function() {
-        expect(s.length()).to.be.equal(0);
-    });
+        it('.peek() should return the top element', function() {
+            expect(s.peek()).to.be.equal(12);
+        });
 
-    it('sould return null when pop from empty stack', function() {
-        expect(s.pop()).to.be.equal(null);
+        it('.pop() should pop the top element', function() {
+            expect(s.pop()).to.be.equal(12);
+            expect(s.length()).to.be.equal(2);
+            expect(s.peek()).to.be.equal(7);
+        });
+
     });
 
 });
