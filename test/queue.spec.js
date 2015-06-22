@@ -7,6 +7,9 @@ describe('queue test', function() {
     
     it('should be empty initially', function() {
         expect(q.isEmpty()).to.be.equal(true);
+        expect(q.dequeue()).to.be.equal(null);
+        expect(q.front()).to.be.equal(null);
+        expect(q.back()).to.be.equal(null);
     });
     
     it('should queue elements', function() {

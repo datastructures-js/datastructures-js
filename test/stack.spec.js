@@ -9,8 +9,9 @@ describe('stack test', function() {
         expect(s.length()).to.be.equal(0);
     });
 
-    it('sould return null when peek on empty stack', function() {
+    it('sould return null when peek or pop on empty stack', function() {
         expect(s.peek()).to.be.equal(null);
+        expect(s.pop()).to.be.equal(null);
     });
     
     it('should push elements', function() {

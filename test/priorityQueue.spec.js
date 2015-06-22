@@ -7,6 +7,9 @@ describe('priorityQueue test', function() {
     
     it('should be empty initially', function() {
         expect(pq.isEmpty()).to.be.equal(true);
+        expect(pq.dequeue()).to.be.equal(null);
+        expect(pq.front()).to.be.equal(null);
+        expect(pq.back()).to.be.equal(null);
     });
     
     it('should queue elements', function() {
