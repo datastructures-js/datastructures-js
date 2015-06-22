@@ -5,14 +5,21 @@ describe('linkedList test', function() {
 
     var ll = linkedList().export();
 
-    it('should have initial length of 0', function(){
-        expect(ll.length()).to.be.equal(0);
+    it('should have initial count of 0', function(){
+        expect(ll.count()).to.be.equal(0);
     });
 
     it('should add 2 nodes at first n1 and n2', function(){
         ll.addFirst('n2');
         ll.addFirst('n1');
-        expect(ll.length()).to.be.equal(2);
+        expect(ll.count()).to.be.equal(2);
+    });
+
+    it('should add a first node using addLast as well', function(){
+        ll.clear();
+        ll.addLast('n2');
+        ll.addFirst('n1');
+        expect(ll.count()).to.be.equal(2);
     });
 
     it('should find the first node n1', function(){
@@ -25,7 +32,7 @@ describe('linkedList test', function() {
     it('should add 2 nodes at last n5 and n6', function(){
         ll.addLast('n5');
         ll.addLast('n6');
-        expect(ll.length()).to.be.equal(4);
+        expect(ll.count()).to.be.equal(4);
     });
 
     it('should find last node n6', function(){
@@ -37,7 +44,8 @@ describe('linkedList test', function() {
 
     it('should add a new node n3 after node n2', function(){
         ll.addAfter('n2', 'n3');
-        expect(ll.length()).to.be.equal(5);
+        ll.addAfter('n6', 'n7');
+        expect(ll.count()).to.be.equal(6);
     });
 
     it('should find the node n3', function(){
@@ -56,7 +64,8 @@ describe('linkedList test', function() {
 
     it('should add a new node n4 before node n5', function(){
         ll.addBefore('n5', 'n4');
-        expect(ll.length()).to.be.equal(6);
+        ll.addBefore('n1', 'n0');
+        expect(ll.count()).to.be.equal(8);
     });
 
     it('should find the node n4', function(){
@@ -74,21 +83,28 @@ describe('linkedList test', function() {
 
     it('should find last node', function(){
         var last = ll.findLast();
-        expect(last.getValue()).to.be.equal('n6');
+        expect(last.getValue()).to.be.equal('n7');
         expect(last.getNext()).to.be.equal(null);
+    });
+
+    it('should find a node before another node', function(){
+        var beforeNode1 = ll.findBefore('n0');
+        var beforeNode2 = ll.findBefore('n4');
+        expect(beforeNode1).to.be.equal(null);
+        expect(beforeNode2.getValue()).to.be.equal('n3');
     });
 
     it('should remove last node', function(){
         ll.removeLast();
         var last = ll.findLast();
-        expect(ll.length()).to.be.equal(5);
-        expect(last.getValue()).to.be.equal('n5');
+        expect(ll.count()).to.be.equal(7);
+        expect(last.getValue()).to.be.equal('n6');
     });
 
     it('should remove first node n1', function(){
         ll.removeFirst();
-        var n1 = ll.find('n1');
-        expect(ll.length()).to.be.equal(4);
+        var n1 = ll.find('n0');
+        expect(ll.count()).to.be.equal(6);
         expect(n1).to.be.equal(null);
     });
 
@@ -96,7 +112,7 @@ describe('linkedList test', function() {
         ll.remove('n4');
         var n4 = ll.find('n4');
         var n3 = ll.find('n3');
-        expect(ll.length()).to.be.equal(3);
+        expect(ll.count()).to.be.equal(5);
         expect(n4).to.be.equal(null);
         expect(n3.getNext().getValue()).to.be.equal('n5');
     });
@@ -113,7 +129,7 @@ describe('linkedList test', function() {
 
     it('should clear the linked list', function(){
         ll.clear();
-        expect(ll.length()).to.be.equal(0);
+        expect(ll.count()).to.be.equal(0);
     });    
 
 });
