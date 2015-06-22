@@ -38,10 +38,6 @@ var stack = ds.stack();
 ```javascript
 stack.push('test');
 ```
-**.length()** returns the number of elements in the stack
-```javascript
-var len = stack.length(); // 1
-```
 **.peek()** returns the top element in the stack or null if the stack is empty
 ```javascript
 var element = stack.peek(); // test
@@ -49,7 +45,14 @@ var element = stack.peek(); // test
 **.pop()** returns and removes the top element in the stack or null if the stack is empty.
 ```javascript
 var element = stack.pop(); // test
-console.log(stack.peek()); // null
+```
+**.isEmpty()** returns true if the stack is empty, false if not
+```javascript
+var len = stack.isEmpty(); // true
+```
+**.length()** returns the number of elements in the stack
+```javascript
+var len = stack.length(); // 0
 ```
 
 ## Queue
@@ -61,7 +64,6 @@ var queue = ds.queue();
 ```javascript
 queue.enqueue(10);
 queue.enqueue(20);
-queue.enqueue(30);
 ```
 **.front()** returns the front element in queue or null if queue is empty
 ```javascript
@@ -69,18 +71,19 @@ var f = queue.front(); // 10
 ```
 **.back()** returns the back element in queue or null if queue is empty
 ```javascript
-var b = queue.back(); // 30
+var b = queue.back(); // 20
+```
+**.dequeue()** returns and removes the front element in the queue
+```javascript
+var element = queue.dequeue(); // 10
 ```
 **.isEmpty()** returns true if queue is empty or false if it has elements
 ```javascript
 var empty = queue.isEmpty(); // false
 ```
-**.dequeue()** returns and removes the front element in the queue
+**.length()** returns the number of elements in the queue
 ```javascript
-var element = queue.dequeue();
-console.log(element); // 10
-console.log(queue.front()); // 20
-console.log(queue.back()); // 30
+var len = queue.length(); // 1
 ```
 
 ## PriorityQueue
@@ -92,7 +95,6 @@ var pQueue = ds.priorityQueue();
 ```javascript
 pQueue.enqueue('patient 1', 2);
 pQueue.enqueue('patient 2', 1); // highest priority
-pQueue.enqueue('patient 3', 3);
 ```
 **.front()** returns the front object in the queue or null if the queue is empty
 ```javascript
@@ -102,14 +104,17 @@ var f = pQueue.front(); // patient 1
 ```javascript
 var b = pQueue.back(); // patient 3
 ```
-**.isEmpty()** returns true if the queue is empty or false has objects
-```javascript
-var empty = pQueue.isEmpty(); // false
-```
 **.dequeue()** returns and removes the top priority object from the queue
 ```javascript
 var e1 = pQueue.dequeue(); // patient 2
-var e2 = pQueue.dequeue(); // patient 1
+```
+**.isEmpty()** returns true if queue is empty or false if it has elements
+```javascript
+var empty = queue.isEmpty(); // false
+```
+**.length()** returns the number of elements in the queue
+```javascript
+var len = queue.length(); // 1
 ```
 
 
@@ -259,9 +264,9 @@ linkedList.removeLast();
 ```javascript
 linkedList.remove('n2');
 ```
-**.length()** returns the number of nodes in the list
+**.count()** returns the number of nodes in the list
 ```javascript
-var length = linkedList.length();
+var length = linkedList.count();
 ```
 **.clear()** clears all the nodes from the list
 ```javascript
@@ -339,9 +344,9 @@ dList.removeLast();
 ```javascript
 dList.remove('n2');
 ```
-**.length()** returns the number of nodes in the list
+**.count()** returns the number of nodes in the list
 ```javascript
-var length = dList.length();
+var count = dList.count();
 ```
 **.clear()** clears all the nodes from the list
 ```javascript
