@@ -12,6 +12,14 @@ describe('doublyLinkedList test', function() {
     it('should add 2 nodes at first n1 and n2', function(){
         dll.addFirst('n2');
         dll.addFirst('n1');
+        expect(dll.count()).to.be.equal(2);
+    });
+
+    it('should add a first node using addLast as well', function(){
+        dll.clear();
+        dll.addLast('n2');
+        dll.addFirst('n1');
+        expect(dll.count()).to.be.equal(2);
     });
 
     it('should find the first node n1', function(){
@@ -34,6 +42,13 @@ describe('doublyLinkedList test', function() {
         expect(n6.getNext()).to.be.equal(null);
         expect(n6.getPrev().getValue()).to.be.equal('n5');
         expect(n6.getValue()).to.be.equal('n6');
+    });
+
+    it('should find a node before another node', function(){
+        var beforeNode1 = dll.findBefore('n1');
+        var beforeNode2 = dll.findBefore('n5');
+        expect(beforeNode1).to.be.equal(null);
+        expect(beforeNode2.getValue()).to.be.equal('n2');
     });
 
     it('should add a new node n3 after node n2', function(){
