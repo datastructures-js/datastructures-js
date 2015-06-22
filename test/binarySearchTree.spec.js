@@ -27,6 +27,13 @@ describe('binarySearchTree test', function() {
         expect(bst.count()).to.be.equal(7);
     });
 
+    it('should get root', function(){
+        var root = bst.getRoot();
+        expect(root.getValue()).to.be.equal(50);
+        expect(root.getRight().getValue()).to.be.equal(80);
+        expect(root.getLeft().getValue()).to.be.equal(30);
+    });
+
     it('should get max value', function(){
         expect(bst.getMaxValue()).to.be.equal(90);
     });
