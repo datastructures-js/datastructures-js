@@ -10,7 +10,7 @@ describe('directedGraph test', function() {
         it('should add vertices', function() {
             diGraph.addVertex('v1');
             diGraph.addVertex('v2');
-            diGraph.addVertex('v3');
+            diGraph.addVertex(3);
             diGraph.addVertex('v4');
             diGraph.addVertex('v5');
 
@@ -18,18 +18,18 @@ describe('directedGraph test', function() {
 
             expect(diGraph.hasVertex('v1')).to.be.equal(true);
             expect(diGraph.hasVertex('v2')).to.be.equal(true);
-            expect(diGraph.hasVertex('v3')).to.be.equal(true);
+            expect(diGraph.hasVertex(3)).to.be.equal(true);
             expect(diGraph.hasVertex('v4')).to.be.equal(true);
             expect(diGraph.hasVertex('v5')).to.be.equal(true);
         });
 
         it('should add and verify directions', function() {
 
-            diGraph.addDirection('v1', 'v3', 7);
+            diGraph.addDirection('v1', '3', 7);
             diGraph.addDirection('v1', 'v5', 10);
             diGraph.addDirection('v2', 'v1', 9);
-            diGraph.addDirection('v3', 'v4', 11);
-            diGraph.addDirection('v5', 'v3', 15);
+            diGraph.addDirection('3', 'v4', 11);
+            diGraph.addDirection('v5', '3', 15);
             expect(diGraph.addDirection.bind(diGraph, 'v5', 'v4')).to.throw({
                 message: 'weight is not a valid number'
             });
@@ -37,24 +37,24 @@ describe('directedGraph test', function() {
                 message: 'weight is not a valid number'
             });
 
-            expect(diGraph.getDirectionWeight('v1', 'v3')).to.be.equal(7);
+            expect(diGraph.getDirectionWeight('v1', '3')).to.be.equal(7);
             expect(diGraph.getDirectionWeight('v1', 'v5')).to.be.equal(10);
             expect(diGraph.getDirectionWeight('v2', 'v1')).to.be.equal(9);
-            expect(diGraph.getDirectionWeight('v3', 'v4')).to.be.equal(11);
-            expect(diGraph.getDirectionWeight('v5', 'v3')).to.be.equal(15);
+            expect(diGraph.getDirectionWeight('3', 'v4')).to.be.equal(11);
+            expect(diGraph.getDirectionWeight('v5', '3')).to.be.equal(15);
 
         });
 
         it('should find the shortest path', function() {    
             var v1v4 = diGraph.findShortestPath('v1', 'v4'),
-                v2v3 = diGraph.findShortestPath('v2', 'v3'),
+                v2v3 = diGraph.findShortestPath('v2', '3'),
                 v5v2 = diGraph.findShortestPath('v5', 'v2');
 
             expect(v1v4.length).to.be.equal(1);
-            expect(v1v4[0]).to.be.eql(['v1', 'v3', 'v4']);
+            expect(v1v4[0]).to.be.eql(['v1', '3', 'v4']);
 
             expect(v2v3.length).to.be.equal(1);
-            expect(v2v3[0]).to.be.eql(['v2', 'v1', 'v3']);
+            expect(v2v3[0]).to.be.eql(['v2', 'v1', '3']);
 
             expect(v5v2.length).to.be.equal(0);
         });
@@ -70,12 +70,13 @@ describe('directedGraph test', function() {
         });
 
         it('should remove a vertex', function() {
-            diGraph.removeVertex('v3');
+            diGraph.removeVertex('v2');
+            diGraph.removeVertex('3');
 
-            expect(diGraph.countVertices()).to.be.equal(4);
-            expect(diGraph.hasVertex('v3')).to.be.equal(false);
-            expect(diGraph.getDirectionWeight('v3', 'v4')).to.be.equal(null);
-            expect(diGraph.getDirectionWeight('v5', 'v3')).to.be.equal(null);
+            expect(diGraph.countVertices()).to.be.equal(3);
+            expect(diGraph.hasVertex('3')).to.be.equal(false);
+            expect(diGraph.getDirectionWeight('3', 'v4')).to.be.equal(null);
+            expect(diGraph.getDirectionWeight('v5', '3')).to.be.equal(null);
         });
     });
 
