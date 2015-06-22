@@ -16,6 +16,16 @@ describe('binarySearchTree test', function() {
         values = [];
     });
 
+    it('should have null root', function(){
+        expect(bst.getRoot()).to.be.equal(null);
+        expect(bst.count()).to.be.equal(0);
+
+        // try to remove non existing value
+        bst.remove(10);
+        expect(bst.getRoot()).to.be.equal(null);
+        expect(bst.count()).to.be.equal(0);
+    });
+
     it('should insert elements', function(){
         bst.insert(50);
         bst.insert(80);
