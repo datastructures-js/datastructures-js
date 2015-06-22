@@ -104,6 +104,22 @@ describe('doublyLinkedList test', function() {
         expect(first.getValue()).to.be.equal('n2');
     });
 
+    it('should remove first node for a list with one node', function(){
+        var oneNodeList = doublyLinkedList().export();
+        oneNodeList.addFirst('n1');
+        expect(oneNodeList.count()).to.be.equal(1);
+        oneNodeList.removeFirst();
+        expect(oneNodeList.count()).to.be.equal(0);
+    });
+
+    it('should remove last node for a list with one node', function(){
+        var oneNodeList = doublyLinkedList().export();
+        oneNodeList.addFirst('n1');
+        expect(oneNodeList.count()).to.be.equal(1);
+        oneNodeList.removeLast();
+        expect(oneNodeList.count()).to.be.equal(0);
+    });
+
     it('should remove the node n4', function(){
         dll.remove('n4');
         var n4 = dll.find('n4');
@@ -111,10 +127,15 @@ describe('doublyLinkedList test', function() {
         expect(dll.count()).to.be.equal(3);
         expect(n4).to.be.equal(null);
         expect(n3.getNext().getValue()).to.be.equal('n5');
+
+        dll.remove('n2');
+        var n2 = dll.find('n2');
+        expect(dll.count()).to.be.equal(2);
+        expect(n2).to.be.equal(null);
     });
 
     it('should throw an exception when trying to remove a non existing node', function(){
-        expect(dll.addBefore.bind(dll, 'n10')).to.throw({
+        expect(dll.remove.bind(dll, 'n12')).to.throw({
             message: 'node n10 not found'
         });
     });
