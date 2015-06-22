@@ -5,8 +5,8 @@ describe('doublyLinkedList test', function() {
 
     var dll = doublyLinkedList().export();
 
-    it('should have initial length of 0', function(){
-        expect(dll.length()).to.be.equal(0);
+    it('should have initial count of 0', function(){
+        expect(dll.count()).to.be.equal(0);
     });
 
     it('should add 2 nodes at first n1 and n2', function(){
@@ -25,7 +25,7 @@ describe('doublyLinkedList test', function() {
     it('should add 2 nodes at last n5 and n6', function(){
         dll.addLast('n5');
         dll.addLast('n6');
-        expect(dll.length()).to.be.equal(4);
+        expect(dll.count()).to.be.equal(4);
     });
 
     it('should find node n6', function(){
@@ -38,7 +38,7 @@ describe('doublyLinkedList test', function() {
 
     it('should add a new node n3 after node n2', function(){
         dll.addAfter('n2', 'n3');
-        expect(dll.length()).to.be.equal(5);
+        expect(dll.count()).to.be.equal(5);
     });
 
     it('should throw an exception when trying to add after a non existing node', function(){
@@ -57,7 +57,7 @@ describe('doublyLinkedList test', function() {
 
     it('should add a new node n4 before node n5', function(){
         dll.addBefore('n5', 'n4');
-        expect(dll.length()).to.be.equal(6);
+        expect(dll.count()).to.be.equal(6);
     });
 
     it('should throw an exception when trying to add before a non existing node', function(){
@@ -77,7 +77,7 @@ describe('doublyLinkedList test', function() {
     it('should remove last node', function(){
         dll.removeLast();
         var last = dll.findLast();
-        expect(dll.length()).to.be.equal(5);
+        expect(dll.count()).to.be.equal(5);
         expect(last.getNext()).to.be.equal(null);
         expect(last.getPrev().getValue()).to.be.equal('n4');
     });
@@ -85,7 +85,7 @@ describe('doublyLinkedList test', function() {
     it('should remove first node n1', function(){
         dll.removeFirst();
         var first = dll.findFirst();
-        expect(dll.length()).to.be.equal(4);
+        expect(dll.count()).to.be.equal(4);
         expect(first.getValue()).to.be.equal('n2');
     });
 
@@ -93,7 +93,7 @@ describe('doublyLinkedList test', function() {
         dll.remove('n4');
         var n4 = dll.find('n4');
         var n3 = dll.find('n3');
-        expect(dll.length()).to.be.equal(3);
+        expect(dll.count()).to.be.equal(3);
         expect(n4).to.be.equal(null);
         expect(n3.getNext().getValue()).to.be.equal('n5');
     });
@@ -106,7 +106,7 @@ describe('doublyLinkedList test', function() {
 
     it('should clear the linked list', function(){
         dll.clear();
-        expect(dll.length()).to.be.equal(0);
+        expect(dll.count()).to.be.equal(0);
     });
 
 });
