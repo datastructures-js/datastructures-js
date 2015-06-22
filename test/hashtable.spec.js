@@ -9,6 +9,9 @@ describe('hashtable test', function() {
             expect(hashtable.bind(hashtable, 4678)).to.throw({
                 message: 'hashtable must have a prime numbe length'
             });
+            expect(hashtable.bind(hashtable, 'test')).to.throw({
+                message: 'hashtable must have a prime numbe length'
+            });
         });
 
         var ht = hashtable(3571).export();
@@ -20,6 +23,11 @@ describe('hashtable test', function() {
             expect(ht.get('john')).to.be.equal(4456);
             expect(ht.get('samantha')).to.be.equal(1123);
             expect(ht.get(33)).to.be.equal(9870);
+            expect(ht.get('not-exist')).to.be.equal(undefined);
+        });
+
+        it('should have length of 3', function(){
+            expect(ht.length()).to.be.equal(3);
         });
 
         it('should not have collisions', function(){
