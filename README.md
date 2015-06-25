@@ -200,19 +200,19 @@ var s = set.clone(); // s contains A, B, D
 ## LinkedList
 ![LinkedList](http://i.imgur.com/ZyD3HJL.jpg "LinkedList")
 
-node element data type: number, string, boolean or null
+node value data type: number, string, boolean or null
 ```javascript
 var linkedList = ds.linkedList();
 ```
-**.addFirst(element)** add a node with element value to the beginning of the list
+**.addFirst(value)** add a node with the specified value to the beginning of the list.
 ```javascript
 linkedList.addFirst('n1');
 ```
-**.addLast(element)** add a node with element value to the end of the list
+**.addLast(value)** add a node with the specified value to the end of the list.
 ```javascript
 linkedList.addLast('n4');
 ```
-**.addAfter(element, newElement)** add a new node with element value after an existing element's node, throws exception if element's node is not found in the list
+**.addAfter(value, newValue)** add a node with newValue after an existing value's node, throws exception if value doesnt exist.
 ```javascript
 linkedList.addAfter('n1', 'n2');
 
@@ -223,11 +223,11 @@ catch (e) {
     console.log(e.message); // node n33 not found
 }
 ```
-**.addBefore(element, newElement)** add an new node with element value before an existing element's node, throws exception if element's node is not found in the list
+**.addBefore(value, newValue)** add a node with newValue before an existing value's node, throws exception if value doesnt exist.
 ```javascript
 linkedList.addBefore('n4', 'n3');
 ```
-**.find(element)** returns a read-only node object or null if not found, the read-only node object contains two functions:
+**.find(value)** returns a read-only node object or null if value not found, the read-only node object contains two functions:
 
 * .getNext() returns the next read-only node object or null if it's the last node.
 * .getValue() returns the node value.
@@ -246,7 +246,7 @@ console.log(first.getValue()); // n1
 var last = linkedList.findLast();
 console.log(last.getValue()); // n4
 ```
-**.findBefore(element)** returns the read-only node object before the specified element's node or null if not found
+**.findBefore(value)** returns the read-only node object before the specified value's node or null if value not found
 ```javascript
 var n2 = linkedList.findBefore('n3');
 console.log(n2.getValue()); // n2
@@ -260,7 +260,7 @@ linkedList.removeFirst();
 ```javascript
 linkedList.removeLast();
 ```
-**.remove(element)** remove the element's node or throw an exception if element's node is not found
+**.remove(value)** remove the value's node from the list or throw an exception if value not found
 ```javascript
 linkedList.remove('n2');
 ```
@@ -277,19 +277,19 @@ console.log(linkedList.length()); // 0
 ## DoublyLinkedList
 ![DoublyLinkedList](http://i.imgur.com/p7ZeBUE.jpg "DoublyLinkedList")
 
-node element data type: number, string, boolean or null
+node value data type: number, string, boolean or null
 ```javascript
 var dList = ds.doublyLinkedList();
 ```
-**.addFirst(element)** add a node with element value to the beginning of the list
+**.addFirst(value)** add a node with the specified value to the beginning of the list
 ```javascript
 dList.addFirst('n1');
 ```
-**.addLast(element)** add a node with element value to the end of the list
+**.addLast(value)** add a node with the specified value to the end of the list
 ```javascript
 dList.addLast('n4');
 ```
-**.addAfter(element, newElement)** add a new node with element value after an existing element's node, throws exception if element's node is not found in the list
+**.addAfter(value, newValue)** add a node with newValue after an existing value's node, throws exception if value doesnt exist.
 ```javascript
 dList.addAfter('n1', 'n2');
 
@@ -300,11 +300,11 @@ catch (e) {
     console.log(e.message); // node n33 not found
 }
 ```
-**.addBefore(element, newElement)** add a new element before an existing element, throws exception if element is not found in the list
+**.addBefore(value, newValue)** add a node with newValue before an existing value's node, throws exception if value doesnt exist.
 ```javascript
 dList.addBefore('n4', 'n3');
 ```
-**.find(element)** returns the element's read-only node object or null if not found, the read-only node object contains three functions:
+**.find(value)** returns a read-only node object or null if value not found, the read-only node object contains three functions:
 
 * .getNext() returns the next read-only node object or null if it's the last node.
 * .getPrev() returns the previous read-only node object or null if it's the first node.
@@ -325,7 +325,7 @@ console.log(first.getValue()); // n1
 var last = dList.findLast();
 console.log(last.getValue()); // n4
 ```
-**.findBefore(element)** returns the read-only node object before the specified element's node or null if not found
+**.findBefore(value)** returns a read-only node object before the specified value's node or null if value not found
 ```javascript
 var n2 = linkedList.findBefore('n3');
 console.log(n2.getValue()); // n2
@@ -340,7 +340,7 @@ dList.removeFirst();
 ```javascript
 dList.removeLast();
 ```
-**.remove(element)** remove the element's node from the list or throw an exception if element's node is not found
+**.remove(value)** remove the value's node from the list or throw an exception if element's node is not found
 ```javascript
 dList.remove('n2');
 ```
