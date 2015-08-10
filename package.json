@@ -1,6 +1,6 @@
 {
   "name": "datastructures-js",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "data structures implementation in javascript",
   "main": "index.js",
   "directories": {
