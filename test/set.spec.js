@@ -33,17 +33,17 @@ describe('set test', function() {
     });
 
     it('should iterate over the set', function() {
-        var iterator = s1.iterator(),
+        var itr = s1.iterator(),
             elements = [];
 
-        while (iterator.next()) {
-            elements.push(iterator.current());
+        while (itr.hasNext()) {
+            elements.push(itr.next());
         }
 
-        expect(iterator.current()).to.be.equal(null);
+        expect(itr.hasNext()).to.be.equal(false);
+        expect(itr.next()).to.be.equal(null);
         expect(elements.length).to.be.equal(3);
         expect(elements).to.have.members([2, 3, 4]);
-        expect(iterator.current()).to.be.equal(null);
     });
 
     it('should union sets', function() {
