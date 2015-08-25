@@ -3,21 +3,26 @@ var expect = require('chai').expect,
 
 describe('iterator test', function() {
 
-	var elements = [1, 2, 3];
-		itr = iterator(elements).export();
+    var elements = [];
+        itr = iterator(elements).export();
 
-	it('should have a null current first', function() {
-		expect(itr.current()).to.be.equal(null);
-	});
+    it('should have a next', function() {
+        expect(itr.hasNext()).to.be.equal(false);
+        expect(itr.next()).to.be.equal(null);
+    });
 
-	it('should iterate over the elements', function() {
-		var e = [];
+    it('should iterate over the elements', function() {
+        var e = [];
 
-		while (itr.next()) {
-			e.push(itr.current());
-		}
+        elements.push(1);
+        elements.push(2);
+        elements.push(3);
 
-		expect(e).to.be.eql(elements);
-	});
+        while (itr.hasNext()) {
+            e.push(itr.next());
+        }
+
+        expect(e).to.be.eql(elements);
+    });
 
 });
