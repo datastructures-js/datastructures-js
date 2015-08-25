@@ -358,11 +358,10 @@ dList.clear();
 * keys data type: number, string 
 * values data type: object, string, number, boolean, null
 ```javascript
-var hashtable = ds.hashtable(3571); // length must be a primary number
-// and better to be bigger enough than 31 to avoid collisions
+var hashtable = ds.hashtable();
 ```
 
-**.put(key, data)** adds data to the hashtable associated with the specified key
+**.put(key, value)** adds a key-value pair to the hashtable
 ```javascript
 hashtable.put('john', 4567);
 hashtable.put('samantha', 1234);
@@ -378,18 +377,21 @@ var data = hashtable.get('john'); // 4567
 var hasData = hashtable.contains('john'); // true
 ```
 
-**.iterator()** returns an iterator object over the hashtable with two functions: 
+**.iterator()** implements the iterator pattern and returns an iterator object over the hashtable with two functions: 
 
-* .current() returns an object with key value properties or null if no current.
-* .next() returns true if there's a current element or false if not and increments the pointer by 1
+* .hasNext() returns true if there's a next element or false when arrives to the end.
+* .next() returns a hashTablePair read-only object with two functions:
+    * .getKey() returns the key of the pair.
+    * .getValue() returns the value of the pair.
 ```javascript
 var iterator = hashtable.iterator();
-console.log(iterator.current()); // null
-while (iterator.next()) {
-    console.log(iterator.current());
+
+while (iterator.hashNext()) {
+    var pair = iterator.next();
+    console.log(pair.getKey() + ': ' + pair.getValue());
 }
-//  {key: 'john', value: 4567}
-//  {key: 'samantha', value: 1234}
+//  john: 4567
+//  samantha: 1234
 ```
 
 **.remove(key)** removes key and the data associated with it
@@ -397,29 +399,10 @@ while (iterator.next()) {
 var data = hashtable.remove('john'); // false
 ```
 
-**.length()** returns the number of elements in the hashtable
+**.count()** returns the number of key-value pairs in the hashtable
 ```javascript
-var length = hashtable.length(); // 1
+var length = hashtable.count(); // 1
 ```
-
-**.getCollidedKeys()** returns array of arrays, each array element is an array of the collided keys (have the same hash)
-```javascript
-var ht = ds.hashtable(31);
-ht.put('h', 10);
-ht.put('hh', 20);
-ht.put('m', 30);
-ht.put('mmm', 40);
-collisions = ht.getCollidedKeys(); // [['h', 'hh'], ['m', 'mmm']]
-
-// iterator
-var iterator = hashtable.iterator();
-while (iterator.next()) {
-    console.log(iterator.current());
-}
-//  {key: ['h', 'hh'], value: [10, 20]}
-//  {key: ['m', 'mmm'], value: [30, 40]}
-```
-
 
 ## BinarySearchTree
 ![BinarySearchTree](http://i.imgur.com/sbWTeM7.jpg "BinarySearchTree")
