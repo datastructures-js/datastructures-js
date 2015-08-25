@@ -1,44 +1,44 @@
 var expect = require('chai').expect,
+    hashTablePair = require('../../lib/nodes/hashTablePair');
     hashtableIterator = require('../../lib/iterators/hashtableIterator');
 
 describe('hashtableIterator test', function() {
 
     var elements = [],
-        hashes = [],
-        itr = hashtableIterator(elements, hashes).export();
+        itr = hashtableIterator(elements);
 
-    it('should have a null current first', function() {
-        expect(itr.current()).to.be.equal(null);
+    it('should have a null next first', function() {
+        expect(itr.hasNext()).to.be.equal(false);
+        expect(itr.next()).to.be.equal(null);
     });
 
     it('should iterate over the elements', function() {
-        var e = [];
-        
-        hashes[11] = [1];
-        hashes[12] = [2];
-        hashes[13] = [3];
+        var el = [];
 
-        elements[11] = 'a';
-        elements[12] = 'b';
-        elements[13] = 'c';
+        elements[11] = [hashTablePair('a', '111111')];
+        elements[12] = [hashTablePair('b', '222222'),  hashTablePair('c', '333333')];
 
-        while (itr.next()) {
-            e.push(itr.current());
+        while (itr.hasNext()) {
+            var pair = itr.next();
+            el.push({
+                key: pair.getKey(),
+                value: pair.getValue()
+            });
         }
 
-        expect(e).to.be.eql([
+        expect(el).to.be.eql([
             {
-                key: 1,
-                value: 'a'
-            },            
-            {
-                key: 2,
-                value: 'b'
-            },           
-            {
-                key: 3,
-                value: 'c'
+                key: 'a',
+                value: '111111'
             },
+            {
+                key: 'b',
+                value: '222222'
+            },
+            {
+                key: 'c',
+                value: '333333'
+            }
         ]);
     });
 
