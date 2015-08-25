@@ -4,17 +4,8 @@ var expect = require('chai').expect,
 describe('hashtable test', function() {
 
     describe('without collisions', function(){
-        
-        it('should throw exception if length is not a primary number', function() {
-            expect(hashtable.bind(hashtable, 4678)).to.throw({
-                message: 'hashtable must have a prime numbe length'
-            });
-            expect(hashtable.bind(hashtable, 'test')).to.throw({
-                message: 'hashtable must have a prime numbe length'
-            });
-        });
 
-        var ht = hashtable(3571).export();
+        var ht = hashtable().export();
 
         it('should put elements', function(){
             ht.put('john', 4456);
@@ -26,12 +17,8 @@ describe('hashtable test', function() {
             expect(ht.get('not-exist')).to.be.equal(undefined);
         });
 
-        it('should have length of 3', function(){
-            expect(ht.length()).to.be.equal(3);
-        });
-
-        it('should not have collisions', function(){
-            expect(ht.getCollidedKeys().length).to.be.equal(0);
+        it('should have 3 pairs', function(){
+            expect(ht.count()).to.be.equal(3);
         });
 
         it('should remove an element', function(){
@@ -40,75 +27,84 @@ describe('hashtable test', function() {
         });
 
         it('should override an existing element', function(){
-            ht.put('john', 8890);
+            ht.put('john', 'modified');
             expect(ht.contains('john')).to.be.equal(true);
-            expect(ht.get('john')).to.be.equal(8890);
+            expect(ht.get('john')).to.be.equal('modified');
         });
 
         it('should iterate over the hashtable', function(){
             var iterator = ht.iterator(),
-                keys = [],
-                values = [];
+                el = [];
 
-            expect(iterator.current()).to.be.equal(null);
-
-            while (iterator.next()) {
-                var element = iterator.current();
-                keys.push(element.key);
-                values.push(element.value);
+            while (iterator.hasNext()) {
+                var pair = iterator.next();
+                el.push({
+                    key: pair.getKey(),
+                    value: pair.getValue()
+                });
             }
 
-            expect(keys).to.have.members(['john', 'samantha']);
-            expect(values).to.have.members([8890, 1123]);
+            expect(el).to.deep.include.members([
+                {
+                    key: 'john',
+                    value: 'modified'
+                },
+                {
+                    key: 'samantha',
+                    value: 1123
+                }
+            ]);
+        });
 
-        });      
     });
 
     describe('with collisions', function(){
         
-        var ht = hashtable(31);
+        var ht = hashtable();
 
         it('should add an element', function(){
             ht.put('h', 11);
             ht.put('hh', 55);
             ht.put('hhh', 99);
+            expect(ht.get('h')).to.be.equal(11);
+            expect(ht.get('hh')).to.be.equal(55);
+            expect(ht.get('hhh')).to.be.equal(99);
         });
 
         it('should iterate over the hashtable', function(){
             var iterator = ht.iterator(),
-                keys = [],
-                values = [];
+                el = [];
 
-            expect(iterator.current()).to.be.equal(null);
-
-            while (iterator.next()) {
-                var element = iterator.current();
-                keys.push(element.key);
-                values.push(element.value);
+            while (iterator.hasNext()) {
+                var pair = iterator.next();
+                el.push({
+                    key: pair.getKey(),
+                    value: pair.getValue()
+                });
             }
 
-            expect(keys[0]).to.have.members(['h', 'hh', 'hhh']);
-            expect(values[0]).to.have.members([11, 55, 99]);
+            expect(el).to.deep.include.members([
+                {
+                    key: 'h',
+                    value: 11
+                },
+                {
+                    key: 'hh',
+                    value: 55
+                },
+                {
+                    key: 'hhh',
+                    value: 99
+                }
+            ]);
 
-        });     
-
-        it('should have collisions', function(){
-            var collisions = ht.getCollidedKeys();
-            expect(collisions.length).to.be.equal(1);
-            expect(collisions[0]).to.include.members(['h', 'hh', 'hhh']);
         });
 
-        it('should have collided elements in an array', function(){
-            expect(ht.get('h')).to.include.members([11, 55, 99]);
-            expect(ht.get('hh')).to.include.members([11, 55, 99]);
-            expect(ht.get('hhh')).to.include.members([11, 55, 99]);
-        });
-
-        it('should override an existing collision', function(){
+        it('should override an existing element', function(){
             ht.put('h', 77);
             expect(ht.get('h')).to.be.equal(77);
-            expect(ht.contains('hh')).to.be.equal(false);
-            expect(ht.contains('hhh')).to.be.equal(false);
+            expect(ht.get('hh')).to.be.equal(55);
+            expect(ht.get('hhh')).to.be.equal(99);
         });
 
     });
