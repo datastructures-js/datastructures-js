@@ -394,7 +394,7 @@ while (iterator.hashNext()) {
 //  samantha: 1234
 ```
 
-**.remove(key)** removes key and the data associated with it
+**.remove(key)** removes a key-value pair by key
 ```javascript
 var data = hashtable.remove('john'); // false
 ```
