@@ -372,7 +372,7 @@ hashtable.put('samantha', 1234);
 var data = hashtable.get('john'); // 4567
 ```
 
-**.contains(key)** returns true if the hashtable contains data associated with the key
+**.contains(key)** returns true if the hashtable contains the key
 ```javascript
 var hasData = hashtable.contains('john'); // true
 ```
