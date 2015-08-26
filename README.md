@@ -1,7 +1,7 @@
 # datastructures-js
 [![build:?](https://travis-ci.org/eyas-ranjous/datastructures-js.svg?branch=master)](https://travis-ci.org/eyas-ranjous/datastructures-js) [![npm](https://img.shields.io/npm/v/datastructures-js.svg)](https://www.npmjs.com/package/datastructures-js) [![Code Climate](https://codeclimate.com/repos/55873a90695680448d04d706/badges/cf23efd736b6758e3e94/gpa.svg)](https://codeclimate.com/repos/55873a90695680448d04d706/feed) [![Test Coverage](https://codeclimate.com/repos/55873a90695680448d04d706/badges/cf23efd736b6758e3e94/coverage.svg)](https://codeclimate.com/repos/55873a90695680448d04d706/coverage)
 
-Javascript implementation of the main data structures. Each data structure is represented by a function that returns an object with the data structure operations. All the data structures are well tested.
+Javascript implementation of the main data structures. Each data structure object is constructed by a factory function.
 
 ## Install
 ```
