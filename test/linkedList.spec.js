@@ -8,6 +8,10 @@ describe('linkedList test', function() {
     it('should have initial count of 0', function(){
         expect(ll.count()).to.be.equal(0);
     });
+    
+    it('should not find the first node', function() {
+        expect(ll.findFirst()).to.be.equal(null);
+    });
 
     it('should add 2 nodes at first n1 and n2', function(){
         ll.addFirst('n2');
