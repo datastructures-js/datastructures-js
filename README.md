@@ -143,15 +143,14 @@ var cont = set.contains('C'); // true
 set.remove('C');
 console.log(set.contains('C')); // false
 ```
-**.iterator()** returns an iterator object over the set with two functions: 
+**.iterator()**  returns an iterator object over the set with two functions: 
 
-* .current() returns the current element or null if no current element.
-* .next() returns true if there's a current element or false if not and increments the pointer by 1
+* .hasNext() returns true if there's a next element or false when it hits the end.
+* .next() returns the next element or null when it hits the end.
 ```javascript
 var iterator = set.iterator();
-console.log(iterator.current()); // null
-while (iterator.next()) {
-	console.log(iterator.current());
+while (iterator.hasNext()) {
+	console.log(iterator.next());
 }
 // A
 // B
@@ -377,9 +376,9 @@ var data = hashtable.get('john'); // 4567
 var hasData = hashtable.contains('john'); // true
 ```
 
-**.iterator()** implements the iterator pattern and returns an iterator object over the hashtable with two functions: 
+**.iterator()** returns an iterator object over the hashtable with two functions: 
 
-* .hasNext() returns true if there's a next element or false when arrives to the end.
+* .hasNext() returns true if there's a next element or false when it hits the end.
 * .next() returns a hashTablePair read-only object with two functions:
     * .getKey() returns the key of the pair.
     * .getValue() returns the value of the pair.
