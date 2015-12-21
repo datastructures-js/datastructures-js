@@ -1,7 +1,7 @@
 # datastructures-js
 [![build:?](https://travis-ci.org/eyas-ranjous/datastructures-js.svg?branch=master)](https://travis-ci.org/eyas-ranjous/datastructures-js) [![npm](https://img.shields.io/npm/v/datastructures-js.svg)](https://www.npmjs.com/package/datastructures-js) [![Code Climate](https://codeclimate.com/repos/55873a90695680448d04d706/badges/cf23efd736b6758e3e94/gpa.svg)](https://codeclimate.com/repos/55873a90695680448d04d706/feed) [![Test Coverage](https://codeclimate.com/repos/55873a90695680448d04d706/badges/cf23efd736b6758e3e94/coverage.svg)](https://codeclimate.com/repos/55873a90695680448d04d706/coverage)
 
-Javascript implementation of the main data structures. Each data structure object is constructed by a factory function.
+Javascript implementation of the main data structures. Each data structure object is constructed from the main module using a factory function.
 
 ## Install
 ```
@@ -30,15 +30,15 @@ var ds = require('datastructures-js');
 
 
 ## Stack
-elements data type: object, number, string, boolean or null
+elements data type: object, number, string, boolean or null.
 ```javascript
 var stack = ds.stack();
 ```
-**.push(element)** push an element to the stack
+**.push(element)** push an element to the top of the stack.
 ```javascript
 stack.push('test');
 ```
-**.peek()** returns the top element in the stack or null if the stack is empty
+**.peek()** returns the top element in the stack or null if the stack is empty.
 ```javascript
 var element = stack.peek(); // test
 ```
@@ -46,38 +46,38 @@ var element = stack.peek(); // test
 ```javascript
 var element = stack.pop(); // test
 ```
-**.isEmpty()** returns true if the stack is empty, false if not
+**.isEmpty()** returns true if the stack is empty or false if not.
 ```javascript
 var len = stack.isEmpty(); // true
 ```
-**.length()** returns the number of elements in the stack
+**.length()** returns the number of elements in the stack.
 ```javascript
 var len = stack.length(); // 0
 ```
 
 ## Queue
-elements data type: object, number, string, boolean or null
+elements data type: object, number, string, boolean or null.
 ```javascript
 var queue = ds.queue();
 ```
-**.enqueue(element)** enqueues an element in the queue
+**.enqueue(element)** adds an element to the back of the queue.
 ```javascript
 queue.enqueue(10);
 queue.enqueue(20);
 ```
-**.front()** returns the front element in queue or null if queue is empty
+**.front()** returns the front element in queue or null if the queue is empty.
 ```javascript
 var f = queue.front(); // 10
 ```
-**.back()** returns the back element in queue or null if queue is empty
+**.back()** returns the back element in the queue or null if the queue is empty.
 ```javascript
 var b = queue.back(); // 20
 ```
-**.dequeue()** returns and removes the front element in the queue
+**.dequeue()** returns and removes the front element in the queue or null if the queue is empty.
 ```javascript
 var element = queue.dequeue(); // 10
 ```
-**.isEmpty()** returns true if queue is empty or false if it has elements
+**.isEmpty()** returns true if the queue is empty or false if not.
 ```javascript
 var empty = queue.isEmpty(); // false
 ```
@@ -87,58 +87,58 @@ var len = queue.length(); // 1
 ```
 
 ## PriorityQueue
-elements data type: object, number, string, boolean or null
+elements data type: object, number, string, boolean or null.
 ```javascript
 var pQueue = ds.priorityQueue();
 ```
-**.enqueue(element, priority)** enqueues an element with a priority (int) in the queue
+**.enqueue(element, priority)** adds an element with priority (number) to the back of the queue.
 ```javascript
-pQueue.enqueue('patient 1', 2);
-pQueue.enqueue('patient 2', 1); // highest priority
+pQueue.enqueue('patient 1', 2); // lower priority
+pQueue.enqueue('patient 2', 1); // higher priority
 ```
-**.front()** returns the front object in the queue or null if the queue is empty
+**.front()** returns the front element in queue or null if the queue is empty.
 ```javascript
 var f = pQueue.front(); // patient 1
 ```
-**.back()** returns the back object in the queue or null if the queue is empty
+**.back()** returns the back element in the queue or null if the queue is empty.
 ```javascript
 var b = pQueue.back(); // patient 3
 ```
-**.dequeue()** returns and removes the top priority object from the queue
+**.dequeue()** returns and removes the front element in the queue or null if the queue is empty.
 ```javascript
 var e1 = pQueue.dequeue(); // patient 2
 ```
-**.isEmpty()** returns true if queue is empty or false if it has elements
+**.isEmpty()** returns true if the queue is empty or false if not.
 ```javascript
 var empty = queue.isEmpty(); // false
 ```
-**.length()** returns the number of elements in the queue
+**.length()** returns the number of elements in the queue.
 ```javascript
 var len = queue.length(); // 1
 ```
 
 
 ## Set
-elements data type: number, string, boolean or null
+elements data type: number, string, boolean or null.
 ```javascript
 var set = ds.set();
 ```
-**.add(element)** adds an element to the set
+**.add(element)** adds an element to the set.
 ```javascript
 set.add('A');
 set.add('B');
 set.add('C');
 set.add('D');
 ```
-**.isEmpty()** returns true if the set is empty or false if it has elements
+**.isEmpty()** returns true if the set is empty or false if not.
 ```javascript
 var empty = set.isEmpty(); // false
 ```
-**.contains(element)** returns true the set contains the element, false otherwise
+**.contains(element)** returns true the set contains the element or false if not.
 ```javascript
 var cont = set.contains('C'); // true
 ```
-**.remove(element)** removes an element (if it exists) from the set
+**.remove(element)** removes an element (if it exists) from the set.
 ```javascript
 set.remove('C');
 console.log(set.contains('C')); // false
@@ -157,17 +157,17 @@ while (iterator.next()) {
 // B
 // D
 ```
-**.size()** returns the number of elements in the set
+**.size()** returns the number of elements in the set.
 ```javascript
 var s = set.size(); // 3
 ```
-**.union(s)** unions the set with another set (s) and returns the resulting set
+**.union(s)** unions the set with another set and returns the resulting set.
 ```javascript
 var s = ds.set();
 s.add('A', 'E', 'F');
-var unionSet = set.union(s); // union contains B, D, E, F
+var unionSet = set.union(s); // resulting set has B, D, E, F
 ```
-**.intersect(s)** intersects the set with another set (s) and returns the resulting set
+**.intersect(s)** intersects the set with another set and returns the resulting set.
 ```javascript
 var s = ds.set();
 s.add('A', 'E', 'F');
@@ -175,14 +175,14 @@ s.add('A', 'E', 'F');
 var intersectSet = set.intersect(s); // intersectSet contains A
 
 ```
-**.difference(s)** returns a set containing the elements fount in set but not found in s
+**.difference(s)** returns a set that contains the elements found in the set but not in s.
 ```javascript
 var s = ds.set();
 s.add('E', 'F', 'A');
 // set contains A, B, D
 var diffSet = set.difference(s); // diffSet contains B, D
 ```
-**.isSubset(s)** returns true if the set is part of s, false if not
+**.isSubset(s)** returns true if the set is a subset of s or false if not.
 ```javascript
 var s1 = ds.set();
 var s2 = ds.set();
@@ -192,7 +192,7 @@ s2.add('A', 'G', 'B', 'G', 'D');
 var d1 = set.isSubset(s1); // false
 var d2 = set.isSubset(s2); // true
 ```
-**.clone()** returns a cloned set
+**.clone()** returns a cloned set.
 ```javascript
 var s = set.clone(); // s contains A, B, D
 ```
