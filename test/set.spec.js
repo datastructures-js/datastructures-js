@@ -1,9 +1,10 @@
-var expect = require('chai').expect,
-    set = require('../lib/set');
-
 describe('set test', function() {
 
-    var s1 = set().export(),
+    'use strict';
+
+    var expect = require('chai').expect,
+        set = require('../lib/set'),
+        s1 = set().export(),
         s2 = set().export();
 
     it('should add elements to the set', function() {

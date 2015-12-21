@@ -1,16 +1,15 @@
-var expect = require('chai').expect,
-    binarySearchTree = require('../lib/binarySearchTree');
-
 describe('binarySearchTree test', function() {
 
-    var bst = binarySearchTree().export(),
+    'use strict';
 
-        values = [],
+    var expect = require('chai').expect,
+        binarySearchTree = require('../lib/binarySearchTree'),
+        bst = binarySearchTree().export(),
+        values = [];
 
-        traverseFunc = function(nodeVal) {
-            values.push(nodeVal);
-        };
-
+    var traverseFunc = function(nodeVal) {
+        values.push(nodeVal);
+    };
 
     beforeEach(function(){
         values = [];
@@ -68,8 +67,9 @@ describe('binarySearchTree test', function() {
     });
 
     it('should find a value in th tree', function(){
-        var node = bst.find(30);
+        var node = bst.find(30),
             notFound = bst.find(100);
+            
         expect(node.getValue()).to.be.eql(30);
         expect(node.getLeft().getValue()).to.be.equal(20);
         expect(node.getRight().getValue()).to.be.equal(40);

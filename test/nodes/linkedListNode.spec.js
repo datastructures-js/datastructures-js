@@ -1,8 +1,10 @@
-var expect = require('chai').expect,
-    linkedListNode = require('../../lib/nodes/linkedListNode');
 describe('linkedListNode test', function() {
 
-    var n2 = linkedListNode(null, 'n2'),
+    'use strict';
+
+    var expect = require('chai').expect,
+        linkedListNode = require('../../lib/nodes/linkedListNode'),
+        n2 = linkedListNode(null, 'n2'),
         n1 = linkedListNode(n2, 'n1');
 
     it('should access n2', function() {

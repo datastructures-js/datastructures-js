@@ -1,13 +1,15 @@
-var expect = require('chai').expect,
-    binaryTreeNode = require('../../lib/nodes/binaryTreeNode');
-
 describe('binaryTreeNode test', function() {
 
-    var root = binaryTreeNode(null, null, 50);
-        left = binaryTreeNode(null, null, 30);
+    'use strict';
+
+    var expect = require('chai').expect,
+        binaryTreeNode = require('../../lib/nodes/binaryTreeNode'),
+        root = binaryTreeNode(null, null, 50),
+        left = binaryTreeNode(null, null, 30),
         right = binaryTreeNode(null, null, 70);
-        root.setRight(right);
-        root.setLeft(left);
+
+    root.setRight(right);
+    root.setLeft(left);
 
     it('should access root', function() {
         expect(root.getValue()).to.be.equal(50);

@@ -1,13 +1,15 @@
-var expect = require('chai').expect,
-    doublyLinkedListNode = require('../../lib/nodes/doublyLinkedListNode');
 describe('doublyLinkedListNode test', function() {
 
-    var n3 = doublyLinkedListNode(null, null, 'n3'),
+    'use strict';
+
+    var expect = require('chai').expect,
+        doublyLinkedListNode = require('../../lib/nodes/doublyLinkedListNode'),
+        n3 = doublyLinkedListNode(null, null, 'n3'),
         n1 = doublyLinkedListNode(null, null, 'n1'),
         n2 = doublyLinkedListNode(n1, n3, 'n2');
-        
-        n3.setPrev(n2);
-        n1.setNext(n2);
+
+    n3.setPrev(n2);
+    n1.setNext(n2);
 
     it('should access n1', function() {
         expect(n1.getValue()).to.be.equal('n1');

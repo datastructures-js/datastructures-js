@@ -1,10 +1,10 @@
-var expect = require('chai').expect,
-    hashTablePair = require('../../lib/nodes/hashTablePair');
-
 describe('hashTablePair test', function() {
 
-    // john and sam keys are colliding (have the same hash)
-    var p1 = hashTablePair('john', '123456');
+    'use strict';
+
+    var expect = require('chai').expect,
+        hashTablePair = require('../../lib/nodes/hashTablePair'),
+        p1 = hashTablePair('john', '123456');
 
     it('should access p1', function() {
         var p1Exp = p1.export();

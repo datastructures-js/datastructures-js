@@ -1,46 +1,53 @@
-var src = './lib';
+/*!
+ * datastructures-js
+ * index (main module object)
+ * Copyright(c) 2015 Eyas Ranjous <eyas@eyasranjous.info>
+ * MIT Licensed
+ */
 
-// export objects api
-var getObject = function(ds, args) {
-    return require(src + '/' + ds + '.js').apply(this, args).export();
-};
+'use strict';
 
-module.exports = {
+module.exports = (function() {
 
-    stack: function() {
-        return getObject('stack');
-    },
+    var getObject = function(ds, args) {
+        return require('lib/' + ds).apply(this, args).export();
+    };
 
-    queue: function() {
-        return getObject('queue');
-    },
+    return  {
+        stack: function() {
+            return getObject('stack');
+        },
 
-    priorityQueue: function() {
-        return getObject('priorityQueue');
-    },
+        queue: function() {
+            return getObject('queue');
+        },
 
-    set: function() {
-        return getObject('set');
-    },
+        priorityQueue: function() {
+            return getObject('priorityQueue');
+        },
 
-    linkedList: function() {
-        return getObject('linkedList');
-    },
+        set: function() {
+            return getObject('set');
+        },
 
-    doublyLinkedList: function() {
-        return getObject('doublyLinkedList');
-    },
+        linkedList: function() {
+            return getObject('linkedList');
+        },
 
-    hashtable: function(length) {
-    	return getObject('hashtable', [length]);
-    },
+        doublyLinkedList: function() {
+            return getObject('doublyLinkedList');
+        },
 
-    binarySearchTree: function() {
-        return getObject('binarySearchTree');
-    },
+        hashtable: function() {
+            return getObject('hashtable');
+        },
 
-    directedGraph: function() {
-        return getObject('directedGraph');
-    }
-    
-};
+        binarySearchTree: function() {
+            return getObject('binarySearchTree');
+        },
+
+        directedGraph: function() {
+            return getObject('directedGraph');
+        }
+    };
+})();

@@ -1,10 +1,11 @@
-var expect = require('chai').expect,
-    hashTablePair = require('../../lib/nodes/hashTablePair');
-    hashtableIterator = require('../../lib/iterators/hashtableIterator');
-
 describe('hashtableIterator test', function() {
 
-    var elements = [],
+    'use strict';
+
+    var expect = require('chai').expect,
+        hashTablePair = require('../../lib/nodes/hashTablePair'),
+        hashtableIterator = require('../../lib/iterators/hashtableIterator'),
+        elements = [],
         itr = hashtableIterator(elements);
 
     it('should have a null next first', function() {

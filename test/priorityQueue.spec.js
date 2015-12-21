@@ -1,9 +1,10 @@
-var expect = require('chai').expect,
-    priorityQueue = require('../lib/priorityQueue');
-
 describe('priorityQueue test', function() {
 
-    var pq = priorityQueue().export();
+    'use strict';
+
+    var expect = require('chai').expect,
+        priorityQueue = require('../lib/priorityQueue'),
+        pq = priorityQueue().export();
 
     describe('when the queue is empty', function() {
 
