@@ -48,7 +48,7 @@ var element = stack.pop(); // test
 ```
 **.isEmpty()** returns true if the stack is empty or false if not.
 ```javascript
-var len = stack.isEmpty(); // true
+var isEmpty = stack.isEmpty(); // true
 ```
 **.length()** returns the number of elements in the stack.
 ```javascript
@@ -79,7 +79,7 @@ var element = queue.dequeue(); // 10
 ```
 **.isEmpty()** returns true if the queue is empty or false if not.
 ```javascript
-var empty = queue.isEmpty(); // false
+var isEmpty = queue.isEmpty(); // false
 ```
 **.length()** returns the number of elements in the queue
 ```javascript
@@ -110,7 +110,7 @@ var e1 = pQueue.dequeue(); // patient 2
 ```
 **.isEmpty()** returns true if the queue is empty or false if not.
 ```javascript
-var empty = queue.isEmpty(); // false
+var isEmpty = queue.isEmpty(); // false
 ```
 **.length()** returns the number of elements in the queue.
 ```javascript
@@ -199,7 +199,7 @@ var s = set.clone(); // s contains A, B, D
 ## LinkedList
 ![LinkedList](http://i.imgur.com/ZyD3HJL.jpg "LinkedList")
 
-node value data type: number, string, boolean or null
+node value data type: number, string, boolean or null.
 ```javascript
 var linkedList = ds.linkedList();
 ```
@@ -226,7 +226,7 @@ catch (e) {
 ```javascript
 linkedList.addBefore('n4', 'n3');
 ```
-**.find(value)** returns a read-only node object or null if value not found, the read-only node object contains two functions:
+**.find(value)** returns a read-only node object or null if value not found, the object contains two functions:
 
 * .getNext() returns the next read-only node object or null if it's the last node.
 * .getValue() returns the node value.
@@ -235,12 +235,12 @@ var n3 = linkedList.find('n3');
 console.log(n3.getValue()); // n3
 console.log(n3.getNext().getValue()); // n4
 ```
-**.findFirst()** returns the first read-only node object in the list
+**.findFirst()** returns the first read-only node object in the list.
 ```javascript
 var first = linkedList.findFirst();
 console.log(first.getValue()); // n1
 ```
-**.findLast()** returns the last read-only node object in the list
+**.findLast()** returns the last read-only node object in the list.
 ```javascript
 var last = linkedList.findLast();
 console.log(last.getValue()); // n4
@@ -251,23 +251,23 @@ var n2 = linkedList.findBefore('n3');
 console.log(n2.getValue()); // n2
 console.log(n2.getNext().getValue()); // n3
 ```
-**.removeFirst()** removes the first node in the list
+**.removeFirst()** removes the first node in the list.
 ```javascript
 linkedList.removeFirst();
 ```
-**.removeLast()** removes the last node in the list
+**.removeLast()** removes the last node in the list.
 ```javascript
 linkedList.removeLast();
 ```
-**.remove(value)** remove the value's node from the list or throw an exception if value not found
+**.remove(value)** remove the value's node from the list or throw an exception if value not found.
 ```javascript
 linkedList.remove('n2');
 ```
-**.count()** returns the number of nodes in the list
+**.count()** returns the number of nodes in the list.
 ```javascript
 var length = linkedList.count();
 ```
-**.clear()** clears all the nodes from the list
+**.clear()** removes all the nodes from the list.
 ```javascript
 linkedList.clear();
 console.log(linkedList.length()); // 0	
@@ -276,15 +276,15 @@ console.log(linkedList.length()); // 0
 ## DoublyLinkedList
 ![DoublyLinkedList](http://i.imgur.com/p7ZeBUE.jpg "DoublyLinkedList")
 
-node value data type: number, string, boolean or null
+node value data type: number, string, boolean or null.
 ```javascript
 var dList = ds.doublyLinkedList();
 ```
-**.addFirst(value)** add a node with the specified value to the beginning of the list
+**.addFirst(value)** add a node with the specified value to the beginning of the list.
 ```javascript
 dList.addFirst('n1');
 ```
-**.addLast(value)** add a node with the specified value to the end of the list
+**.addLast(value)** add a node with the specified value to the end of the list.
 ```javascript
 dList.addLast('n4');
 ```
@@ -303,7 +303,7 @@ catch (e) {
 ```javascript
 dList.addBefore('n4', 'n3');
 ```
-**.find(value)** returns a read-only node object or null if value not found, the read-only node object contains three functions:
+**.find(value)** returns a read-only node object or null if value not found, the object contains three functions:
 
 * .getNext() returns the next read-only node object or null if it's the last node.
 * .getPrev() returns the previous read-only node object or null if it's the first node.
@@ -314,40 +314,40 @@ console.log(n3.getValue()); // n3
 console.log(n3.getNext().getValue()); // n4
 console.log(n3.getPrev().getValue()); // n2
 ```
-**.findFirst()** returns the first read-only node object in the list
+**.findFirst()** returns the first read-only node object in the list.
 ```javascript
 var first = dList.findFirst();
 console.log(first.getValue()); // n1
 ```
-**.findLast()** returns the last read-only node object in the list
+**.findLast()** returns the last read-only node object in the list.
 ```javascript
 var last = dList.findLast();
 console.log(last.getValue()); // n4
 ```
-**.findBefore(value)** returns a read-only node object before the specified value's node or null if value not found
+**.findBefore(value)** returns a read-only node object before the specified value's node or null if value not found.
 ```javascript
 var n2 = linkedList.findBefore('n3');
 console.log(n2.getValue()); // n2
 console.log(n2.getNext().getValue()); // n3
 console.log(n2.getPrev().getValue()); // n1
 ```
-**.removeFirst()** removes the first node from the list
+**.removeFirst()** removes the first node from the list.
 ```javascript
 dList.removeFirst();
 ```
-**.removeLast()** removes the last node from the list
+**.removeLast()** removes the last node from the list.
 ```javascript
 dList.removeLast();
 ```
-**.remove(value)** remove the value's node from the list or throw an exception if element's node is not found
+**.remove(value)** remove the value's node from the list or throw an exception if value not found.
 ```javascript
 dList.remove('n2');
 ```
-**.count()** returns the number of nodes in the list
+**.count()** returns the number of nodes in the list.
 ```javascript
 var count = dList.count();
 ```
-**.clear()** clears all the nodes from the list
+**.clear()** clears all the nodes from the list.
 ```javascript
 dList.clear();
 ```
@@ -355,23 +355,23 @@ dList.clear();
 
 ## HashTable
 * keys data type: number, string 
-* values data type: object, string, number, boolean, null
+* values data type: object, string, number, boolean, null.
 ```javascript
 var hashtable = ds.hashtable();
 ```
 
-**.put(key, value)** adds a key-value pair to the hashtable
+**.put(key, value)** adds a key-value pair to the hashtable.
 ```javascript
 hashtable.put('john', 4567);
 hashtable.put('samantha', 1234);
 ```
 
-**.get(key)** returns the data associated with key
+**.get(key)** returns the data associated with key.
 ```javascript
 var data = hashtable.get('john'); // 4567
 ```
 
-**.contains(key)** returns true if the hashtable contains the key
+**.contains(key)** returns true if the hashtable contains the key.
 ```javascript
 var hasData = hashtable.contains('john'); // true
 ```
@@ -393,12 +393,12 @@ while (iterator.hashNext()) {
 //  samantha: 1234
 ```
 
-**.remove(key)** removes a key-value pair by key
+**.remove(key)** removes a key-value pair by key.
 ```javascript
 var data = hashtable.remove('john'); // false
 ```
 
-**.count()** returns the number of key-value pairs in the hashtable
+**.count()** returns the number of key-value pairs in the hashtable.
 ```javascript
 var length = hashtable.count(); // 1
 ```
@@ -410,7 +410,7 @@ node value data type: string, number
 ```javascript
 var bst = ds.binarySearchTree();
 ```
-**.insert(element)** inserts a node with element value into the tree
+**.insert(value)** inserts a node with the specified value into the tree.
 ```javascript
 bst.insert(50);
 bst.insert(80);
@@ -420,15 +420,15 @@ bst.insert(60);
 bst.insert(40);
 bst.insert(20);
 ```
-**.getMinValue()** returns the min value in the tree (most left node value)
+**.getMinValue()** returns the min value in the tree (most left node value).
 ```javascript
 var min = bst.getMinValue(); // 20
 ```
-**.getMaxValue()** returns the max value in the tree (most right node value)
+**.getMaxValue()** returns the max value in the tree (most right node value).
 ```javascript
 var max = bst.getMaxValue(); // 90
 ```
-**.find(element)** returns a read-only node object or null if not found, the read-only node object contains three functions:
+**.find(value)** returns a read-only node object or null if not found, the object contains three functions:
 
 * .getRight() returns the right child read-only node object or null if it has no right.
 * .getLeft() returns the left child read-only node object or null if it has no left.
@@ -446,7 +446,7 @@ console.log(root.getLeft().getValue()); // 30
 console.log(root.getRight().getValue()); // 80
 console.log(root.getValue()); // 50
 ```
-**.remove(element)** removes an element's node from the tree
+**.remove(value)** removes an value's node (if exists) from the tree.
 ```javascript
 bst.remove(30);
 
@@ -461,10 +461,10 @@ console.log(n40.getLeft().getValue()); // 20
 * order: string, takes one of three values: 'inOrder', 'preOrder' or 'postOrder'
 * func: a custom function that has one param: nodeVal which is passed in the traverse.
 ```javascript
-var preOrderTravFunc = function(nodeVal) {
+var inOrderTravFunc = function(nodeVal) {
     console.log(nodeVal);
 }
-bst.traverse('inOrder', preOrderTravFunc);
+bst.traverse('inOrder', inOrderTravFunc);
 
 // 20
 // 40
@@ -472,16 +472,8 @@ bst.traverse('inOrder', preOrderTravFunc);
 // 60
 // 80
 // 90
-
-
-var values = [];
-var postOrderTravFunc = function(nodeVal) {
-    values.push(nodeVal);
-}
-bst.traverse('postOrder', postOrderTravFunc);
-console.log(values); // [20, 40, 60, 90, 80, 50]
 ```
-**.count()** return the number of nodes in the tree
+**.count()** return the number of nodes in the tree.
 ```javascript
 var count = bst.count() // 6
 ```
@@ -495,7 +487,7 @@ vertex data type: string, number
 ```javascript
 var diGraph = ds.directedGraph();
 ```
-**.addVertex(vertex)** adds a vertex to the graph
+**.addVertex(vertex)** adds a vertex to the graph.
 ```javascript
 diGraph.addVertex('v1');
 diGraph.addVertex('v2');
@@ -503,16 +495,16 @@ diGraph.addVertex('v3');
 diGraph.addVertex('v4');
 diGraph.addVertex('v5');
 ```
-**.hasVertex(vertex)** returns true if the graph contains the vertex or false if not
+**.hasVertex(vertex)** returns true if the graph contains the vertex or false if not.
 ```javascript
 var c1 = diGraph.hasVertex('v3'); // true
 var c2 = diGraph.hasVertex('v77'); // false
 ```
-**.countVertices()** returns the number of vertices in the graph
+**.countVertices()** returns the number of vertices in the graph.
 ```javascript
 var count = diGraph.countVertices(); // 5
 ```
-**.addDirection(v1, v2, weight)** adds a direction from v1 to v2 with a weight
+**.addDirection(v1, v2, weight)** adds a direction from v1 to v2 with a weight (number).
 ```javascript
 diGraph.addDirection('v1', 'v2', 5);
 diGraph.addDirection('v1', 'v5', 1);
@@ -522,7 +514,7 @@ diGraph.addDirection('v4', 'v1', 7);
 diGraph.addDirection('v4', 'v3', 4);
 diGraph.addDirection('v5', 'v4', 2);
 ```
-**.hasDirection(v1, v2)** returns true there's a direction from v1 to v2
+**.hasDirection(v1, v2)** returns true there's a direction from v1 to v2.
 ```javascript
 var hasDi1 = diGraph.hasDirection('v3', 'v5'); // true
 var hasDi2 = diGraph.hasDirection('v3', 'v1'); // false
@@ -531,7 +523,7 @@ var hasDi2 = diGraph.hasDirection('v3', 'v1'); // false
 ```javascript
 var weight = diGraph.getDirectionWeight('v4', 'v1'); // 7
 ```
-**.visit(func)** visit all the connected vertices in the graph using the depth-first approach and apply func on the reached vertex
+**.visit(func)** visit all the connected vertices in the graph using the depth-first approach and apply func on the reached vertex.
 ```javascript
 var visitFunc = function(vertex) {
     console.log(vertex);
@@ -553,7 +545,7 @@ var sp1 = diGraph.findShortestPath('v1', 'v3');
 var sp2 = diGraph.findShortestPath('v4', 'v5');
 // [['v4', 'v1', 'v5'], ['v4', 'v3', 'v5']]
 ```
-**.removeDirection(v1, v2)** removes an existing direction between v1 and v2
+**.removeDirection(v1, v2)** removes an existing direction between v1 and v2.
 ```javascript
 diGraph.removeDirection('v4', 'v3');
 diGraph.removeDirection('v3', 'v5');
@@ -562,7 +554,7 @@ diGraph.removeDirection('v3', 'v5');
 ```javascript
 var s = diGraph.getSeparatedVertices(); // ['v3']
 ```
-**.removeVertex(v1)** removes an existing vertex and all its directions (the incoming and outgoing)
+**.removeVertex(v1)** removes an existing vertex and all its directions (the incoming and outgoing).
 ```javascript
 diGraph.removeVertex('v3');
 ```
