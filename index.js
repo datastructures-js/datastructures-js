@@ -12,7 +12,7 @@ module.exports = (function() {
     var self = {};
 
     var getObject = function(ds, args) {
-        return require('lib/' + ds).apply(this, args).export();
+        return require('./lib/' + ds).apply(this, args).export();
     };
 
     self.stack = function() {
