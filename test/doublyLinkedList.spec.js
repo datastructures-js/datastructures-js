@@ -1,10 +1,11 @@
+var expect = require('chai').expect,
+    doublyLinkedList = require('../lib/doublyLinkedList');
+        
 describe('doublyLinkedList test', function() {
 
     'use strict';
 
-    var expect = require('chai').expect,
-        doublyLinkedList = require('../lib/doublyLinkedList'),
-        dll = doublyLinkedList().export();
+    var dll = doublyLinkedList().export();
 
     it('should have initial count of 0', function(){
         expect(dll.count()).to.be.equal(0);

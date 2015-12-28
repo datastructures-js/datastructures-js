@@ -1,10 +1,11 @@
+var expect = require('chai').expect,
+    linkedList = require('../lib/linkedList');
+
 describe('linkedList test', function() {
 
     'use strict';
 
-    var expect = require('chai').expect,
-        linkedList = require('../lib/linkedList'),
-        ll = linkedList().export();
+    var ll = linkedList().export();
 
     it('should have initial count of 0', function(){
         expect(ll.count()).to.be.equal(0);

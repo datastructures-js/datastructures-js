@@ -1,10 +1,11 @@
+var expect = require('chai').expect,
+    queue = require('../lib/queue');
+
 describe('queue test', function() {
 
     'use strict';
 
-    var expect = require('chai').expect,
-        queue = require('../lib/queue'),
-        q = queue().export();
+    var q = queue().export();
 
     describe('when the queue is empty', function() {
 

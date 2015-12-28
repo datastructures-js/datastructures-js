@@ -1,10 +1,11 @@
+var expect = require('chai').expect,
+    stack = require('../lib/stack');
+
 describe('stack test', function() {
 
     'use strict';
 
-    var expect = require('chai').expect,
-        stack = require('../lib/stack'),
-        s = stack().export();
+    var s = stack().export();
 
     describe('when the stack is empty', function() {
 

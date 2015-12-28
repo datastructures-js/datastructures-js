@@ -1,9 +1,9 @@
+var expect = require('chai').expect,
+    directedGraph = require('../lib/directedGraph');
+        
 describe('directedGraph test', function() {
 
     'use strict';
-
-    var expect = require('chai').expect,
-        directedGraph = require('../lib/directedGraph');
 
     describe('simple graph', function() {
 

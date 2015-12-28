@@ -1,10 +1,11 @@
+var expect = require('chai').expect,
+    iterator = require('../../lib/iterators/iterator');
+
 describe('iterator test', function() {
 
     'use strict';
     
-    var expect = require('chai').expect,
-        iterator = require('../../lib/iterators/iterator'),
-        elements = [],
+    var elements = [],
         itr = iterator(elements).export();
 
     it('should have a next', function() {

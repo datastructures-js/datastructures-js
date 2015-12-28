@@ -1,9 +1,9 @@
+var expect = require('chai').expect,
+    ds = require('../index');
+
 describe('index (main module) test', function() {
 
     'use strict';
-
-    var expect = require('chai').expect,
-        ds = require('../index');
 
     it('should get a stack object', function() {
         expect(ds.stack()).to.be.an('object');

@@ -1,9 +1,9 @@
+var expect = require('chai').expect,
+    hashtable = require('../lib/hashtable');
+
 describe('hashtable test', function() {
 
     'use strict';
-
-    var expect = require('chai').expect,
-        hashtable = require('../lib/hashtable');
 
     describe('without collisions', function(){
 
