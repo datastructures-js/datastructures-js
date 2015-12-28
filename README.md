@@ -395,7 +395,7 @@ while (iterator.hashNext()) {
 
 **.remove(key)** removes a key-value pair by key.
 ```javascript
-var data = hashtable.remove('john'); // false
+hashtable.remove('john');
 ```
 
 **.count()** returns the number of key-value pairs in the hashtable.
