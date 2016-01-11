@@ -84,7 +84,7 @@ describe('directedGraph test', function() {
 
     describe('complex graph', function() {
 
-        var diGraph = directedGraph();
+        var diGraph = directedGraph().export();
 
         it('should add vertices', function() {
             diGraph.addVertex('v1');

@@ -6,7 +6,7 @@ describe('iterator test', function() {
     'use strict';
     
     var elements = [],
-        itr = iterator(elements).export();
+        itr = iterator(elements);
 
     it('should have a next', function() {
         expect(itr.hasNext()).to.be.equal(false);
@@ -25,6 +25,12 @@ describe('iterator test', function() {
         }
 
         expect(e).to.be.eql(elements);
+    });
+
+    it('should export iterator api', function() {
+        var exportedIterator = itr.export();
+        expect(exportedIterator.hasNext()).to.be.equal(false);
+        expect(exportedIterator.next()).to.be.equal(null);
     });
 
 });

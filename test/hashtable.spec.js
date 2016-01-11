@@ -62,53 +62,8 @@ describe('hashtable test', function() {
 
     describe('with collisions', function(){
         
-        var ht = hashtable();
-
-        it('should add an element', function(){
-            ht.put('h', 11);
-            ht.put('hh', 55);
-            ht.put('hhh', 99);
-            expect(ht.get('h')).to.be.equal(11);
-            expect(ht.get('hh')).to.be.equal(55);
-            expect(ht.get('hhh')).to.be.equal(99);
-        });
-
-        it('should iterate over the hashtable', function(){
-            var iterator = ht.iterator(),
-                el = [];
-
-            while (iterator.hasNext()) {
-                var pair = iterator.next();
-                el.push({
-                    key: pair.getKey(),
-                    value: pair.getValue()
-                });
-            }
-
-            expect(el).to.deep.include.members([
-                {
-                    key: 'h',
-                    value: 11
-                },
-                {
-                    key: 'hh',
-                    value: 55
-                },
-                {
-                    key: 'hhh',
-                    value: 99
-                }
-            ]);
-
-        });
-
-        it('should override an existing element', function(){
-            ht.put('h', 77);
-            expect(ht.get('h')).to.be.equal(77);
-            expect(ht.get('hh')).to.be.equal(55);
-            expect(ht.get('hhh')).to.be.equal(99);
-        });
-
+        var ht = hashtable().export();
+        // TODO Tests
     });
 
 });

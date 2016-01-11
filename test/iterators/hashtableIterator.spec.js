@@ -44,4 +44,8 @@ describe('hashtableIterator test', function() {
         ]);
     });
 
+    it('should has export method', function() {
+        expect(itr.export).to.be.a('Function');
+    });
+
 });
