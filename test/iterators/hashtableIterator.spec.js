@@ -44,7 +44,7 @@ describe('hashtableIterator test', function() {
         ]);
     });
 
-    it('should has export method', function() {
+    it('should have export method', function() {
         expect(itr.export).to.be.a('Function');
     });
 
