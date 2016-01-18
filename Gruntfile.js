@@ -16,7 +16,7 @@ module.exports = function(grunt) {
                 reporter: require('jshint-stylish'),
                 jshintrc: '.jshintrc'
             },
-            files: ['./lib/**/*.js', './test/**/*.spec.js', 'index.js', 'Gruntfile.js']
+            files: ['./lib/**/*.js', './test/**/*.spec.js', './*.js']
         },
 
         mochaTest: {
@@ -27,7 +27,7 @@ module.exports = function(grunt) {
             coverage: {
                 src: 'test',
                 options: {
-                    mask: '*.spec.js'
+                    mask: '**/*.spec.js'
                 }
             }
         }
