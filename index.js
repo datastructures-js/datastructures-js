@@ -7,48 +7,55 @@
 
 'use strict';
 
+var di = require('./di');
+
 module.exports = (function() {
 
     var self = {};
 
-    var getObject = function(ds, args) {
-        return require('./lib/' + ds).apply(this, args).export();
-    };
-
     self.stack = function() {
-        return getObject('stack');
+        var stack = di.getFactory('ds', 'stack')();
+        return di.exportObject(stack);
     };
 
     self.queue = function() {
-        return getObject('queue');
+        var queue = di.getFactory('ds', 'queue')();
+        return di.exportObject(queue);
     };
 
     self.priorityQueue = function() {
-        return getObject('priorityQueue');
+        var priorityQueue = di.getPriorityQueueFactory()();
+        return di.exportObject(priorityQueue);
     };
 
     self.set = function() {
-        return getObject('set');
+        var set = di.getSetFactory()();
+        return di.exportObject(set);
     };
 
     self.linkedList = function() {
-        return getObject('linkedList');
+        var linkedList = di.getLinkedListFactory()();
+        return di.exportObject(linkedList);
     };
 
     self.doublyLinkedList = function() {
-        return getObject('doublyLinkedList');
+        var doublyLinkedList = di.getDoublyLinkedListFactory()();
+        return di.exportObject(doublyLinkedList);
     };
 
     self.hashtable = function() {
-        return getObject('hashtable');
+        var hashtable = di.getHashtableFactory()();
+        return di.exportObject(hashtable);
     };
 
     self.binarySearchTree = function() {
-        return getObject('binarySearchTree');
+        var binarySearchTree = di.getBinarySearchTreeFactory()();
+        return di.exportObject(binarySearchTree);
     };
 
     self.directedGraph = function() {
-        return getObject('directedGraph');
+       var directedGraph = di.getFactory('ds', 'directedGraph')();
+        return di.exportObject(directedGraph);
     };
 
     return self;
