@@ -1,11 +1,12 @@
 var expect = require('chai').expect,
-    binaryTreeNode = require('../../lib/nodes/binaryTreeNode');
+    di = require('../../di');
 
 describe('binaryTreeNode test', function() {
 
     'use strict';
 
-    var root = binaryTreeNode(null, null, 50),
+    var binaryTreeNode = di.getBstNodeFactory(),
+        root = binaryTreeNode(null, null, 50),
         left = binaryTreeNode(null, null, 30),
         right = binaryTreeNode(null, null, 70);
 

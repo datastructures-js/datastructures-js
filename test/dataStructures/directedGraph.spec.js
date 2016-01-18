@@ -1,5 +1,5 @@
 var expect = require('chai').expect,
-    directedGraph = require('../lib/directedGraph');
+    di = require('../../di');
         
 describe('directedGraph test', function() {
 
@@ -7,7 +7,7 @@ describe('directedGraph test', function() {
 
     describe('simple graph', function() {
 
-        var diGraph = directedGraph().export();
+        var diGraph = di.getFactory('ds', 'directedGraph')();
 
         it('should add vertices', function() {
             diGraph.addVertex('v1');
@@ -84,8 +84,8 @@ describe('directedGraph test', function() {
 
     describe('complex graph', function() {
 
-        var diGraph = directedGraph().export();
-
+        var diGraph = di.getFactory('ds', 'directedGraph')();
+        
         it('should add vertices', function() {
             diGraph.addVertex('v1');
             diGraph.addVertex('v2');

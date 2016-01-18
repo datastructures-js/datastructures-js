@@ -1,14 +1,15 @@
 var expect = require('chai').expect,
-    hashTablePair = require('../../lib/nodes/hashTablePair'),
-    hashtableIterator = require('../../lib/iterators/hashtableIterator');
+    di = require('../../di');
 
 describe('hashtableIterator test', function() {
 
     'use strict';
 
     var elements = [],
-        itr = hashtableIterator(elements);
+        itr = di.getHtIteratorFactory()(elements),
+        hashTablePair = di.getFactory('nd', 'hashTablePair');
 
+        console.log(itr);
     it('should have a null next first', function() {
         expect(itr.hasNext()).to.be.equal(false);
         expect(itr.next()).to.be.equal(null);

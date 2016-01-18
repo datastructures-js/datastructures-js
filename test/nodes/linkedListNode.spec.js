@@ -1,11 +1,12 @@
 var expect = require('chai').expect,
-    linkedListNode = require('../../lib/nodes/linkedListNode');
+    di = require('../../di');
 
 describe('linkedListNode test', function() {
 
     'use strict';
 
-    var n2 = linkedListNode(null, 'n2'),
+    var linkedListNode = di.getFactory('nd', 'linkedListNode'),
+        n2 = linkedListNode(null, 'n2'),
         n1 = linkedListNode(n2, 'n1');
 
     it('should access n2', function() {

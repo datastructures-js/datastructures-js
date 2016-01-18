@@ -1,12 +1,12 @@
 var expect = require('chai').expect,
-    iterator = require('../../lib/iterators/iterator');
+    di = require('../../di');
 
 describe('iterator test', function() {
 
     'use strict';
-    
+
     var elements = [],
-        itr = iterator(elements);
+        itr = di.getFactory('itr', 'iterator')(elements);
 
     it('should have a next', function() {
         expect(itr.hasNext()).to.be.equal(false);

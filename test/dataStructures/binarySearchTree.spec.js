@@ -1,11 +1,11 @@
 var expect = require('chai').expect,
-    binarySearchTree = require('../lib/binarySearchTree');
+    di = require('../../di');
 
 describe('binarySearchTree test', function() {
 
     'use strict';
 
-    var bst = binarySearchTree().export(),
+    var bst = di.getBinarySearchTreeFactory()(),
         values = [];
 
     var traverseFunc = function(nodeVal) {

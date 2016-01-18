@@ -1,11 +1,12 @@
 var expect = require('chai').expect,
-    doublyLinkedListNode = require('../../lib/nodes/doublyLinkedListNode');
+    di = require('../../di');
         
 describe('doublyLinkedListNode test', function() {
 
     'use strict';
 
-    var n3 = doublyLinkedListNode(null, null, 'n3'),
+    var doublyLinkedListNode = di.getDllNodeFactory(),
+        n3 = doublyLinkedListNode(null, null, 'n3'),
         n1 = doublyLinkedListNode(null, null, 'n1'),
         n2 = doublyLinkedListNode(n1, n3, 'n2');
 

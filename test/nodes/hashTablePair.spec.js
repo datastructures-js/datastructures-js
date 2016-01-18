@@ -1,11 +1,12 @@
 var expect = require('chai').expect,
-    hashTablePair = require('../../lib/nodes/hashTablePair');
+    di = require('../../di');
 
 describe('hashTablePair test', function() {
 
     'use strict';
 
-    var p1 = hashTablePair('john', '123456');
+    var hashTablePair = di.getFactory('nd', 'hashTablePair'),
+        p1 = hashTablePair('john', '123456');
 
     it('should access p1', function() {
         expect(p1.getKey()).to.be.equal('john');

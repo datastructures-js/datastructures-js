@@ -1,12 +1,12 @@
 var expect = require('chai').expect,
-    set = require('../lib/set');
+    di = require('../../di');
 
 describe('set test', function() {
 
     'use strict';
 
-    var s1 = set().export(),
-        s2 = set().export();
+    var s1 = di.getSetFactory()(),
+        s2 = di.getSetFactory()();
 
     it('should add elements to the set', function() {
         s1.add(1);
