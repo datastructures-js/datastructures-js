@@ -26,9 +26,15 @@ describe('hashtable test', function() {
         it('should remove an element', function(){
             hashtable.remove(33);
             expect(hashtable.contains(33)).to.be.equal(false);
+            expect(hashtable.count()).to.be.equal(2);
         });
 
-        it('should override an existing element', function(){
+        it('should not affect count when removing non existing element', function(){
+            hashtable.remove(6464);
+            expect(hashtable.count()).to.be.equal(2);
+        });
+
+        it('should update an existing element', function(){
             hashtable.put('john', 'modified');
             expect(hashtable.contains('john')).to.be.equal(true);
             expect(hashtable.get('john')).to.be.equal('modified');
@@ -62,8 +68,42 @@ describe('hashtable test', function() {
 
     describe('with collisions', function(){
         
-        var ht = di.getHashtableFactory()();
-        // TODO Tests
+        var htPairFactory = di.getFactory('nd', 'hashTablePair'),
+            hashFunction = di.getFactory('hlp', 'sumCharsHash', [3, 5]),
+            htIteratorFactory = di.getHtIteratorFactory(),
+            hashtable = di.getFactory('ds', 'hashtable', 
+                [htPairFactory, htIteratorFactory, hashFunction])();
+
+        it('should put elements', function(){
+            hashtable.put('e', 1234);
+            hashtable.put('r', 1111);
+            expect(hashtable.get('e')).to.be.equal(1234);
+            expect(hashtable.get('r')).to.be.equal(1111);
+        });
+
+        it('should have 2 pairs', function() {
+            expect(hashtable.count()).to.be.equal(2);
+        });
+
+        it('should update an existing pair value', function() {
+            hashtable.put('e', 555);
+            expect(hashtable.get('e')).to.be.equal(555);
+        }); 
+
+        it('should chain a collided element', function() {
+            hashtable.put('eeeee', 'c');
+            expect(hashtable.get('eeeee')).to.be.equal('c');
+            expect(hashtable.get('e')).to.be.equal(555);
+            expect(hashtable.count()).to.be.equal(3);
+        }); 
+
+        it('should remove a collided element', function() {
+            hashtable.remove('eeeee');
+            expect(hashtable.get('eeeee')).to.be.equal(undefined);
+            expect(hashtable.get('e')).to.be.equal(555);
+            expect(hashtable.count()).to.be.equal(2);
+        }); 
+
     });
 
 });

@@ -9,7 +9,6 @@ describe('hashtableIterator test', function() {
         itr = di.getHtIteratorFactory()(elements),
         hashTablePair = di.getFactory('nd', 'hashTablePair');
 
-        console.log(itr);
     it('should have a null next first', function() {
         expect(itr.hasNext()).to.be.equal(false);
         expect(itr.next()).to.be.equal(null);
