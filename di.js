@@ -10,7 +10,8 @@
 var modules = {
     itr: require('./lib/iterators'),
     nd: require('./lib/nodes'),
-    ds: require('./lib/dataStructures')
+    ds: require('./lib/dataStructures'),
+    hlp: require('./lib/helpers')
 };
 
 module.exports = (function() {
@@ -63,8 +64,10 @@ module.exports = (function() {
 
     self.getHashtableFactory = function() {
         var htPairFactory = this.getFactory('nd', 'hashTablePair'),
+            hashFunction = this.getFactory('hlp', 'sumCharsHash', [31, 104729]),
             htIteratorFactory = this.getHtIteratorFactory();
-        return this.getFactory('ds', 'hashtable', [htPairFactory, htIteratorFactory]);
+        return this.getFactory('ds', 'hashtable', 
+            [htPairFactory, htIteratorFactory, hashFunction]);
     };
 
     self.getBinarySearchTreeFactory = function() {
