@@ -8,6 +8,11 @@ describe('set test', function() {
     var s1 = di.getSetFactory()(),
         s2 = di.getSetFactory()();
 
+    it('should be empty sets', function() {
+        expect(s1.isEmpty()).to.be.equal(true);
+        expect(s2.isEmpty()).to.be.equal(true);
+    });
+
     it('should add elements to the set', function() {
         s1.add(1);
         s1.add(2);
@@ -32,6 +37,11 @@ describe('set test', function() {
         expect(s1.contains(2)).to.be.equal(true);
         expect(s1.contains(3)).to.be.equal(true);
         expect(s1.contains(4)).to.be.equal(true);
+    });
+
+    it('should not affect the set when removing a non existing element', function() {
+        s1.remove(33);
+        expect(s1.size()).to.be.equal(3);
     });
 
     it('should iterate over the set', function() {

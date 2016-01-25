@@ -15,6 +15,31 @@ describe('linkedList test', function() {
         expect(linkedList.findFirst()).to.be.equal(null);
     });
 
+    it('should not be affected by removeFirst', function() {
+        linkedList.removeFirst();
+        expect(linkedList.count()).to.be.equal(0);
+    });
+
+    it('should not be affected by removeLast', function() {
+        linkedList.removeLast();
+        expect(linkedList.count()).to.be.equal(0);
+    });
+
+    it('should return null when trying to findLast in empty list', function(){
+        var last = linkedList.findLast();
+        expect(last).to.be.equal(null);
+    });
+
+    it('should add a node at first', function(){
+        linkedList.addFirst('n1');
+        expect(linkedList.count()).to.be.equal(1);
+    });
+
+    it('should remove the added node', function(){
+        linkedList.removeFirst();
+        expect(linkedList.count()).to.be.equal(0);
+    });
+
     it('should add 2 nodes at first n1 and n2', function(){
         linkedList.addFirst('n2');
         linkedList.addFirst('n1');
@@ -92,6 +117,7 @@ describe('linkedList test', function() {
         expect(last.getValue()).to.be.equal('n7');
         expect(last.getNext()).to.be.equal(null);
     });
+
 
     it('should find a node before another node', function(){
         var beforeNode1 = linkedList.findBefore('n0');
