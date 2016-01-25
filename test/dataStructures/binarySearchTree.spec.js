@@ -19,11 +19,17 @@ describe('binarySearchTree test', function() {
     it('should have null root', function(){
         expect(bst.getRoot()).to.be.equal(null);
         expect(bst.count()).to.be.equal(0);
+    });
 
-        // try to remove non existing value
+    it('should do nothing when removing from empty tree', function(){
         bst.remove(10);
         expect(bst.getRoot()).to.be.equal(null);
         expect(bst.count()).to.be.equal(0);
+    });
+
+    it('should return null for getMinValue and getMaxValue', function(){
+        expect(bst.getMinValue()).to.be.equal(null);
+        expect(bst.getMaxValue()).to.be.equal(null);
     });
 
     it('should insert elements', function(){
