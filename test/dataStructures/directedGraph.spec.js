@@ -25,6 +25,12 @@ describe('directedGraph test', function() {
             expect(diGraph.hasVertex('v5')).to.be.equal(true);
         });
 
+        it('should throw an exception when trying to add an existing vertex', function(){
+            expect(diGraph.addVertex.bind(diGraph, 'v1')).to.throw({
+                message: 'vertex v1 already exists'
+            });
+        });
+
         it('should add and verify directions', function() {
 
             diGraph.addDirection('v1', '3', 7);
@@ -47,6 +53,11 @@ describe('directedGraph test', function() {
 
         });
 
+        it('should not do anything when adding a direction for non existing vertex', function() {    
+            diGraph.addDirection('v1', 'v99', 1);
+            expect(diGraph.hasDirection('v1', 'v99')).to.be.equal(false);
+        });
+
         it('should find the shortest path', function() {    
             var v1v4 = diGraph.findShortestPath('v1', 'v4'),
                 v2v3 = diGraph.findShortestPath('v2', '3'),
@@ -66,6 +77,12 @@ describe('directedGraph test', function() {
             expect(diGraph.getDirectionWeight('v2', 'v1')).to.be.equal(null);
         });
 
+        it('should do nothing when removing a non existing direction', function() {
+            expect(diGraph.hasDirection('v2', 'v5')).to.be.equal(false);
+            diGraph.removeDirection('v2', 'v5');
+            expect(diGraph.hasDirection('v2', 'v5')).to.be.equal(false);
+        });
+
         it('should get the separated vertices', function() {
             var s = diGraph.getSeparatedVertices();
             expect(s).to.be.eql(['v2']);
@@ -79,6 +96,11 @@ describe('directedGraph test', function() {
             expect(diGraph.hasVertex('3')).to.be.equal(false);
             expect(diGraph.getDirectionWeight('3', 'v4')).to.be.equal(null);
             expect(diGraph.getDirectionWeight('v5', '3')).to.be.equal(null);
+        });
+
+        it('should do nothing when trying to remove a non existing vertex', function() {
+            diGraph.removeVertex('v10');
+            expect(diGraph.countVertices()).to.be.equal(3);
         });
     });
 
