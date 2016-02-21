@@ -26,7 +26,7 @@
     "type": "git",
     "url": "https://github.com/eyas-ranjous/datastructures-js.git"
   },
-  "author": "Eyas Ranjous <eyas@eyasranjous.info>",
+  "author": "Eyas Ranjous <eyas.ranjous@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/eyas-ranjous/datastructures-js#readme",
   "devDependencies": {
