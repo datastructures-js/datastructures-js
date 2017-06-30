@@ -102,6 +102,19 @@ describe('hashtable test', function() {
             expect(hashtable.get('eeeee')).to.be.equal(undefined);
             expect(hashtable.get('e')).to.be.equal(555);
             expect(hashtable.count()).to.be.equal(2);
+        });
+
+        it('should remove all elements', function() {
+            var ht = di.getFactory('ds', 'hashtable', 
+                [htPairFactory, htIteratorFactory, hashFunction])();
+            for (var i = 0; i < 1000; i++) {
+                ht.put(i, i);
+            }
+            expect(ht.count()).to.be.equal(1000);
+            for (var k = 0; k < 1000; k++) {
+                ht.remove(k);
+            }
+            expect(ht.count()).to.be.equal(0);
         }); 
 
     });
