@@ -56,13 +56,13 @@ describe('queue test', function() {
             expect(q.back()).to.be.equal(45);
         });
 
-        it('clear() should empty the queue', function(){
+        it('.clear() should empty the queue', function(){
             expect(q.length()).to.be.equal(2);
             q.clear();
             expect(q.length()).to.be.equal(0);
         });
 
-        it('getElements() should return all elements', function(){
+        it('.getElements() should return all elements', function(){
             q.enqueue(1);
             q.enqueue(8);
             q.enqueue(45);
