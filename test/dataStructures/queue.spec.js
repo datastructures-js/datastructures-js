@@ -66,7 +66,7 @@ describe('queue test', function() {
             q.enqueue(1);
             q.enqueue(8);
             q.enqueue(45);
-            let elements = q.getElements();
+            var elements = q.getElements();
             expect(elements[0]).to.be.equal(1);
             expect(elements[1]).to.be.equal(8);
             expect(elements[2]).to.be.equal(45);
