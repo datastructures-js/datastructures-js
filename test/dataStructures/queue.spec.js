@@ -62,14 +62,14 @@ describe('queue test', function() {
             expect(q.length()).to.be.equal(0);
         });
 
-        it('.getElements() should return all elements', function(){
+        it('.toArray() should return all elements as an array', function(){
             q.enqueue(1);
             q.enqueue(8);
+            q.dequeue();
             q.enqueue(45);
-            var elements = q.getElements();
-            expect(elements[0]).to.be.equal(1);
-            expect(elements[1]).to.be.equal(8);
-            expect(elements[2]).to.be.equal(45);
+            var elements = q.toArray();
+            expect(elements[0]).to.be.equal(8);
+            expect(elements[1]).to.be.equal(45);
         });
 
     });
