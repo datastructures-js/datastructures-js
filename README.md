@@ -85,6 +85,18 @@ var isEmpty = queue.isEmpty(); // false
 ```javascript
 var len = queue.length(); // 1
 ```
+**.clear()** clears the queue
+```javascript
+queue.clear();
+queue.length(); // 0
+```
+**.toArray()** converts the queue to an array with front starting at 0
+```javascript
+queue.enqueue(1);
+queue.enqueue(4);
+queue.enqueue(2);
+var elements = queue.toArray(); // [1, 4, 2]
+```
 
 ## PriorityQueue
 elements data type: object, number, string, boolean or null.
