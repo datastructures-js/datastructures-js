@@ -39,6 +39,12 @@ describe('queue tests', () => {
         });
     });
 
+    describe('toArray()', () => {
+        it('should dequeue all elements', function() {
+            expect(queue.toArray()).to.deep.equal([1, 8, 45]);
+        });
+    });
+
     describe('dequeue()', () => {
         it('should dequeue all elements', function() {
             expect(queue.dequeue()).to.be.equal(1);
