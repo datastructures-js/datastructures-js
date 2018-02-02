@@ -1,13 +1,10 @@
 language: node_js
 node_js:
-    - "0.10"
-    - "0.11"
-    - "0.12"
+    - "6"
+    - "7"
+    - "8"
 install:
     - npm install -g grunt-cli
-    - npm install -g codeclimate-test-reporter
     - npm install
 script:
-    - grunt
-after_script:
-    - CODECLIMATE_REPO_TOKEN=3ffe577d8ce67dbf78d34cc3cce3ce602d33d9b9f11c689feb04f0cb77e487c8 codeclimate < ./coverage/lcov.info
+    - grunt build

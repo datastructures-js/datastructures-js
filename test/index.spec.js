@@ -1,43 +1,51 @@
-var expect = require('chai').expect,
-    ds = require('../index');
+'use strict';
 
-describe('index (main module) test', function() {
+const expect    = require('chai').expect,
+      ds        = require('../lib'),
+      dsFactory = require('../index');
 
-    'use strict';
+describe('dsFactory tests', function() {
 
     it('should get a stack object', function() {
-        expect(ds.stack()).to.be.an('object');
-    });
-
-    it('should get a queue object', function() {
-        expect(ds.queue()).to.be.an('object');
-    });
-
-    it('should get a priorityQueue object', function() {
-        expect(ds.priorityQueue()).to.be.an('object');
+        expect(dsFactory.stack()).to.be.instanceof(ds.Stack);
     });
 
     it('should get a set object', function() {
-        expect(ds.set()).to.be.an('object');
+        expect(dsFactory.set()).to.be.instanceof(ds.Set);
+    });
+
+    it('should get a queue object', function() {
+        expect(dsFactory.queue()).to.be.instanceof(ds.Queue);
+        expect(dsFactory.q()).to.be.instanceof(ds.Queue);
+    });
+
+    it('should get a priorityQueue object', function() {
+        expect(dsFactory.priorityQueue()).to.be.instanceof(ds.PriorityQueue);
+        expect(dsFactory.pq()).to.be.instanceof(ds.PriorityQueue);
     });
 
     it('should get a linkedList object', function() {
-        expect(ds.linkedList()).to.be.an('object');
+        expect(dsFactory.linkedList()).to.be.instanceof(ds.LinkedList);
+        expect(dsFactory.ll()).to.be.instanceof(ds.LinkedList);
     });
 
     it('should get a doublyLinkedList object', function() {
-        expect(ds.doublyLinkedList()).to.be.an('object');
-    });
-
-    it('should get a hashtable object', function() {
-        expect(ds.hashtable()).to.be.an('object');
+        expect(dsFactory.doublyLinkedList()).to.be.instanceof(ds.DoublyLinkedList);
+        expect(dsFactory.dll()).to.be.instanceof(ds.DoublyLinkedList);
     });
 
     it('should get a binarySearchTree object', function() {
-        expect(ds.binarySearchTree()).to.be.an('object');
+        expect(dsFactory.binarySearchTree()).to.be.instanceof(ds.BinarySearchTree);
+        expect(dsFactory.bst()).to.be.instanceof(ds.BinarySearchTree);
+    });
+
+    it('should get a graph object', function() {
+        expect(dsFactory.graph()).to.be.instanceof(ds.Graph);
+        expect(dsFactory.g()).to.be.instanceof(ds.Graph);
     });
 
     it('should get a directedGraph object', function() {
-        expect(ds.directedGraph()).to.be.an('object');
+        expect(dsFactory.directedGraph()).to.be.instanceof(ds.DirectedGraph);
+        expect(dsFactory.dg()).to.be.instanceof(ds.DirectedGraph);
     });
 });
