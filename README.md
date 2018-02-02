@@ -1,4 +1,4 @@
-<img width="399" alt="ds_logo" src="https://user-images.githubusercontent.com/6517308/35717029-4ca29d26-07a2-11e8-8b4e-eb4c3e8d736d.png">
+<img width="456" alt="da_logo_2" src="https://user-images.githubusercontent.com/6517308/35717375-705df47a-07a4-11e8-9867-fbb144f222ed.png">
 
 [![build:?](https://travis-ci.org/eyas-ranjous/datastructures-js.svg?branch=master)](https://travis-ci.org/eyas-ranjous/datastructures-js) [![npm](https://img.shields.io/npm/v/datastructures-js.svg)](https://www.npmjs.com/package/datastructures-js) [![Maintainability](https://api.codeclimate.com/v1/badges/4a335c4842eab2f83497/maintainability)](https://codeclimate.com/github/eyas-ranjous/datastructures-js/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/4a335c4842eab2f83497/test_coverage)](https://codeclimate.com/github/eyas-ranjous/datastructures-js/test_coverage)
 
