@@ -194,81 +194,105 @@ var len = queue.length(); // 1
 ```
 
 ## Set
-elements data type: number, string, boolean or null.
+elements data type: number, string, boolean, null, undefined.
+
+**construction**
 ```javascript
-var set = ds.set();
+let set = ds.set();
 ```
-**.add(element)** adds an element to the set.
+
+**.add(element)** 
+
+adds an element to the set.
 ```javascript
 set.add('A');
 set.add('B');
 set.add('C');
 set.add('D');
 ```
-**.isEmpty()** returns true if the set is empty or false if not.
+**.isEmpty()** 
+
+checks if the set is empty.
 ```javascript
-var empty = set.isEmpty(); // false
+let isEmpty = set.isEmpty(); // false
 ```
-**.contains(element)** returns true the set contains the element or false if not.
+
+**.contains(element)** 
+
+checks if the set contains an element
 ```javascript
-var cont = set.contains('C'); // true
+let contains = set.contains('C'); // true
 ```
-**.remove(element)** removes an element (if it exists) from the set.
+
+**.remove(element)** 
+
+removes an element from the set.
 ```javascript
 set.remove('C');
 console.log(set.contains('C')); // false
 ```
-**.iterator()**  returns an iterator object over the set with two functions: 
 
-* .hasNext() returns true if there's a next element or false when it hits the end.
-* .next() returns the next element or null when it hits the end.
-```javascript
-var iterator = set.iterator();
-while (iterator.hasNext()) {
-	console.log(iterator.next());
-}
-// A
-// B
-// D
-```
-**.size()** returns the number of elements in the set.
-```javascript
-var s = set.size(); // 3
-```
-**.union(s)** unions the set with another set and returns the resulting set.
-```javascript
-var s = ds.set();
-s.add('A', 'E', 'F');
-var unionSet = set.union(s); // resulting set has B, D, E, F
-```
-**.intersect(s)** intersects the set with another set and returns the resulting set.
-```javascript
-var s = ds.set();
-s.add('A', 'E', 'F');
-// set contains A, B, D
-var intersectSet = set.intersect(s); // intersectSet contains A
+**.size()** 
 
-```
-**.difference(s)** returns a set that contains the elements found in the set but not in s.
+returns the number of elements in the set.
 ```javascript
-var s = ds.set();
-s.add('E', 'F', 'A');
+let size = set.size(); // 3
+```
+
+**.union(set)** 
+
+unions the set with another set and returns the resulting set.
+```javascript
+let set2 = ds.set();
+set.add('A', 'E', 'F');
+let unionSet = set.union(set2); // resulting set has B, D, E, F
+```
+
+**.intersect(set)** 
+
+intersects the set with another set and returns the resulting set.
+```javascript
+let set2 = ds.set();
+set.add('A', 'E', 'F');
 // set contains A, B, D
-var diffSet = set.difference(s); // diffSet contains B, D
+let intersectSet = set.intersect(set2); // intersectSet contains A
 ```
-**.isSubset(s)** returns true if the set is a subset of s or false if not.
+
+**.diff(set)** 
+
+returns the diff set between the set and another set.
 ```javascript
-var s1 = ds.set();
-var s2 = ds.set();
+let set2 = ds.set();
+set.add('E', 'F', 'A');
+// set contains A, B, D
+let diffSet = set.difference(set2); // diffSet contains B, D
+```
+
+**.isSubset(set)** 
+
+checks if the set is a subset of another set
+```javascript
+let s1 = ds.set();
+let s2 = ds.set();
 s1.add('B', 'X', 'H');
 s2.add('A', 'G', 'B', 'G', 'D');
 // set has A, B, D
-var d1 = set.isSubset(s1); // false
-var d2 = set.isSubset(s2); // true
+let d1 = set.isSubset(s1); // false
+let d2 = set.isSubset(s2); // true
 ```
-**.clone()** returns a cloned set.
+
+**.toArray()** 
+
+converts the set into an array.
 ```javascript
-var s = set.clone(); // s contains A, B, D
+let arr = set.toArray(); // ['A', 'B', 'D']
+```
+
+**.clear()** 
+
+clears the set
+```javascript
+set.clear(); // set is empty
 ```
 
 ## LinkedList
