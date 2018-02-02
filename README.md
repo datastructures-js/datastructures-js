@@ -413,6 +413,7 @@ catch (e) {
 ```
 
 **.traverse(cb)** 
+
 traverse the linked list and calls cb for each node
 ```javascript
 linkedList.traverse((value) => {
