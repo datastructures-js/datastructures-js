@@ -364,8 +364,8 @@ console.log(n3.getNext().getValue()); // n4
 
 returns the first linkedListNode object in the list.
 ```javascript
-let first = linkedList.findFirst();
-console.log(first.getValue()); // n1
+let head = linkedList.getHead();
+console.log(head.getValue()); // n1
 ```
 
 **.removeFirst()** 
@@ -422,131 +422,112 @@ console.log(linkedList.length()); // 0
 ## DoublyLinkedList
 ![DoublyLinkedList](http://i.imgur.com/p7ZeBUE.jpg "DoublyLinkedList")
 
-node value data type: number, string, boolean or null.
+node value data type: number, string, boolean, null, undefined.
+
+**construction**
 ```javascript
-var dList = ds.doublyLinkedList();
+let dList = ds.doublyLinkedList();
+
+// OR
+
+let dList = ds.dll();
 ```
-**.addFirst(value)** add a node with the specified value to the beginning of the list.
+
+**.addFirst(value)** 
+
+add a node with the specified value to the beginning of the list.
 ```javascript
 dList.addFirst('n1');
 ```
-**.addLast(value)** add a node with the specified value to the end of the list.
+
+**.addLast(value)** 
+
+add a node with the specified value to the end of the list.
 ```javascript
 dList.addLast('n4');
 ```
-**.addAfter(value, newValue)** add a node with newValue after an existing value's node, throws exception if value doesnt exist.
-```javascript
-dList.addAfter('n1', 'n2');
 
+**.addAfter(value, newValue)** 
+
+add a node with newValue after an existing value's node, throws exception if value doesnt exist.
+```javascript
 try {
+    dList.addAfter('n1', 'n2');
     dList.addAfter('n33', 'n2');
 }
 catch (e) {
     console.log(e.message); // node n33 not found
 }
 ```
-**.addBefore(value, newValue)** add a node with newValue before an existing value's node, throws exception if value doesnt exist.
-```javascript
-dList.addBefore('n4', 'n3');
-```
-**.find(value)** returns a read-only node object or null if value not found, the object contains three functions:
 
-* .getNext() returns the next read-only node object or null if it's the last node.
-* .getPrev() returns the previous read-only node object or null if it's the first node.
-* .getValue() returns the node value.
+**.addBefore(value, newValue)** 
+
+add a node with newValue before an existing value's node, throws exception if value doesnt exist.
+```javascript
+try {
+    dList.addBefore('n4', 'n3');
+    dList.addBefore('n33', 'n2');
+}
+catch (e) {
+    console.log(e.message); // node n33 not found
+}
+```
+
+**.find(value)** 
+
+returns a doublyLinkedListNode object that contains three functions:
+
+* .getNext() returns the next doublyLinkedListNode object.
+* .getPrev() returns the previous doublyLinkedListNode object.
+* .getValue() returns the node's value.
 ```javascript
 var n3 = dList.find('n3');
 console.log(n3.getValue()); // n3
 console.log(n3.getNext().getValue()); // n4
 console.log(n3.getPrev().getValue()); // n2
 ```
-**.findFirst()** returns the first read-only node object in the list.
+
+**.getHead()** 
+
+returns the first doublyLinkedListNode object in the list.
 ```javascript
-var first = dList.findFirst();
-console.log(first.getValue()); // n1
+var head = dList.getHead();
+console.log(head.getValue()); // n1
 ```
-**.findLast()** returns the last read-only node object in the list.
-```javascript
-var last = dList.findLast();
-console.log(last.getValue()); // n4
-```
-**.findBefore(value)** returns a read-only node object before the specified value's node or null if value not found.
-```javascript
-var n2 = linkedList.findBefore('n3');
-console.log(n2.getValue()); // n2
-console.log(n2.getNext().getValue()); // n3
-console.log(n2.getPrev().getValue()); // n1
-```
-**.removeFirst()** removes the first node from the list.
+
+**.removeFirst()** 
+
+removes the first node from the list.
 ```javascript
 dList.removeFirst();
 ```
-**.removeLast()** removes the last node from the list.
+
+**.removeLast()** 
+
+removes the last node from the list.
 ```javascript
 dList.removeLast();
 ```
-**.remove(value)** remove the value's node from the list or throw an exception if value not found.
+
+**.remove(value)** 
+
+remove the value's node from the list or throw an exception if value not found.
 ```javascript
 dList.remove('n2');
 ```
-**.count()** returns the number of nodes in the list.
+
+**.length()** 
+
+returns the number of nodes in the list.
 ```javascript
 var count = dList.count();
 ```
-**.clear()** clears all the nodes from the list.
+
+**.clear()** 
+
+clears all the nodes from the list.
 ```javascript
 dList.clear();
-```
-
-
-## HashTable
-* keys data type: number, string 
-* values data type: object, string, number, boolean, null.
-```javascript
-var hashtable = ds.hashtable();
-```
-
-**.put(key, value)** adds a key-value pair to the hashtable.
-```javascript
-hashtable.put('john', 4567);
-hashtable.put('samantha', 1234);
-```
-
-**.get(key)** returns the data associated with key.
-```javascript
-var data = hashtable.get('john'); // 4567
-```
-
-**.contains(key)** returns true if the hashtable contains the key.
-```javascript
-var hasData = hashtable.contains('john'); // true
-```
-
-**.iterator()** returns an iterator object over the hashtable with two functions: 
-
-* .hasNext() returns true if there's a next element or false when it hits the end.
-* .next() returns a hashTablePair read-only object with two functions:
-    * .getKey() returns the key of the pair.
-    * .getValue() returns the value of the pair.
-```javascript
-var iterator = hashtable.iterator();
-
-while (iterator.hashNext()) {
-    var pair = iterator.next();
-    console.log(pair.getKey() + ': ' + pair.getValue());
-}
-//  john: 4567
-//  samantha: 1234
-```
-
-**.remove(key)** removes a key-value pair by key.
-```javascript
-hashtable.remove('john');
-```
-
-**.count()** returns the number of key-value pairs in the hashtable.
-```javascript
-var length = hashtable.count(); // 1
 ```
 
 ## BinarySearchTree
