@@ -298,75 +298,138 @@ set.clear(); // set is empty
 ## LinkedList
 ![LinkedList](http://i.imgur.com/ZyD3HJL.jpg "LinkedList")
 
-node value data type: number, string, boolean or null.
+node value data type: number, string, boolean, null, undefined.
+
+**construction**
 ```javascript
-var linkedList = ds.linkedList();
+let linkedList = ds.linkedList();
+
+// OR
+
+let linkedList = ds.ll();
 ```
-**.addFirst(value)** add a node with the specified value to the beginning of the list.
+
+**.addFirst(value)** 
+
+add a node with the specified value to the beginning of the list.
 ```javascript
 linkedList.addFirst('n1');
 ```
-**.addLast(value)** add a node with the specified value to the end of the list.
+
+**.addLast(value)** 
+
+add a node with the specified value to the end of the list.
 ```javascript
 linkedList.addLast('n4');
 ```
-**.addAfter(value, newValue)** add a node with newValue after an existing value's node, throws exception if value doesnt exist.
-```javascript
-linkedList.addAfter('n1', 'n2');
 
+**.addAfter(value, newValue)** 
+
+add a node with newValue after an existing value's node, throws exception if value doesnt exist.
+```javascript
 try {
-    linkedList.addAfter('n33', 'n2');
+    linkedList.addAfter('n1', 'n2');
+    linkedList.addAfter('n33', 'n3');
 }
 catch (e) {
     console.log(e.message); // node n33 not found
 }
 ```
-**.addBefore(value, newValue)** add a node with newValue before an existing value's node, throws exception if value doesnt exist.
-```javascript
-linkedList.addBefore('n4', 'n3');
-```
-**.find(value)** returns a read-only node object or null if value not found, the object contains two functions:
 
-* .getNext() returns the next read-only node object or null if it's the last node.
+**.addBefore(value, newValue)** 
+
+add a node with newValue before an existing value's node, throws exception if value doesnt exist.
+```javascript
+try {
+    linkedList.addBefore('n1', 'n2');
+    linkedList.addBefore('n33', 'n3');
+}
+catch (e) {
+    console.log(e.message); // node n33 not found
+}
+```
+
+**.find(value)** 
+
+returns a linkedListNode object that contains two functions:
+* .getNext() returns the next linkedListNode object.
 * .getValue() returns the node value.
 ```javascript
-var n3 = linkedList.find('n3');
+let n3 = linkedList.find('n3');
 console.log(n3.getValue()); // n3
 console.log(n3.getNext().getValue()); // n4
 ```
-**.findFirst()** returns the first read-only node object in the list.
+
+**.findFirst()** 
+
+returns the first linkedListNode object in the list.
 ```javascript
-var first = linkedList.findFirst();
+let first = linkedList.findFirst();
 console.log(first.getValue()); // n1
 ```
-**.findLast()** returns the last read-only node object in the list.
+
+**.findLast()** 
+
+returns the last linkedListNode object in the list.
 ```javascript
-var last = linkedList.findLast();
+let last = linkedList.findLast();
 console.log(last.getValue()); // n4
 ```
-**.findBefore(value)** returns the read-only node object before the specified value's node or null if value not found
+
+**.findBefore(value)** 
+
+returns the linkedListNode object before the specified value's node.
 ```javascript
-var n2 = linkedList.findBefore('n3');
+let n2 = linkedList.findBefore('n3');
 console.log(n2.getValue()); // n2
 console.log(n2.getNext().getValue()); // n3
 ```
-**.removeFirst()** removes the first node in the list.
+
+**.removeFirst()** 
+
+removes the first node in the list.
 ```javascript
 linkedList.removeFirst();
 ```
-**.removeLast()** removes the last node in the list.
+
+**.removeLast()** 
+
+removes the last node in the list.
 ```javascript
 linkedList.removeLast();
 ```
-**.remove(value)** remove the value's node from the list or throw an exception if value not found.
+
+**.remove(value)** 
+
+remove the value's node from the list or throw an exception if value not found.
 ```javascript
-linkedList.remove('n2');
+try {
+    linkedList.remove('n2');
+    linkedList.remove('n33');
+}
+catch (e) {
+    console.log(e.message); // node n33 not found
+}
 ```
-**.count()** returns the number of nodes in the list.
+
+**.traverse(cb)** 
+traverse the linked list and calls cb for each node
 ```javascript
-var length = linkedList.count();
+linkedList.traverse((value) => {
+    console.log(value);
+});
 ```
-**.clear()** removes all the nodes from the list.
+
+**.length()** 
+
+returns the number of nodes in the list.
+```javascript
+let length = linkedList.count();
+```
+
+**.clear()** 
+
+removes all the nodes from the list.
 ```javascript
 linkedList.clear();
 console.log(linkedList.length()); // 0	
