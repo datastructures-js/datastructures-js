@@ -1,13 +1,20 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=f37987f5b690b8affb67ad1a7e1520e01c3e6cd20bf44b3dcdb90a4c8108de55
 language: node_js
 node_js:
-    - "0.10"
-    - "0.11"
-    - "0.12"
+    - "6"
+    - "7"
+    - "8"
 install:
     - npm install -g grunt-cli
     - npm install -g codeclimate-test-reporter
     - npm install
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 script:
-    - grunt
+    - grunt build
 after_script:
-    - CODECLIMATE_REPO_TOKEN=3ffe577d8ce67dbf78d34cc3cce3ce602d33d9b9f11c689feb04f0cb77e487c8 codeclimate < ./coverage/lcov.info
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
