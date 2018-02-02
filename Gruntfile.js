@@ -1,15 +1,7 @@
-/*!
- * datastructures-js
- * Gruntfile
- * Copyright(c) 2015 Eyas Ranjous <eyas.ranjous@gmail.com>
- * MIT Licensed
- */
-
 'use strict';
 
 module.exports = function(grunt) {
 
-    // project configuration
     grunt.initConfig({
         jshint: {
             options: {
@@ -37,8 +29,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-mocha-test');
     grunt.loadNpmTasks('grunt-mocha-istanbul');
 
-    grunt.registerTask('build', ['jshint']);
+    grunt.registerTask('lint', ['jshint']);
     grunt.registerTask('test', ['mochaTest']);
-    grunt.registerTask('test-coverage', ['mocha_istanbul']);
-    grunt.registerTask('default', ['build', 'test', 'test-coverage']);
+    grunt.registerTask('coverage', ['mocha_istanbul']);
+    grunt.registerTask('build', ['lint', 'coverage']);
 };
