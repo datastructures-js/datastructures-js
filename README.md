@@ -360,29 +360,12 @@ console.log(n3.getValue()); // n3
 console.log(n3.getNext().getValue()); // n4
 ```
 
-**.findFirst()** 
+**.getHead()** 
 
 returns the first linkedListNode object in the list.
 ```javascript
 let first = linkedList.findFirst();
 console.log(first.getValue()); // n1
-```
-
-**.findLast()** 
-
-returns the last linkedListNode object in the list.
-```javascript
-let last = linkedList.findLast();
-console.log(last.getValue()); // n4
-```
-
-**.findBefore(value)** 
-
-returns the linkedListNode object before the specified value's node.
-```javascript
-let n2 = linkedList.findBefore('n3');
-console.log(n2.getValue()); // n2
-console.log(n2.getNext().getValue()); // n3
 ```
 
 **.removeFirst()** 
