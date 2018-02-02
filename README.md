@@ -13,19 +13,19 @@ npm install datastructures-js
 
 ## Usage
 ```javascript
-var ds = require('datastructures-js');
+let ds = require('datastructures-js');
 ```
 
 ## Data Structures
 - [Stack](#stack)
 - [Queue](#queue)
-- [PriorityQueue](#priorityqueue)
+- [Priority Queue](#priorityqueue)
 - [Set](#set)
-- [LinkedList](#linkedlist)
-- [DoublyLinkedList](#doublylinkedlist)
-- [BinarySearchTree](#binarysearchtree)
+- [Linked List](#linkedlist)
+- [Doubly Linked List](#doublylinkedlist)
+- [Binary Search Tree](#binarysearchtree)
 - [Graph](#graph)
-- [DirectedGraph](#directedgraph)
+- [Directed Graph](#directedgraph)
 
 ## Contribution & License
 - [Contribution](#contribution)
@@ -48,68 +48,92 @@ stack.push('test');
 
 returns the top element in the stack.
 ```javascript
-var element = stack.peek(); // test
+let element = stack.peek(); // test
 ```
 **.pop()** 
 
 pops the top element of the stack.
 ```javascript
-var element = stack.pop(); // test
+let element = stack.pop(); // test
 ```
 **.isEmpty()** 
 
 checks if the stack is empty.
 ```javascript
-var isEmpty = stack.isEmpty(); // true
+let isEmpty = stack.isEmpty(); // true
 ```
 **.length()** 
 
 returns the length length of the stack.
 ```javascript
-var len = stack.length(); // 0
+let length = stack.length(); // 0
 ```
 
 ## Queue
-elements data type: object, number, string, boolean or null.
+elements data type: any type.
+
+**creating an instance**
 ```javascript
-var queue = ds.queue();
+let queue = ds.queue();
+
+// OR
+
+let queue = ds.q();
 ```
-**.enqueue(element)** adds an element to the back of the queue.
+**.enqueue(element)** 
+
+adds an element to the back of the queue.
 ```javascript
 queue.enqueue(10);
 queue.enqueue(20);
 ```
-**.front()** returns the front element in queue or null if the queue is empty.
+**.front()** 
+
+returns the front element in queue.
 ```javascript
 var f = queue.front(); // 10
 ```
-**.back()** returns the back element in the queue or null if the queue is empty.
+**.back()** 
+
+returns the back element in the queue.
 ```javascript
 var b = queue.back(); // 20
 ```
-**.dequeue()** returns and removes the front element in the queue or null if the queue is empty.
+
+**.dequeue()** 
+
+dequeues an element from the queue.
 ```javascript
 var element = queue.dequeue(); // 10
 ```
-**.isEmpty()** returns true if the queue is empty or false if not.
+
+**.isEmpty()** 
+
+checks if the queue is empty.
 ```javascript
 var isEmpty = queue.isEmpty(); // false
 ```
-**.length()** returns the number of elements in the queue
+**.length()** 
+
+returns the length of the queue
 ```javascript
 var len = queue.length(); // 1
 ```
-**.clear()** clears the queue
-```javascript
-queue.clear();
-queue.length(); // 0
-```
+
 **.toArray()** converts the queue to an array with front starting at 0
 ```javascript
 queue.enqueue(1);
 queue.enqueue(4);
 queue.enqueue(2);
 var elements = queue.toArray(); // [1, 4, 2]
+```
+
+**.clear()** 
+
+clears the queue
+```javascript
+queue.clear();
+queue.length(); // 0
 ```
 
 ## PriorityQueue
