@@ -34,7 +34,7 @@ let ds = require('datastructures-js');
 ## Stack
 elements data type: any type.
 
-**creating an instance**
+**construction**
 ```javascript
 let stack = ds.stack();
 ```
@@ -72,7 +72,7 @@ let length = stack.length(); // 0
 ## Queue
 elements data type: any type.
 
-**creating an instance**
+**construction**
 ```javascript
 let queue = ds.queue();
 
@@ -139,36 +139,59 @@ queue.length(); // 0
 ```
 
 ## PriorityQueue
-elements data type: object, number, string, boolean or null.
+elements data type: any type.
+
+**construction**
 ```javascript
-var pQueue = ds.priorityQueue();
+let pQueue = ds.priorityQueue();
+
+// OR
+
+let pQueue = ds.pq();
 ```
-**.enqueue(element, priority)** adds an element with priority (number) to the back of the queue.
+
+**.enqueue(element, priority)** 
+
+adds an element with priority (number) to the back of the queue.
 ```javascript
 pQueue.enqueue('patient 1', 2); // lower priority
 pQueue.enqueue('patient 2', 1); // higher priority
 ```
-**.front()** returns the front element in queue or null if the queue is empty.
+
+**.front()** 
+
+returns the front element in queue.
 ```javascript
-var f = pQueue.front(); // patient 1
+var front = pQueue.front(); // patient 1
 ```
-**.back()** returns the back element in the queue or null if the queue is empty.
+
+**.back()** 
+
+returns the back element in the queue.
 ```javascript
-var b = pQueue.back(); // patient 3
+var back = pQueue.back(); // patient 3
 ```
-**.dequeue()** returns and removes the front element in the queue or null if the queue is empty.
+
+**.dequeue()** 
+
+dequeues the highest priority element from the queue.
 ```javascript
-var e1 = pQueue.dequeue(); // patient 2
+var element = pQueue.dequeue(); // patient 2
 ```
-**.isEmpty()** returns true if the queue is empty or false if not.
+
+**.isEmpty()** 
+
+checks if the queue is empty.
 ```javascript
 var isEmpty = queue.isEmpty(); // false
 ```
-**.length()** returns the number of elements in the queue.
+
+**.length()** 
+
+returns the length of the queue.
 ```javascript
 var len = queue.length(); // 1
 ```
-
 
 ## Set
 elements data type: number, string, boolean or null.
