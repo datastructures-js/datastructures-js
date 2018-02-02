@@ -1,63 +1,137 @@
-/*!
- * datastructures-js
- * index (main module object)
- * Copyright(c) 2015 Eyas Ranjous <eyas.ranjous@gmail.com>
- * MIT Licensed
- */
-
 'use strict';
 
-var di = require('./di');
+const ds = require('./lib');
 
-module.exports = (function() {
+class DsFactory {
 
-    var self = {};
+    /**
+     * @public
+     * @returns {Stack}
+     */    
+    stack() {
+        return new ds.Stack();
+    }
 
-    self.stack = function() {
-        var stack = di.getFactory('ds', 'stack')();
-        return di.exportObject(stack);
-    };
+    /**
+     * @public
+     * @returns {Set}
+     */   
+    set() {
+        return new ds.Set();
+    }
 
-    self.queue = function() {
-        var queue = di.getFactory('ds', 'queue')();
-        return di.exportObject(queue);
-    };
+    /**
+     * @public
+     * @returns {Queue}
+     */   
+    queue() {
+        return new ds.Queue();
+    }
 
-    self.priorityQueue = function() {
-        var priorityQueue = di.getPriorityQueueFactory()();
-        return di.exportObject(priorityQueue);
-    };
+    /**
+     * @public
+     * @returns {Queue}
+     */   
+    q() {
+        return new ds.Queue();
+    }
 
-    self.set = function() {
-        var set = di.getSetFactory()();
-        return di.exportObject(set);
-    };
+    /**
+     * @public
+     * @returns {PriorityQueue}
+     */   
+    priorityQueue() {
+        return new ds.PriorityQueue();
+    }
 
-    self.linkedList = function() {
-        var linkedList = di.getLinkedListFactory()();
-        return di.exportObject(linkedList);
-    };
+    /**
+     * @public
+     * @returns {PriorityQueue}
+     */  
+    pq() {
+        return new ds.PriorityQueue();
+    }
 
-    self.doublyLinkedList = function() {
-        var doublyLinkedList = di.getDoublyLinkedListFactory()();
-        return di.exportObject(doublyLinkedList);
-    };
+    /**
+     * @public
+     * @returns {LinkedList}
+     */  
+    linkedList() {
+        return new ds.LinkedList();
+    }
 
-    self.hashtable = function() {
-        var hashtable = di.getHashtableFactory()();
-        return di.exportObject(hashtable);
-    };
+    /**
+     * @public
+     * @returns {LinkedList}
+     */  
+    ll() {
+        return new ds.LinkedList();
+    }
 
-    self.binarySearchTree = function() {
-        var binarySearchTree = di.getBinarySearchTreeFactory()();
-        return di.exportObject(binarySearchTree);
-    };
+    /**
+     * @public
+     * @returns {DoublyLinkedList}
+     */  
+    doublyLinkedList() {
+        return new ds.DoublyLinkedList();
+    }
 
-    self.directedGraph = function() {
-       var directedGraph = di.getFactory('ds', 'directedGraph')();
-        return di.exportObject(directedGraph);
-    };
+    /**
+     * @public
+     * @returns {DoublyLinkedList}
+     */  
+    dll() {
+        return new ds.DoublyLinkedList();
+    }
 
-    return self;
+    /**
+     * @public
+     * @returns {BinarySearchTree}
+     */  
+    binarySearchTree() {
+        return new ds.BinarySearchTree();
+    }
 
-}());
+    /**
+     * @public
+     * @returns {BinarySearchTree}
+     */  
+    bst() {
+        return new ds.BinarySearchTree();
+    }
+
+    /**
+     * @public
+     * @returns {Graph}
+     */  
+    graph() {
+        return new ds.Graph();
+    }
+
+    /**
+     * @public
+     * @returns {Graph}
+     */  
+    g() {
+        return new ds.Graph();
+    }
+
+    /**
+     * @public
+     * @returns {DirectedGraph}
+     */  
+    directedGraph() {
+        return new ds.DirectedGraph();
+    }
+    
+    /**
+     * @public
+     * @returns {DirectedGraph}
+     */  
+    dg() {
+        return new ds.DirectedGraph();
+    }
+
+}
+
+module.exports = new DsFactory();
