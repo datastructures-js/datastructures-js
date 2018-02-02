@@ -658,7 +658,7 @@ console.log(n40.getLeft().getValue()); // 20
 ## Graph
 <img width="513" alt="graph" src="https://user-images.githubusercontent.com/6517308/35726652-35d54d7c-07cb-11e8-9d4e-998fb9c994c1.png">
 
-vertex data type: string, number
+vertex data type: string, number, boolean, null, undefined
 
 **construction**
 ```javascript
@@ -764,6 +764,7 @@ console.log(vertices); // [ 'v5', 'v4', 'v3', 'v2', 'v1' ]
 ```
 
 **findShortestPath(v1, v2)**
+
 find all possible shortests paths between two vertices in the graph
 ``` javascript
 let shortestPath = graph.findShortestPath('v1', 'v5'); // [ ['v1', 'v2', 'v4', 'v3', 'v5'] ]
@@ -771,6 +772,29 @@ let shortestPath = graph.findShortestPath('v1', 'v5'); // [ ['v1', 'v2', 'v4', '
 
 ## DirectedGraph
 <img width="496" alt="dgraph" src="https://user-images.githubusercontent.com/6517308/35726809-c5ff0aaa-07cb-11e8-8e4b-a0e337d0c088.png">
+
+**construction**
+``` javascript
+let dgraph = ds.directedGraph();
+
+// OR
+
+let dgraph = ds.dg();
+```
+
+The Directed Graph extends the Graph implementation and override the following functions:
+
+**.addEdge(v1, v2, weight)**
+
+adds a weighted direction from v1 to v2
+
+**hasEdge(v1, v2)**
+
+checks if the graph has a direction from v1 to v2
+
+**removeEdge(v1, v2)**
+
+removes the direction from v1 to v2
 
 ## Contribution
 Fork and then clone the repo:
@@ -785,17 +809,17 @@ install dependencies
 ```
 npm install
 ```
-Create a branch with a name indicatig the fix/feature
+Create a branch from development branch with a name indicatig the fix/feature
 ```
 git checkout -b fix-branch
 ```
 run all tasks
 ```
-grunt
-```
-to run build only
-```
 grunt build
+```
+to run lint only
+```
+grunt lint
 ```
 to run tests only
 ```
@@ -803,14 +827,14 @@ grunt test
 ```
 to run test coverage only
 ```
-grunt test-coverage
+grunt coverage
 ```
 
 when everything is OK, push the changes to the same branch
 ```
 git push origin fix-branch
 ```
-and create a pull request.
+and create a pull request from **development** branch.
 
 Changes are reviewed and merged if all is ok.
 
