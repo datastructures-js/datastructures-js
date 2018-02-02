@@ -91,41 +91,43 @@ queue.enqueue(20);
 
 returns the front element in queue.
 ```javascript
-var f = queue.front(); // 10
+let front = queue.front(); // 10
 ```
 **.back()** 
 
 returns the back element in the queue.
 ```javascript
-var b = queue.back(); // 20
+let back = queue.back(); // 20
 ```
 
 **.dequeue()** 
 
 dequeues an element from the queue.
 ```javascript
-var element = queue.dequeue(); // 10
+let element = queue.dequeue(); // 10
 ```
 
 **.isEmpty()** 
 
 checks if the queue is empty.
 ```javascript
-var isEmpty = queue.isEmpty(); // false
+let isEmpty = queue.isEmpty(); // false
 ```
 **.length()** 
 
 returns the length of the queue
 ```javascript
-var len = queue.length(); // 1
+var length = queue.length(); // 1
 ```
 
-**.toArray()** converts the queue to an array with front starting at 0
+**.toArray()** 
+
+converts the queue to an array with front starting at 0
 ```javascript
 queue.enqueue(1);
 queue.enqueue(4);
 queue.enqueue(2);
-var elements = queue.toArray(); // [1, 4, 2]
+let elements = queue.toArray(); // [1, 4, 2]
 ```
 
 **.clear()** 
