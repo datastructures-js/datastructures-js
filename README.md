@@ -4,7 +4,7 @@
 [![npm](https://img.shields.io/npm/v/datastructures-js.svg)](https://www.npmjs.com/package/datastructures-js)
 [![npm](https://img.shields.io/npm/dm/datastructures-js.svg)](https://www.npmjs.com/packages/datastructures-js) [![npm](https://img.shields.io/badge/node-%3E=%206.0-blue.svg)](https://www.npmjs.com/package/sort-algorithms-js) [![Maintainability](https://api.codeclimate.com/v1/badges/4a335c4842eab2f83497/maintainability)](https://codeclimate.com/github/eyas-ranjous/datastructures-js/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/4a335c4842eab2f83497/test_coverage)](https://codeclimate.com/github/eyas-ranjous/datastructures-js/test_coverage)
 
-Javascript implementation of the main data structures. Each data structure object is constructed from the main module using a factory function that holds the data structure name.
+Javascript implementation of the main data structures. Each data structure object is constructed using a factory function that holds the data structure name.
 
 ## Install
 ```
@@ -16,44 +16,55 @@ npm install datastructures-js
 var ds = require('datastructures-js');
 ```
 
-## Implemented Data Structures
+## Data Structures
 - [Stack](#stack)
 - [Queue](#queue)
 - [PriorityQueue](#priorityqueue)
 - [Set](#set)
 - [LinkedList](#linkedlist)
 - [DoublyLinkedList](#doublylinkedlist)
-- [HashTable](#hashtable)
 - [BinarySearchTree](#binarysearchtree)
+- [Graph](#graph)
 - [DirectedGraph](#directedgraph)
 
 ## Contribution & License
 - [Contribution](#contribution)
 - [License](#license)
 
-
 ## Stack
-elements data type: object, number, string, boolean or null.
+elements data type: any type.
+
+**creating an instance**
 ```javascript
-var stack = ds.stack();
+let stack = ds.stack();
 ```
-**.push(element)** push an element to the top of the stack.
+**.push(element)** 
+
+push an element to the top of the stack.
 ```javascript
 stack.push('test');
 ```
-**.peek()** returns the top element in the stack or null if the stack is empty.
+**.peek()** 
+
+returns the top element in the stack.
 ```javascript
 var element = stack.peek(); // test
 ```
-**.pop()** returns and removes the top element in the stack or null if the stack is empty.
+**.pop()** 
+
+pops the top element of the stack.
 ```javascript
 var element = stack.pop(); // test
 ```
-**.isEmpty()** returns true if the stack is empty or false if not.
+**.isEmpty()** 
+
+checks if the stack is empty.
 ```javascript
 var isEmpty = stack.isEmpty(); // true
 ```
-**.length()** returns the number of elements in the stack.
+**.length()** 
+
+returns the length length of the stack.
 ```javascript
 var len = stack.length(); // 0
 ```
