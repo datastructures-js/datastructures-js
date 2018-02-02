@@ -538,6 +538,10 @@ node value data type: string, number
 **construction**
 ```javascript
 let bst = ds.binarySearchTree();
+
+// OR
+
+let bst = ds.bst();
 ```
 
 **.insert(value)** 
@@ -651,86 +655,122 @@ let n40 = bst.find(40);
 console.log(n50.getLeft().getValue()); // 40
 console.log(n40.getLeft().getValue()); // 20
 ```
-
-## DirectedGraph
-![DirectedGraph](http://i.imgur.com/zpHcAzm.jpg "DirectedGraph")
+## Graph
+<img width="418" alt="graph" src="https://user-images.githubusercontent.com/6517308/35725512-38ebea74-07c7-11e8-9353-e67330572db5.png">
 
 vertex data type: string, number
-```javascript
-var diGraph = ds.directedGraph();
-```
-**.addVertex(vertex)** adds a vertex to the graph.
-```javascript
-diGraph.addVertex('v1');
-diGraph.addVertex('v2');
-diGraph.addVertex('v3');
-diGraph.addVertex('v4');
-diGraph.addVertex('v5');
-```
-**.hasVertex(vertex)** returns true if the graph contains the vertex or false if not.
-```javascript
-var c1 = diGraph.hasVertex('v3'); // true
-var c2 = diGraph.hasVertex('v77'); // false
-```
-**.countVertices()** returns the number of vertices in the graph.
-```javascript
-var count = diGraph.countVertices(); // 5
-```
-**.addDirection(v1, v2, weight)** adds a direction from v1 to v2 with a weight (number).
-```javascript
-diGraph.addDirection('v1', 'v2', 5);
-diGraph.addDirection('v1', 'v5', 1);
-diGraph.addDirection('v2', 'v4', 2);
-diGraph.addDirection('v3', 'v5', 4);
-diGraph.addDirection('v4', 'v1', 7);
-diGraph.addDirection('v4', 'v3', 4);
-diGraph.addDirection('v5', 'v4', 2);
-```
-**.hasDirection(v1, v2)** returns true there's a direction from v1 to v2.
-```javascript
-var hasDi1 = diGraph.hasDirection('v3', 'v5'); // true
-var hasDi2 = diGraph.hasDirection('v3', 'v1'); // false
-```
-**.getDirectionWeight(v1, v2)** returns direction weight between v1 & v2 or null if no direction exists.
-```javascript
-var weight = diGraph.getDirectionWeight('v4', 'v1'); // 7
-```
-**.visit(func)** visit all the connected vertices in the graph using the depth-first approach and apply func on the reached vertex.
-```javascript
-var visitFunc = function(vertex) {
-    console.log(vertex);
-}
 
-diGraph.visit(visitFunc);
+**construction**
+```javascript
+let graph = ds.graph();
 
-// v1
-// v2
-// v4
-// v3
-// v5
-```
-**.findShortestPath(v1, v2)** returns an array of all the shortest paths between two vertices based on the sum of weights.
-```javascript
-var sp1 = diGraph.findShortestPath('v1', 'v3'); 
-// [['v1', ' v5', 'v4', 'v3']]
+// OR
 
-var sp2 = diGraph.findShortestPath('v4', 'v5');
-// [['v4', 'v1', 'v5'], ['v4', 'v3', 'v5']]
-```
-**.removeDirection(v1, v2)** removes an existing direction between v1 and v2.
-```javascript
-diGraph.removeDirection('v4', 'v3');
-diGraph.removeDirection('v3', 'v5');
-```
-**.getSeparatedVertices()** returns an array of all the vertices that are separated from the graph.
-```javascript
-var s = diGraph.getSeparatedVertices(); // ['v3']
-```
-**.removeVertex(v1)** removes an existing vertex and all its directions (the incoming and outgoing).
-```javascript
-diGraph.removeVertex('v3');
+let graph = ds.g();
 ```
 
+**.addVertex(vertex)** 
+
+adds a vertex to the graph.
+```javascript
+graph.addVertex('test');
+```
+
+**.hasVertex(vertex)**
+
+checks if the graph has a vertex
+```javascript
+let check = graph.hasVertex('test'); // true
+```
+
+**.removeVertex(vertex)**
+
+checks if the graph has a vertex
+```javascript
+graph.removeVertex('test');
+graph.hasVertex('test'); // false
+```
+
+**.addEdge(v1, v2, weight)** 
+
+adds a weighted edge between two existing vertices.
+```javascript
+graph.addVertex('v1');
+graph.addVertex('v2');
+graph.addEdge('v1', 'v2', 3)
+```
+
+**.hasEdge(v1, v2)**
+
+checks if the graph has an edge between two exsiting vertices
+```javascript
+let check = graph.hasEdge('v1', 'v2'); // true
+```
+
+**.removeEdge(v1, v2)**
+
+removes an existing edge in the graph
+```javascript
+graph.removeEdge('v1', 'v2');
+graph.hasEdge('v1', 'v2'); // false
+```
+
+**.addPath(v1, v2, weight)** 
+
+adds an edge between two vertices and creates the vertices if one or both dont exist.
+```javascript
+// building the diagram graph
+graph.addPath('v1', 'v2', 2);
+graph.addPath('v2', 'v3', 3);
+graph.addPath('v1', 'v3', 6);
+graph.addPath('v2', 'v4', 1);
+graph.addPath('v4', 'v3', 1);
+graph.addPath('v4', 'v5', 4);
+graph.addPath('v3', 'v5', 2);
+```
+
+**.getWeight(v1, v2)** 
+
+returns the weight between two vertices
+```javascript
+let w = graph.getWeight('v1', 'v2'); // 2
+```
+
+**.countVertices()** 
+
+returns the number of vertices in the graph.
+```javascript
+let count = graph.countVertices(); // 5
+```
+
+**.traverse(vertex, cb, type)** 
+
+traverse the graph.
+* type: 'bfs' OR 'dfs' (breadth-first search or depth-first search). default is 'bfs'
+``` javascript
+// bfs traverse
+let vertices = [];
+graph.traverse('v1', (v) => {
+    vertices.push(v);
+});
+console.log(vertices); // [ 'v1', 'v2', 'v3', 'v4', 'v5' ]
+
+// dfs traverse
+vertices = [];
+graph.traverse('v1', (v) => {
+    vertices.push(v);
+}, 'dfs');
+console.log(vertices); // [ 'v5', 'v4', 'v3', 'v2', 'v1' ]
+```
+
+**findShortestPath(v1, v2)**
+find all possible shortests paths between two vertices in the graph
+``` javascript
+let shortestPath = graph.findShortestPath('v1', 'v5'); // [ ['v1', 'v2', 'v4', 'v3', 'v5'] ]
+```
+
+## DirectedGraph
+<img width="455" alt="dgraph" src="https://user-images.githubusercontent.com/6517308/35725543-4e0de79a-07c7-11e8-802f-d012d116a547.png">
 
 ## Contribution
 Fork and then clone the repo:
