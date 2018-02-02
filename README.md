@@ -656,7 +656,7 @@ console.log(n50.getLeft().getValue()); // 40
 console.log(n40.getLeft().getValue()); // 20
 ```
 ## Graph
-<img width="418" alt="graph" src="https://user-images.githubusercontent.com/6517308/35725512-38ebea74-07c7-11e8-9353-e67330572db5.png">
+<img width="513" alt="graph" src="https://user-images.githubusercontent.com/6517308/35726652-35d54d7c-07cb-11e8-9d4e-998fb9c994c1.png">
 
 vertex data type: string, number
 
@@ -770,7 +770,7 @@ let shortestPath = graph.findShortestPath('v1', 'v5'); // [ ['v1', 'v2', 'v4', '
 ```
 
 ## DirectedGraph
-<img width="455" alt="dgraph" src="https://user-images.githubusercontent.com/6517308/35725543-4e0de79a-07c7-11e8-802f-d012d116a547.png">
+<img width="496" alt="dgraph" src="https://user-images.githubusercontent.com/6517308/35726809-c5ff0aaa-07cb-11e8-8e4b-a0e337d0c088.png">
 
 ## Contribution
 Fork and then clone the repo:
