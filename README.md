@@ -420,7 +420,7 @@ console.log(linkedList.length()); // 0
 ```
 
 ## DoublyLinkedList
-![DoublyLinkedList](http://i.imgur.com/p7ZeBUE.jpg "DoublyLinkedList")
+![DoublyLinkedList](https://user-images.githubusercontent.com/6517308/35724467-6f2bd49a-07c3-11e8-9d43-616bd0764cfe.jpeg)
 
 node value data type: number, string, boolean, null, undefined.
 
@@ -481,7 +481,7 @@ returns a doublyLinkedListNode object that contains three functions:
 * .getPrev() returns the previous doublyLinkedListNode object.
 * .getValue() returns the node's value.
 ```javascript
-var n3 = dList.find('n3');
+let n3 = dList.find('n3');
 console.log(n3.getValue()); // n3
 console.log(n3.getNext().getValue()); // n4
 console.log(n3.getPrev().getValue()); // n2
@@ -491,7 +491,7 @@ console.log(n3.getPrev().getValue()); // n2
 
 returns the first doublyLinkedListNode object in the list.
 ```javascript
-var head = dList.getHead();
+let head = dList.getHead();
 console.log(head.getValue()); // n1
 ```
 
@@ -520,7 +520,7 @@ dList.remove('n2');
 
 returns the number of nodes in the list.
 ```javascript
-var count = dList.count();
+let length = dList.count();
 ```
 
 **.clear()** 
@@ -531,13 +531,18 @@ dList.clear();
 ```
 
 ## BinarySearchTree
-![BinarySearchTree](http://i.imgur.com/sbWTeM7.jpg "BinarySearchTree")
+![BinarySearchTree](https://user-images.githubusercontent.com/6517308/35724526-a7b46f66-07c3-11e8-93e7-170c8040846e.jpg)
 
 node value data type: string, number
+
+**construction**
 ```javascript
-var bst = ds.binarySearchTree();
+let bst = ds.binarySearchTree();
 ```
-**.insert(value)** inserts a node with the specified value into the tree.
+
+**.insert(value)** 
+
+inserts a node with the specified value into the tree.
 ```javascript
 bst.insert(50);
 bst.insert(80);
@@ -547,65 +552,105 @@ bst.insert(60);
 bst.insert(40);
 bst.insert(20);
 ```
-**.getMinValue()** returns the min value in the tree (most left node value).
-```javascript
-var min = bst.getMinValue(); // 20
-```
-**.getMaxValue()** returns the max value in the tree (most right node value).
-```javascript
-var max = bst.getMaxValue(); // 90
-```
-**.find(value)** returns a read-only node object or null if not found, the object contains three functions:
 
-* .getRight() returns the right child read-only node object or null if it has no right.
-* .getLeft() returns the left child read-only node object or null if it has no left.
+**.getRoot()** 
+
+returns the root node
+```javascript
+let root = bst.getRoot().getValue(); // 90
+```
+
+**.getMin()** 
+
+returns the min value binaryNode object (most left node value).
+```javascript
+let min = bst.getMin().getValue(); // 20
+```
+
+**.getMax()** 
+
+returns the max value binaryNode object (most right node value).
+```javascript
+let max = bst.getMax().getValue(); // 90
+```
+
+**.count()** 
+
+returns number of nodes in the tree
+```javascript
+let count = bst.count(); // 7
+```
+
+**.find(value)** 
+
+returns a binaryNode object that contains three functions:
+* .getRight() returns the right child binaryNode node object.
+* .getLeft() returns the left child binaryNode node object.
 * .getValue() returns the node value.
 ```javascript
-var n = bst.find(30);
+let n = bst.find(30);
 console.log(n.getValue()); // 30
 console.log(n.getRight().getValue()); // 40
 console.log(n.getLeft().getValue()); // 20
 ```
-**.getRoot()** returns the tree root read-only node object.
-```javascript
-var root = bst.getRoot();
-console.log(root.getLeft().getValue()); // 30
-console.log(root.getRight().getValue()); // 80
-console.log(root.getValue()); // 50
-```
-**.remove(value)** removes an value's node (if exists) from the tree.
-```javascript
-bst.remove(30);
 
-var n50 = bst.find(50);
-var n40 = bst.find(40);
-console.log(n50.getLeft().getValue()); // 40
-console.log(n40.getLeft().getValue()); // 20
+**.traverse(cb, order)** 
 
-```
-**.traverse(order, func)** traverse the tree in the defined order and apply func on each reached node.
+traverse the tree in the defined order and apply a callback on each node.
 
-* order: string, takes one of three values: 'inOrder', 'preOrder' or 'postOrder'
-* func: a custom function that has one param: nodeVal which is passed in the traverse.
+* order: 'inOrder' OR 'preOrder' OR 'postOrder'. default is 'inOrder'
+
 ```javascript
-var inOrderTravFunc = function(nodeVal) {
-    console.log(nodeVal);
-}
-bst.traverse('inOrder', inOrderTravFunc);
+// inOrder traverse
+bst.traverse((value) => {
+    console.log(value);
+});
 
 // 20
+// 30
 // 40
 // 50
 // 60
 // 80
 // 90
+
+// preOrder traverse
+bst.traverse((value) => {
+    console.log(value);
+}, 'preOrder');
+
+// 50
+// 30
+// 20
+// 40
+// 80
+// 60
+// 90
+
+// postOrder traverse
+bst.traverse((value) => {
+    console.log(value);
+}, 'postOrder');
+
+// 20
+// 40
+// 30
+// 60
+// 90
+// 80
+// 50
 ```
-**.count()** return the number of nodes in the tree.
+
+**.delete(value)** 
+
+removes a value's node (if exists) from the tree.
 ```javascript
-var count = bst.count() // 6
+bst.remove(30);
+let n50 = bst.find(50);
+let n40 = bst.find(40);
+console.log(n50.getLeft().getValue()); // 40
+console.log(n40.getLeft().getValue()); // 20
 ```
-
-
 
 ## DirectedGraph
 ![DirectedGraph](http://i.imgur.com/zpHcAzm.jpg "DirectedGraph")
