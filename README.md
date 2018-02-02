@@ -1,4 +1,4 @@
-<img width="456" alt="da_logo_2" src="https://user-images.githubusercontent.com/6517308/35717375-705df47a-07a4-11e8-9867-fbb144f222ed.png">
+<img width="446" alt="ds_logo" src="https://user-images.githubusercontent.com/6517308/35717932-accbd0a0-07a7-11e8-8cdd-44c567af0bb5.png">
 
 [![build:?](https://travis-ci.org/eyas-ranjous/datastructures-js.svg?branch=master)](https://travis-ci.org/eyas-ranjous/datastructures-js) 
 [![npm](https://img.shields.io/npm/v/datastructures-js.svg)](https://www.npmjs.com/package/datastructures-js)
