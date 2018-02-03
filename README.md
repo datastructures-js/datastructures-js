@@ -296,7 +296,8 @@ set.clear(); // set is empty
 ```
 
 ## LinkedList
-![LinkedList](http://i.imgur.com/ZyD3HJL.jpg "LinkedList")
+
+<img width="429" alt="ll" src="https://user-images.githubusercontent.com/6517308/35762715-5d00c9bc-0861-11e8-88f7-6e503a1fa3af.png">
 
 node value data type: number, string, boolean, null, undefined.
 
@@ -420,7 +421,7 @@ console.log(linkedList.length()); // 0
 ```
 
 ## DoublyLinkedList
-![DoublyLinkedList](https://user-images.githubusercontent.com/6517308/35724467-6f2bd49a-07c3-11e8-9d43-616bd0764cfe.jpeg)
+<img width="552" alt="dll" src="https://user-images.githubusercontent.com/6517308/35762752-19b17df4-0862-11e8-8ce3-f940d83dde51.png">
 
 node value data type: number, string, boolean, null, undefined.
 
@@ -531,7 +532,8 @@ dList.clear();
 ```
 
 ## BinarySearchTree
-![BinarySearchTree](https://user-images.githubusercontent.com/6517308/35724526-a7b46f66-07c3-11e8-93e7-170c8040846e.jpg)
+
+<img width="413" alt="bst" src="https://user-images.githubusercontent.com/6517308/35762621-74a72626-085f-11e8-8934-ef6facdd6e10.png">
 
 node value data type: string, number
 
@@ -647,16 +649,16 @@ bst.traverse((value) => {
 
 **.delete(value)** 
 
-removes a value's node (if exists) from the tree.
+deletes a value's node (if exists) from the tree.
 ```javascript
-bst.remove(30);
+bst.delete(30);
 let n50 = bst.find(50);
 let n40 = bst.find(40);
 console.log(n50.getLeft().getValue()); // 40
 console.log(n40.getLeft().getValue()); // 20
 ```
 ## Graph
-<img width="513" alt="graph" src="https://user-images.githubusercontent.com/6517308/35726652-35d54d7c-07cb-11e8-9d4e-998fb9c994c1.png">
+<img width="413" alt="graph" src="https://user-images.githubusercontent.com/6517308/35762771-d25ff10a-0862-11e8-9302-812a36eddb9e.png">
 
 vertex data type: string, number, boolean, null, undefined
 
@@ -771,7 +773,7 @@ let shortestPath = graph.findShortestPath('v1', 'v5'); // [ ['v1', 'v2', 'v4', '
 ```
 
 ## DirectedGraph
-<img width="496" alt="dgraph" src="https://user-images.githubusercontent.com/6517308/35726809-c5ff0aaa-07cb-11e8-8e4b-a0e337d0c088.png">
+<img width="424" alt="dgraph" src="https://user-images.githubusercontent.com/6517308/35762789-3f49bc06-0863-11e8-85ee-105b352b1aad.png">
 
 **construction**
 ``` javascript
