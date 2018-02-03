@@ -2,7 +2,7 @@
 
 [![build:?](https://travis-ci.org/eyas-ranjous/datastructures-js.svg?branch=master)](https://travis-ci.org/eyas-ranjous/datastructures-js) 
 [![npm](https://img.shields.io/npm/v/datastructures-js.svg)](https://www.npmjs.com/package/datastructures-js)
-[![npm](https://img.shields.io/npm/dm/datastructures-js.svg)](https://www.npmjs.com/packages/datastructures-js) [![npm](https://img.shields.io/badge/node-%3E=%206.0-blue.svg)](https://www.npmjs.com/package/sort-algorithms-js) [![Maintainability](https://api.codeclimate.com/v1/badges/4a335c4842eab2f83497/maintainability)](https://codeclimate.com/github/eyas-ranjous/datastructures-js/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/4a335c4842eab2f83497/test_coverage)](https://codeclimate.com/github/eyas-ranjous/datastructures-js/test_coverage)
+[![npm](https://img.shields.io/npm/dm/datastructures-js.svg)](https://www.npmjs.com/packages/datastructures-js) [![npm](https://img.shields.io/badge/node-%3E=%206.0-blue.svg)](https://www.npmjs.com/package/datastructures-js) [![Maintainability](https://api.codeclimate.com/v1/badges/4a335c4842eab2f83497/maintainability)](https://codeclimate.com/github/eyas-ranjous/datastructures-js/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/4a335c4842eab2f83497/test_coverage)](https://codeclimate.com/github/eyas-ranjous/datastructures-js/test_coverage)
 
 Javascript implementation of the main data structures. Each data structure object is constructed using a factory function that holds the data structure name.
 
@@ -784,19 +784,34 @@ let dgraph = ds.directedGraph();
 let dgraph = ds.dg();
 ```
 
-The Directed Graph extends the Graph implementation and override the following functions:
-
 **.addEdge(v1, v2, weight)**
 
 adds a weighted direction from v1 to v2
 
-**hasEdge(v1, v2)**
+**.hasEdge(v1, v2)**
 
 checks if the graph has a direction from v1 to v2
 
-**removeEdge(v1, v2)**
+**.removeEdge(v1, v2)**
 
 removes the direction from v1 to v2
+
+**.addPath(v1, v2, weight)**
+
+adds a direction from v1 to v2 and creates both vertices if not exist
+```javascript
+// build the diagram dgraph
+dgraph.addPath('v1', 'v2', 2);
+dgraph.addPath('v1', 'v3', 3);
+dgraph.addPath('v1', 'v4', 1);
+dgraph.addPath('v2', 'v4', 1);
+dgraph.addPath('v3', 'v5', 2);
+dgraph.addPath('v4', 'v3', 1);
+dgraph.addPath('v4', 'v5', 4);
+```
+
+
+***
 
 ## Contribution
 Fork and then clone the repo:
