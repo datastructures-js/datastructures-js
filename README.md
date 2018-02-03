@@ -193,6 +193,22 @@ returns the length of the queue.
 var len = queue.length(); // 1
 ```
 
+converts the queue to an array in the order elements were queued
+```javascript
+queue.enqueue('test 1', 2);
+queue.enqueue('test 2', 3);
+queue.enqueue('test 3', 1);
+let elements = queue.toArray(); // ['test 1', 'test 2', 'test 3']
+```
+
+**.clear()** 
+
+clears the queue
+```javascript
+queue.clear();
+queue.length(); // 0
+```
+
 ## Set
 elements data type: number, string, boolean, null, undefined.
 
