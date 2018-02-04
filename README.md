@@ -673,6 +673,7 @@ let n40 = bst.find(40);
 console.log(n50.getLeft().getValue()); // 40
 console.log(n40.getLeft().getValue()); // 20
 ```
+
 ## Graph
 <img width="413" alt="graph" src="https://user-images.githubusercontent.com/6517308/35762771-d25ff10a-0862-11e8-9302-812a36eddb9e.png">
 
@@ -800,6 +801,28 @@ let dgraph = ds.directedGraph();
 let dgraph = ds.dg();
 ```
 
+**.addVertex(vertex)** 
+
+adds a vertex to the graph.
+```javascript
+graph.addVertex('test');
+```
+
+**.hasVertex(vertex)**
+
+checks if the graph has a vertex
+```javascript
+let check = graph.hasVertex('test'); // true
+```
+
+**.removeVertex(vertex)**
+
+checks if the graph has a vertex
+```javascript
+graph.removeVertex('test');
+graph.hasVertex('test'); // false
+```
+
 **.addEdge(v1, v2, weight)**
 
 adds a weighted direction from v1 to v2
@@ -826,6 +849,46 @@ dgraph.addPath('v4', 'v3', 1);
 dgraph.addPath('v4', 'v5', 4);
 ```
 
+**.getWeight(v1, v2)** 
+
+returns the weight from v1 to v2
+```javascript
+let w = graph.getWeight('v1', 'v2'); // 2
+```
+
+**.countVertices()** 
+
+returns the number of vertices in the graph.
+```javascript
+let count = graph.countVertices(); // 5
+```
+
+**.traverse(vertex, cb, type)** 
+
+traverse the graph.
+* type: 'bfs' OR 'dfs' (breadth-first search or depth-first search). default is 'bfs'
+``` javascript
+// bfs traverse
+let vertices = [];
+graph.traverse('v1', (v) => {
+    vertices.push(v);
+});
+console.log(vertices); // [ 'v1', 'v2', 'v3', 'v4', 'v5' ]
+
+// dfs traverse
+vertices = [];
+graph.traverse('v1', (v) => {
+    vertices.push(v);
+}, 'dfs');
+console.log(vertices); // [ 'v1', 'v2', 'v4', 'v3', 'v5' ]
+```
+
+**findShortestPath(v1, v2)**
+
+find all possible shortests paths between two vertices in the graph
+``` javascript
+let shortestPath = graph.findShortestPath('v1', 'v5'); // [ ['v1', 'v4', 'v3', 'v5'] ]
+```
 
 ***
 
