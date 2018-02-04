@@ -67,7 +67,7 @@ describe('graph test', () => {
             let vertices = [];
             graph.traverse('v1', (v) => {
                 vertices.push(v);
-            });
+            }, 'dfs');
             expect(vertices).to.deep.equal([ 'v1', 'v2', 'v3', 'v4', 'v5' ]);
         });
 
