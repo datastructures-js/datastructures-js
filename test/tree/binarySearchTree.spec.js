@@ -68,32 +68,32 @@ describe('binarySearchTree tests', () => {
         });
     });
 
-    describe('.delete(value)', () => {
-        it('should delete a leaf node', () => {
-            bst.delete(20);
+    describe('.remove(value)', () => {
+        it('should remove a leaf node', () => {
+            bst.remove(20);
             expect(bst.find(20)).to.equal(null);
             expect(bst.find(30).getLeft()).to.equal(null);
             expect(bst.count()).to.equal(6);
         });
 
-        it('should delete a node with a right child only', function(){
-            bst.delete(30);
+        it('should remove a node with a right child only', function(){
+            bst.remove(30);
             expect(bst.find(30)).to.equal(null);
             expect(bst.getRoot().getLeft().getValue()).to.equal(40);
             expect(bst.count()).to.equal(5);
         });
 
 
-        it('should delete a node with a left child only', function(){
+        it('should remove a node with a left child only', function(){
             bst.insert(30);
-            bst.delete(40);
+            bst.remove(40);
             expect(bst.find(40)).to.equal(null);
             expect(bst.getRoot().getLeft().getValue()).to.equal(30);
             expect(bst.count()).to.equal(5);
         });
 
-        it('should delete a node with two children', function(){
-            bst.delete(80);
+        it('should remove a node with two children', function(){
+            bst.remove(80);
             expect(bst.find(80)).to.equal(null);
             expect(bst.getRoot().getRight().getValue()).to.equal(90);
             expect(bst.find(90).getRight()).to.equal(null);
