@@ -98,4 +98,11 @@ describe('linkedList tests', function() {
         });
     });
 
+    describe('.clear()', () => {
+        it('should clear the linked list', () => {
+            linkedList.clear();
+            expect(linkedList.length()).to.equal(0);
+        });
+    });
+
 });
