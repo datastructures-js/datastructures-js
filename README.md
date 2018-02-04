@@ -371,7 +371,7 @@ catch (e) {
 add a node with newValue before an existing value's node, throws exception if value doesnt exist.
 ```javascript
 try {
-    linkedList.addBefore('n1', 'n2');
+    linkedList.addBefore('n4', 'n3');
     linkedList.addBefore('n33', 'n3');
 }
 catch (e) {
@@ -390,39 +390,12 @@ console.log(n3.getValue()); // n3
 console.log(n3.getNext().getValue()); // n4
 ```
 
-**.getHead()** 
+**.head()** 
 
 returns the first linkedListNode object in the list.
 ```javascript
 let head = linkedList.getHead();
 console.log(head.getValue()); // n1
-```
-
-**.removeFirst()** 
-
-removes the first node in the list.
-```javascript
-linkedList.removeFirst();
-```
-
-**.removeLast()** 
-
-removes the last node in the list.
-```javascript
-linkedList.removeLast();
-```
-
-**.remove(value)** 
-
-remove the value's node from the list or throw an exception if value not found.
-```javascript
-try {
-    linkedList.remove('n2');
-    linkedList.remove('n33');
-}
-catch (e) {
-    console.log(e.message); // node n33 not found
-}
 ```
 
 **.traverse(cb)** 
@@ -432,13 +405,38 @@ traverse the linked list and calls cb for each node
 linkedList.traverse((value) => {
     console.log(value);
 });
+// n1
+// n2   
+// n3
+// n4
+```
+
+**.remove(value)** 
+
+remove the value's node from the list or throw an exception if value not found.
+```javascript
+linkedList.remove('n3');
+```
+
+**.removeFirst()** 
+
+removes the first node in the list.
+```javascript
+linkedList.removeFirst(); // n1 removed
+```
+
+**.removeLast()** 
+
+removes the last node in the list.
+```javascript
+linkedList.removeLast(); // n4 removed
 ```
 
 **.length()** 
 
 returns the number of nodes in the list.
 ```javascript
-let length = linkedList.count();
+let length = linkedList.count(); // 1
 ```
 
 **.clear()** 
@@ -517,12 +515,20 @@ console.log(n3.getNext().getValue()); // n4
 console.log(n3.getPrev().getValue()); // n2
 ```
 
-**.getHead()** 
+**.head()** 
 
 returns the first doublyLinkedListNode object in the list.
 ```javascript
 let head = dList.getHead();
 console.log(head.getValue()); // n1
+```
+
+**.tail()** 
+
+returns the last doublyLinkedListNode object in the list.
+```javascript
+let tail = dList.getTail();
+console.log(tail.getValue()); // n4
 ```
 
 **.removeFirst()** 
@@ -541,7 +547,7 @@ dList.removeLast();
 
 **.remove(value)** 
 
-remove the value's node from the list or throw an exception if value not found.
+remove the value's node from the list.
 ```javascript
 dList.remove('n2');
 ```
@@ -550,7 +556,7 @@ dList.remove('n2');
 
 returns the number of nodes in the list.
 ```javascript
-let length = dList.count();
+let length = dList.length();
 ```
 
 **.clear()** 
@@ -588,25 +594,25 @@ bst.insert(40);
 bst.insert(20);
 ```
 
-**.getRoot()** 
+**.root()** 
 
 returns the root node
 ```javascript
-let root = bst.getRoot().getValue(); // 90
+let root = bst.root().getValue(); // 90
 ```
 
-**.getMin()** 
+**.min()** 
 
 returns the min value binaryNode object (most left node value).
 ```javascript
-let min = bst.getMin().getValue(); // 20
+let min = bst.min().getValue(); // 20
 ```
 
-**.getMax()** 
+**.max()** 
 
 returns the max value binaryNode object (most right node value).
 ```javascript
-let max = bst.getMax().getValue(); // 90
+let max = bst.max().getValue(); // 90
 ```
 
 **.count()** 
@@ -676,15 +682,22 @@ bst.traverse((value) => {
 // 50
 ```
 
-**.delete(value)** 
+**.remove(value)** 
 
-deletes a value's node (if exists) from the tree.
+removes a value's node (if exists) from the tree.
 ```javascript
-bst.delete(30);
+bst.remove(30);
 let n50 = bst.find(50);
 let n40 = bst.find(40);
 console.log(n50.getLeft().getValue()); // 40
 console.log(n40.getLeft().getValue()); // 20
+```
+
+**.clear()** 
+
+clears all the nodes from the tree.
+```javascript
+bst.clear();
 ```
 
 ## Graph
@@ -739,6 +752,13 @@ checks if the graph has an edge between two exsiting vertices
 let check = graph.hasEdge('v1', 'v2'); // true
 ```
 
+**.getWeight(v1, v2)** 
+
+returns the weight between two vertices
+```javascript
+let w = graph.getWeight('v1', 'v2'); // 3
+```
+
 **.removeEdge(v1, v2)**
 
 removes an existing edge in the graph
@@ -762,13 +782,6 @@ graph.addPath('v4', 'v5', 4);
 graph.addPath('v3', 'v5', 2);
 ```
 
-**.getWeight(v1, v2)** 
-
-returns the weight between two vertices
-```javascript
-let w = graph.getWeight('v1', 'v2'); // 2
-```
-
 **.countVertices()** 
 
 returns the number of vertices in the graph.
@@ -780,20 +793,23 @@ let count = graph.countVertices(); // 5
 
 traverse the graph.
 * type: 'bfs' OR 'dfs' (breadth-first search or depth-first search). default is 'bfs'
+
 ``` javascript
 // bfs traverse
-let vertices = [];
-graph.traverse('v1', (v) => {
-    vertices.push(v);
-});
-console.log(vertices); // [ 'v1', 'v2', 'v3', 'v4', 'v5' ]
+graph.traverse('v5', (v) => console.log(v), 'bfs');
+// v5
+// v4
+// v3
+// v2
+// v1
 
 // dfs traverse
-vertices = [];
-graph.traverse('v1', (v) => {
-    vertices.push(v);
-}, 'dfs');
-console.log(vertices); // [ 'v5', 'v4', 'v3', 'v2', 'v1' ]
+graph.traverse('v1', (v) => console.log(v), 'dfs');
+// v1
+// v2
+// v3
+// v4
+// v5
 ```
 
 **findShortestPath(v1, v2)**
@@ -801,6 +817,11 @@ console.log(vertices); // [ 'v5', 'v4', 'v3', 'v2', 'v1' ]
 find all possible shortests paths between two vertices in the graph
 ``` javascript
 let shortestPath = graph.findShortestPath('v1', 'v5'); // [ ['v1', 'v2', 'v4', 'v3', 'v5'] ]
+```
+
+clears all the nodes from the graph.
+```javascript
+graph.clear();
 ```
 
 ## DirectedGraph
@@ -843,23 +864,30 @@ adds a weighted direction from v1 to v2
 ```javascript
 dgraph.addVertex('v1');
 dgraph.addVertex('v2');
-dgraph.addEdge('v1', 'v2', 3)
+dgraph.addEdge('v1', 'v2', 3);
 ```
 
 **.hasEdge(v1, v2)**
 
 checks if the graph has a direction from v1 to v2
 ```javascript
-let check1 = graph.hasEdge('v1', 'v2'); // true
-let check2 = graph.hasEdge('v2', 'v1'); // false
+let check1 = dgraph.hasEdge('v1', 'v2'); // true
+let check2 = dgraph.hasEdge('v2', 'v1'); // false
+```
+
+**.getWeight(v1, v2)** 
+
+returns the weight from v1 to v2
+```javascript
+let w = dgraph.getWeight('v1', 'v2'); // 3
 ```
 
 **.removeEdge(v1, v2)**
 
 removes the direction from v1 to v2
 ```javascript
-graph.removeEdge('v1', 'v2');
-graph.hasEdge('v1', 'v2'); // false
+dgraph.removeEdge('v1', 'v2');
+dgraph.hasEdge('v1', 'v2'); // false
 ```
 
 **.addPath(v1, v2, weight)**
@@ -876,18 +904,11 @@ dgraph.addPath('v4', 'v3', 1);
 dgraph.addPath('v4', 'v5', 4);
 ```
 
-**.getWeight(v1, v2)** 
-
-returns the weight from v1 to v2
-```javascript
-let w = graph.getWeight('v1', 'v2'); // 2
-```
-
 **.countVertices()** 
 
 returns the number of vertices in the graph.
 ```javascript
-let count = graph.countVertices(); // 5
+let count = dgraph.countVertices(); // 5
 ```
 
 **.traverse(vertex, cb, type)** 
@@ -896,25 +917,32 @@ traverse the graph.
 * type: 'bfs' OR 'dfs' (breadth-first search or depth-first search). default is 'bfs'
 ``` javascript
 // bfs traverse
-let vertices = [];
-graph.traverse('v1', (v) => {
-    vertices.push(v);
-});
-console.log(vertices); // [ 'v1', 'v2', 'v3', 'v4', 'v5' ]
+dgraph.traverse('v1', (v) => console.log(v), 'bfs');
+// v1
+// v2
+// v3
+// v4
+// v5
 
 // dfs traverse
-vertices = [];
-graph.traverse('v1', (v) => {
-    vertices.push(v);
-}, 'dfs');
-console.log(vertices); // [ 'v1', 'v2', 'v4', 'v3', 'v5' ]
+dgraph.traverse('v5', (v) => console.log(v), 'dfs');
+// v1
+// v2
+// v4
+// v3
+// v5
 ```
 
 **findShortestPath(v1, v2)**
 
 find all possible shortests paths between two vertices in the graph
 ``` javascript
-let shortestPath = graph.findShortestPath('v1', 'v5'); // [ ['v1', 'v4', 'v3', 'v5'] ]
+let shortestPath = dgraph.findShortestPath('v1', 'v5'); // [ ['v1', 'v4', 'v3', 'v5'] ]
+```
+
+clears all the nodes from the graph.
+```javascript
+dgraph.clear();
 ```
 
 ***
