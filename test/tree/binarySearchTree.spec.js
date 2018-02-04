@@ -17,21 +17,27 @@ describe('binarySearchTree tests', () => {
             bst.insert(40);
             bst.insert(20);
             expect(bst.count()).to.be.equal(7);
-            expect(bst.getRoot().getValue()).to.equal(50);
-            expect(bst.getRoot().getRight().getValue()).to.equal(80);
-            expect(bst.getRoot().getLeft().getValue()).to.equal(30);
+            expect(bst.root().getValue()).to.equal(50);
+            expect(bst.root().getRight().getValue()).to.equal(80);
+            expect(bst.root().getLeft().getValue()).to.equal(30);
         });
     });
 
-    describe('.getMin()', () => {
+    describe('.min()', () => {
         it ('should get the node with min value', () => {
-            expect(bst.getMin().getValue(20));
+            expect(bst.min().getValue(20));
         });
     });
 
-    describe('.getMax()', () => {
+    describe('.max()', () => {
         it ('should get the node with min value', () => {
-            expect(bst.getMax().getValue(90));
+            expect(bst.max().getValue(90));
+        });
+    });
+
+    describe('.root()', () => {
+        it ('should get the node with min value', () => {
+            expect(bst.root().getValue(50));
         });
     });
 
@@ -79,7 +85,7 @@ describe('binarySearchTree tests', () => {
         it('should remove a node with a right child only', function(){
             bst.remove(30);
             expect(bst.find(30)).to.equal(null);
-            expect(bst.getRoot().getLeft().getValue()).to.equal(40);
+            expect(bst.root().getLeft().getValue()).to.equal(40);
             expect(bst.count()).to.equal(5);
         });
 
@@ -88,14 +94,14 @@ describe('binarySearchTree tests', () => {
             bst.insert(30);
             bst.remove(40);
             expect(bst.find(40)).to.equal(null);
-            expect(bst.getRoot().getLeft().getValue()).to.equal(30);
+            expect(bst.root().getLeft().getValue()).to.equal(30);
             expect(bst.count()).to.equal(5);
         });
 
         it('should remove a node with two children', function(){
             bst.remove(80);
             expect(bst.find(80)).to.equal(null);
-            expect(bst.getRoot().getRight().getValue()).to.equal(90);
+            expect(bst.root().getRight().getValue()).to.equal(90);
             expect(bst.find(90).getRight()).to.equal(null);
             expect(bst.find(90).getLeft().getValue()).to.equal(60);
             expect(bst.count()).to.equal(4);
