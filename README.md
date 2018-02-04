@@ -260,8 +260,10 @@ let size = set.size(); // 3
 unions the set with another set and returns the resulting set.
 ```javascript
 let set2 = ds.set();
-set.add('A', 'E', 'F');
-let unionSet = set.union(set2); // resulting set has B, D, E, F
+set2.add('A');
+set2.add('E');
+set2.add('F');
+let unionSet = set.union(set2); // unionSet contains A, B, D, E, F
 ```
 
 **.intersect(set)** 
@@ -269,7 +271,9 @@ let unionSet = set.union(set2); // resulting set has B, D, E, F
 intersects the set with another set and returns the resulting set.
 ```javascript
 let set2 = ds.set();
-set.add('A', 'E', 'F');
+set2.add('A');
+set2.add('E');
+set2.add('F');
 // set contains A, B, D
 let intersectSet = set.intersect(set2); // intersectSet contains A
 ```
@@ -279,9 +283,11 @@ let intersectSet = set.intersect(set2); // intersectSet contains A
 returns the diff set between the set and another set.
 ```javascript
 let set2 = ds.set();
-set.add('E', 'F', 'A');
+set2.add('A');
+set2.add('E');
+set2.add('F');
 // set contains A, B, D
-let diffSet = set.difference(set2); // diffSet contains B, D
+let diffSet = set.diff(set2); // diffSet contains B, D
 ```
 
 **.isSubset(set)** 
@@ -289,12 +295,19 @@ let diffSet = set.difference(set2); // diffSet contains B, D
 checks if the set is a subset of another set
 ```javascript
 let s1 = ds.set();
+s1.add('B');
+s1.add('G');
+s1.add('D');
+
 let s2 = ds.set();
-s1.add('B', 'X', 'H');
-s2.add('A', 'G', 'B', 'G', 'D');
-// set has A, B, D
-let d1 = set.isSubset(s1); // false
-let d2 = set.isSubset(s2); // true
+s2.add('A');
+s2.add('G');
+s2.add('B');
+s2.add('G');
+s2.add('D');
+
+let d1 = s2.isSubset(s1); // false
+let d2 = s1.isSubset(s2); // true
 ```
 
 **.toArray()** 
