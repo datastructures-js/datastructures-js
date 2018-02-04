@@ -104,4 +104,11 @@ describe('graph test', () => {
         });
     });
 
+    describe('.clear()', () => {
+        it('should clear the graph', () => {
+            graph.clear();
+            expect(graph.countVertices()).to.equal(0);
+        });
+    });
+
 });
