@@ -108,4 +108,10 @@ describe('binarySearchTree tests', () => {
         });
     });
 
+    describe('.clear()', () => {
+        bst.clear();
+        expect(bst.count()).to.equal(0);
+        expect(bst.root()).to.equal(null);
+    });
+
 });
