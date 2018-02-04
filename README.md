@@ -732,6 +732,7 @@ removes an existing edge in the graph
 ```javascript
 graph.removeEdge('v1', 'v2');
 graph.hasEdge('v1', 'v2'); // false
+graph.hasEdge('v2', 'v1'); // false
 ```
 
 **.addPath(v1, v2, weight)** 
@@ -805,35 +806,48 @@ let dgraph = ds.dg();
 
 adds a vertex to the graph.
 ```javascript
-graph.addVertex('test');
+dgraph.addVertex('test');
 ```
 
 **.hasVertex(vertex)**
 
 checks if the graph has a vertex
 ```javascript
-let check = graph.hasVertex('test'); // true
+let check = dgraph.hasVertex('test'); // true
 ```
 
 **.removeVertex(vertex)**
 
 checks if the graph has a vertex
 ```javascript
-graph.removeVertex('test');
-graph.hasVertex('test'); // false
+dgraph.removeVertex('test');
+dgraph.hasVertex('test'); // false
 ```
 
 **.addEdge(v1, v2, weight)**
 
 adds a weighted direction from v1 to v2
+```javascript
+dgraph.addVertex('v1');
+dgraph.addVertex('v2');
+dgraph.addEdge('v1', 'v2', 3)
+```
 
 **.hasEdge(v1, v2)**
 
 checks if the graph has a direction from v1 to v2
+```javascript
+let check1 = graph.hasEdge('v1', 'v2'); // true
+let check2 = graph.hasEdge('v2', 'v1'); // false
+```
 
 **.removeEdge(v1, v2)**
 
 removes the direction from v1 to v2
+```javascript
+graph.removeEdge('v1', 'v2');
+graph.hasEdge('v1', 'v2'); // false
+```
 
 **.addPath(v1, v2, weight)**
 
