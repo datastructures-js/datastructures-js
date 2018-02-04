@@ -40,7 +40,7 @@ describe('queue tests', () => {
     });
 
     describe('toArray()', () => {
-        it('should dequeue all elements', function() {
+        it('should convert the queue into an array', function() {
             expect(queue.toArray()).to.deep.equal([1, 8, 45]);
         });
     });

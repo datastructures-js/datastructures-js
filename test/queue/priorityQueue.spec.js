@@ -38,6 +38,12 @@ describe('priorityQueue tests', function() {
         });
     });
 
+    describe('toArray()', () => {
+        it('should convert the queue into an array', function() {
+            expect(priorityQueue.toArray()).to.deep.equal(['john', 'sam', 'samantha', 'rose']);
+        });
+    });
+
     describe('.dequeue()', () => {
         it('should dequeue elements by priority', () => {
             expect(priorityQueue.dequeue()).to.equal('samantha');
@@ -53,6 +59,13 @@ describe('priorityQueue tests', function() {
             expect(priorityQueue.front()).to.equal('rose');        
         });
     });
+
+    describe('.isEmpty()', () => {
+        it('should not be empty', () => {
+            expect(priorityQueue.isEmpty()).to.equal(false);
+        });
+    });
+
 
     describe('.clear()', () => {
         it('should clear the priorty queue', () => {

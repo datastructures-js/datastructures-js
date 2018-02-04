@@ -67,7 +67,7 @@ describe('graph test', () => {
             let vertices = [];
             graph.traverse('v1', (v) => {
                 vertices.push(v);
-            });
+            }, 'dfs');
             expect(vertices).to.deep.equal([ 'v1', 'v2', 'v3', 'v4', 'v5' ]);
         });
 
@@ -101,6 +101,13 @@ describe('graph test', () => {
         it('should remove the edge between two vertices', () => {
             graph.removeEdge('v2', 'v3');
             expect(graph.hasEdge('v2', 'v3')).to.equal(false);
+        });
+    });
+
+    describe('.clear()', () => {
+        it('should clear the graph', () => {
+            graph.clear();
+            expect(graph.countVertices()).to.equal(0);
         });
     });
 

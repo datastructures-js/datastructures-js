@@ -41,9 +41,9 @@ describe('linkedList tests', function() {
         });
     });
 
-    describe('.getHead()', () => {
+    describe('.head()', () => {
         it('should get the head node', () => {
-            expect(linkedList.getHead().getValue()).to.equal('test 8');
+            expect(linkedList.head().getValue()).to.equal('test 8');
         });
     });
 
@@ -78,7 +78,7 @@ describe('linkedList tests', function() {
         it('should remove the first node', () => {
             linkedList.removeFirst();
             expect(linkedList.length()).to.equal(7);
-            expect(linkedList.getHead().getValue()).to.equal('test 2');
+            expect(linkedList.head().getValue()).to.equal('test 2');
         });
     });
 
@@ -95,6 +95,13 @@ describe('linkedList tests', function() {
             linkedList.remove('test 5');
             expect(linkedList.length()).to.equal(5);
             expect(linkedList.find('test 5')).to.equal(null);
+        });
+    });
+
+    describe('.clear()', () => {
+        it('should clear the linked list', () => {
+            linkedList.clear();
+            expect(linkedList.length()).to.equal(0);
         });
     });
 

@@ -2,7 +2,7 @@
 
 [![build:?](https://travis-ci.org/eyas-ranjous/datastructures-js.svg?branch=master)](https://travis-ci.org/eyas-ranjous/datastructures-js) 
 [![npm](https://img.shields.io/npm/v/datastructures-js.svg)](https://www.npmjs.com/package/datastructures-js)
-[![npm](https://img.shields.io/npm/dm/datastructures-js.svg)](https://www.npmjs.com/packages/datastructures-js) [![npm](https://img.shields.io/badge/node-%3E=%206.0-blue.svg)](https://www.npmjs.com/package/sort-algorithms-js) [![Maintainability](https://api.codeclimate.com/v1/badges/4a335c4842eab2f83497/maintainability)](https://codeclimate.com/github/eyas-ranjous/datastructures-js/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/4a335c4842eab2f83497/test_coverage)](https://codeclimate.com/github/eyas-ranjous/datastructures-js/test_coverage)
+[![npm](https://img.shields.io/npm/dm/datastructures-js.svg)](https://www.npmjs.com/packages/datastructures-js) [![npm](https://img.shields.io/badge/node-%3E=%206.0-blue.svg)](https://www.npmjs.com/package/datastructures-js) [![Maintainability](https://api.codeclimate.com/v1/badges/4a335c4842eab2f83497/maintainability)](https://codeclimate.com/github/eyas-ranjous/datastructures-js/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/4a335c4842eab2f83497/test_coverage)](https://codeclimate.com/github/eyas-ranjous/datastructures-js/test_coverage)
 
 Javascript implementation of the main data structures. Each data structure object is constructed using a factory function that holds the data structure name.
 
@@ -193,6 +193,22 @@ returns the length of the queue.
 var len = queue.length(); // 1
 ```
 
+converts the queue to an array in the order elements were queued
+```javascript
+queue.enqueue('test 1', 2);
+queue.enqueue('test 2', 3);
+queue.enqueue('test 3', 1);
+let elements = queue.toArray(); // ['test 1', 'test 2', 'test 3']
+```
+
+**.clear()** 
+
+clears the queue
+```javascript
+queue.clear();
+queue.length(); // 0
+```
+
 ## Set
 elements data type: number, string, boolean, null, undefined.
 
@@ -244,8 +260,10 @@ let size = set.size(); // 3
 unions the set with another set and returns the resulting set.
 ```javascript
 let set2 = ds.set();
-set.add('A', 'E', 'F');
-let unionSet = set.union(set2); // resulting set has B, D, E, F
+set2.add('A');
+set2.add('E');
+set2.add('F');
+let unionSet = set.union(set2); // unionSet contains A, B, D, E, F
 ```
 
 **.intersect(set)** 
@@ -253,7 +271,9 @@ let unionSet = set.union(set2); // resulting set has B, D, E, F
 intersects the set with another set and returns the resulting set.
 ```javascript
 let set2 = ds.set();
-set.add('A', 'E', 'F');
+set2.add('A');
+set2.add('E');
+set2.add('F');
 // set contains A, B, D
 let intersectSet = set.intersect(set2); // intersectSet contains A
 ```
@@ -263,9 +283,11 @@ let intersectSet = set.intersect(set2); // intersectSet contains A
 returns the diff set between the set and another set.
 ```javascript
 let set2 = ds.set();
-set.add('E', 'F', 'A');
+set2.add('A');
+set2.add('E');
+set2.add('F');
 // set contains A, B, D
-let diffSet = set.difference(set2); // diffSet contains B, D
+let diffSet = set.diff(set2); // diffSet contains B, D
 ```
 
 **.isSubset(set)** 
@@ -273,12 +295,19 @@ let diffSet = set.difference(set2); // diffSet contains B, D
 checks if the set is a subset of another set
 ```javascript
 let s1 = ds.set();
+s1.add('B');
+s1.add('G');
+s1.add('D');
+
 let s2 = ds.set();
-s1.add('B', 'X', 'H');
-s2.add('A', 'G', 'B', 'G', 'D');
-// set has A, B, D
-let d1 = set.isSubset(s1); // false
-let d2 = set.isSubset(s2); // true
+s2.add('A');
+s2.add('G');
+s2.add('B');
+s2.add('G');
+s2.add('D');
+
+let d1 = s2.isSubset(s1); // false
+let d2 = s1.isSubset(s2); // true
 ```
 
 **.toArray()** 
@@ -296,7 +325,8 @@ set.clear(); // set is empty
 ```
 
 ## LinkedList
-![LinkedList](http://i.imgur.com/ZyD3HJL.jpg "LinkedList")
+
+<img width="429" alt="ll" src="https://user-images.githubusercontent.com/6517308/35762715-5d00c9bc-0861-11e8-88f7-6e503a1fa3af.png">
 
 node value data type: number, string, boolean, null, undefined.
 
@@ -341,7 +371,7 @@ catch (e) {
 add a node with newValue before an existing value's node, throws exception if value doesnt exist.
 ```javascript
 try {
-    linkedList.addBefore('n1', 'n2');
+    linkedList.addBefore('n4', 'n3');
     linkedList.addBefore('n33', 'n3');
 }
 catch (e) {
@@ -360,39 +390,12 @@ console.log(n3.getValue()); // n3
 console.log(n3.getNext().getValue()); // n4
 ```
 
-**.getHead()** 
+**.head()** 
 
 returns the first linkedListNode object in the list.
 ```javascript
 let head = linkedList.getHead();
 console.log(head.getValue()); // n1
-```
-
-**.removeFirst()** 
-
-removes the first node in the list.
-```javascript
-linkedList.removeFirst();
-```
-
-**.removeLast()** 
-
-removes the last node in the list.
-```javascript
-linkedList.removeLast();
-```
-
-**.remove(value)** 
-
-remove the value's node from the list or throw an exception if value not found.
-```javascript
-try {
-    linkedList.remove('n2');
-    linkedList.remove('n33');
-}
-catch (e) {
-    console.log(e.message); // node n33 not found
-}
 ```
 
 **.traverse(cb)** 
@@ -402,13 +405,38 @@ traverse the linked list and calls cb for each node
 linkedList.traverse((value) => {
     console.log(value);
 });
+// n1
+// n2   
+// n3
+// n4
+```
+
+**.remove(value)** 
+
+remove the value's node from the list or throw an exception if value not found.
+```javascript
+linkedList.remove('n3');
+```
+
+**.removeFirst()** 
+
+removes the first node in the list.
+```javascript
+linkedList.removeFirst(); // n1 removed
+```
+
+**.removeLast()** 
+
+removes the last node in the list.
+```javascript
+linkedList.removeLast(); // n4 removed
 ```
 
 **.length()** 
 
 returns the number of nodes in the list.
 ```javascript
-let length = linkedList.count();
+let length = linkedList.count(); // 1
 ```
 
 **.clear()** 
@@ -420,7 +448,7 @@ console.log(linkedList.length()); // 0
 ```
 
 ## DoublyLinkedList
-![DoublyLinkedList](https://user-images.githubusercontent.com/6517308/35724467-6f2bd49a-07c3-11e8-9d43-616bd0764cfe.jpeg)
+<img width="552" alt="dll" src="https://user-images.githubusercontent.com/6517308/35762752-19b17df4-0862-11e8-8ce3-f940d83dde51.png">
 
 node value data type: number, string, boolean, null, undefined.
 
@@ -487,12 +515,20 @@ console.log(n3.getNext().getValue()); // n4
 console.log(n3.getPrev().getValue()); // n2
 ```
 
-**.getHead()** 
+**.head()** 
 
 returns the first doublyLinkedListNode object in the list.
 ```javascript
 let head = dList.getHead();
 console.log(head.getValue()); // n1
+```
+
+**.tail()** 
+
+returns the last doublyLinkedListNode object in the list.
+```javascript
+let tail = dList.getTail();
+console.log(tail.getValue()); // n4
 ```
 
 **.removeFirst()** 
@@ -511,7 +547,7 @@ dList.removeLast();
 
 **.remove(value)** 
 
-remove the value's node from the list or throw an exception if value not found.
+remove the value's node from the list.
 ```javascript
 dList.remove('n2');
 ```
@@ -520,7 +556,7 @@ dList.remove('n2');
 
 returns the number of nodes in the list.
 ```javascript
-let length = dList.count();
+let length = dList.length();
 ```
 
 **.clear()** 
@@ -531,7 +567,8 @@ dList.clear();
 ```
 
 ## BinarySearchTree
-![BinarySearchTree](https://user-images.githubusercontent.com/6517308/35724526-a7b46f66-07c3-11e8-93e7-170c8040846e.jpg)
+
+<img width="413" alt="bst" src="https://user-images.githubusercontent.com/6517308/35762621-74a72626-085f-11e8-8934-ef6facdd6e10.png">
 
 node value data type: string, number
 
@@ -557,25 +594,25 @@ bst.insert(40);
 bst.insert(20);
 ```
 
-**.getRoot()** 
+**.root()** 
 
 returns the root node
 ```javascript
-let root = bst.getRoot().getValue(); // 90
+let root = bst.root().getValue(); // 90
 ```
 
-**.getMin()** 
+**.min()** 
 
 returns the min value binaryNode object (most left node value).
 ```javascript
-let min = bst.getMin().getValue(); // 20
+let min = bst.min().getValue(); // 20
 ```
 
-**.getMax()** 
+**.max()** 
 
 returns the max value binaryNode object (most right node value).
 ```javascript
-let max = bst.getMax().getValue(); // 90
+let max = bst.max().getValue(); // 90
 ```
 
 **.count()** 
@@ -645,7 +682,7 @@ bst.traverse((value) => {
 // 50
 ```
 
-**.delete(value)** 
+**.remove(value)** 
 
 removes a value's node (if exists) from the tree.
 ```javascript
@@ -655,8 +692,16 @@ let n40 = bst.find(40);
 console.log(n50.getLeft().getValue()); // 40
 console.log(n40.getLeft().getValue()); // 20
 ```
+
+**.clear()** 
+
+clears all the nodes from the tree.
+```javascript
+bst.clear();
+```
+
 ## Graph
-<img width="513" alt="graph" src="https://user-images.githubusercontent.com/6517308/35726652-35d54d7c-07cb-11e8-9d4e-998fb9c994c1.png">
+<img width="413" alt="graph" src="https://user-images.githubusercontent.com/6517308/35762771-d25ff10a-0862-11e8-9302-812a36eddb9e.png">
 
 vertex data type: string, number, boolean, null, undefined
 
@@ -707,12 +752,20 @@ checks if the graph has an edge between two exsiting vertices
 let check = graph.hasEdge('v1', 'v2'); // true
 ```
 
+**.getWeight(v1, v2)** 
+
+returns the weight between two vertices
+```javascript
+let w = graph.getWeight('v1', 'v2'); // 3
+```
+
 **.removeEdge(v1, v2)**
 
 removes an existing edge in the graph
 ```javascript
 graph.removeEdge('v1', 'v2');
 graph.hasEdge('v1', 'v2'); // false
+graph.hasEdge('v2', 'v1'); // false
 ```
 
 **.addPath(v1, v2, weight)** 
@@ -729,13 +782,6 @@ graph.addPath('v4', 'v5', 4);
 graph.addPath('v3', 'v5', 2);
 ```
 
-**.getWeight(v1, v2)** 
-
-returns the weight between two vertices
-```javascript
-let w = graph.getWeight('v1', 'v2'); // 2
-```
-
 **.countVertices()** 
 
 returns the number of vertices in the graph.
@@ -747,20 +793,23 @@ let count = graph.countVertices(); // 5
 
 traverse the graph.
 * type: 'bfs' OR 'dfs' (breadth-first search or depth-first search). default is 'bfs'
+
 ``` javascript
 // bfs traverse
-let vertices = [];
-graph.traverse('v1', (v) => {
-    vertices.push(v);
-});
-console.log(vertices); // [ 'v1', 'v2', 'v3', 'v4', 'v5' ]
+graph.traverse('v5', (v) => console.log(v), 'bfs');
+// v5
+// v4
+// v3
+// v2
+// v1
 
 // dfs traverse
-vertices = [];
-graph.traverse('v1', (v) => {
-    vertices.push(v);
-}, 'dfs');
-console.log(vertices); // [ 'v5', 'v4', 'v3', 'v2', 'v1' ]
+graph.traverse('v1', (v) => console.log(v), 'dfs');
+// v1
+// v2
+// v3
+// v4
+// v5
 ```
 
 **findShortestPath(v1, v2)**
@@ -770,8 +819,13 @@ find all possible shortests paths between two vertices in the graph
 let shortestPath = graph.findShortestPath('v1', 'v5'); // [ ['v1', 'v2', 'v4', 'v3', 'v5'] ]
 ```
 
+clears all the nodes from the graph.
+```javascript
+graph.clear();
+```
+
 ## DirectedGraph
-<img width="496" alt="dgraph" src="https://user-images.githubusercontent.com/6517308/35726809-c5ff0aaa-07cb-11e8-8e4b-a0e337d0c088.png">
+<img width="424" alt="dgraph" src="https://user-images.githubusercontent.com/6517308/35762789-3f49bc06-0863-11e8-85ee-105b352b1aad.png">
 
 **construction**
 ``` javascript
@@ -782,19 +836,116 @@ let dgraph = ds.directedGraph();
 let dgraph = ds.dg();
 ```
 
-The Directed Graph extends the Graph implementation and override the following functions:
+**.addVertex(vertex)** 
+
+adds a vertex to the graph.
+```javascript
+dgraph.addVertex('test');
+```
+
+**.hasVertex(vertex)**
+
+checks if the graph has a vertex
+```javascript
+let check = dgraph.hasVertex('test'); // true
+```
+
+**.removeVertex(vertex)**
+
+checks if the graph has a vertex
+```javascript
+dgraph.removeVertex('test');
+dgraph.hasVertex('test'); // false
+```
 
 **.addEdge(v1, v2, weight)**
 
 adds a weighted direction from v1 to v2
+```javascript
+dgraph.addVertex('v1');
+dgraph.addVertex('v2');
+dgraph.addEdge('v1', 'v2', 3);
+```
 
-**hasEdge(v1, v2)**
+**.hasEdge(v1, v2)**
 
 checks if the graph has a direction from v1 to v2
+```javascript
+let check1 = dgraph.hasEdge('v1', 'v2'); // true
+let check2 = dgraph.hasEdge('v2', 'v1'); // false
+```
 
-**removeEdge(v1, v2)**
+**.getWeight(v1, v2)** 
+
+returns the weight from v1 to v2
+```javascript
+let w = dgraph.getWeight('v1', 'v2'); // 3
+```
+
+**.removeEdge(v1, v2)**
 
 removes the direction from v1 to v2
+```javascript
+dgraph.removeEdge('v1', 'v2');
+dgraph.hasEdge('v1', 'v2'); // false
+```
+
+**.addPath(v1, v2, weight)**
+
+adds a direction from v1 to v2 and creates both vertices if not exist
+```javascript
+// build the diagram dgraph
+dgraph.addPath('v1', 'v2', 2);
+dgraph.addPath('v1', 'v3', 3);
+dgraph.addPath('v1', 'v4', 1);
+dgraph.addPath('v2', 'v4', 1);
+dgraph.addPath('v3', 'v5', 2);
+dgraph.addPath('v4', 'v3', 1);
+dgraph.addPath('v4', 'v5', 4);
+```
+
+**.countVertices()** 
+
+returns the number of vertices in the graph.
+```javascript
+let count = dgraph.countVertices(); // 5
+```
+
+**.traverse(vertex, cb, type)** 
+
+traverse the graph.
+* type: 'bfs' OR 'dfs' (breadth-first search or depth-first search). default is 'bfs'
+``` javascript
+// bfs traverse
+dgraph.traverse('v1', (v) => console.log(v), 'bfs');
+// v1
+// v2
+// v3
+// v4
+// v5
+
+// dfs traverse
+dgraph.traverse('v5', (v) => console.log(v), 'dfs');
+// v1
+// v2
+// v4
+// v3
+// v5
+```
+
+**findShortestPath(v1, v2)**
+
+find all possible shortests paths between two vertices in the graph
+``` javascript
+let shortestPath = dgraph.findShortestPath('v1', 'v5'); // [ ['v1', 'v4', 'v3', 'v5'] ]
+```
+
+clears all the nodes from the graph.
+```javascript
+dgraph.clear();
+```
+
+***
 
 ## Contribution
 Fork and then clone the repo:
