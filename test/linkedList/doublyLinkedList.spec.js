@@ -42,9 +42,15 @@ describe('doublyLinkedList tests', function() {
         });
     });
 
-    describe('.getHead()', () => {
+    describe('.head()', () => {
         it('should get the head node', () => {
-            expect(doublyLinkedList.getHead().getValue()).to.equal('test 8');
+            expect(doublyLinkedList.head().getValue()).to.equal('test 8');
+        });
+    });
+
+    describe('.tail()', () => {
+        it('should get the tail node', () => {
+            expect(doublyLinkedList.tail().getValue()).to.equal('test 4');
         });
     });
 
@@ -93,7 +99,7 @@ describe('doublyLinkedList tests', function() {
         it('should remove the first node', () => {
             doublyLinkedList.removeFirst();
             expect(doublyLinkedList.length()).to.equal(7);
-            expect(doublyLinkedList.getHead().getValue()).to.equal('test 2');
+            expect(doublyLinkedList.head().getValue()).to.equal('test 2');
         });
     });
 
