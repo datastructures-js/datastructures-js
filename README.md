@@ -394,7 +394,7 @@ console.log(n3.getNext().getValue()); // n4
 
 returns the first linkedListNode object in the list.
 ```javascript
-let head = linkedList.getHead();
+let head = linkedList.head();
 console.log(head.getValue()); // n1
 ```
 
@@ -519,7 +519,7 @@ console.log(n3.getPrev().getValue()); // n2
 
 returns the first doublyLinkedListNode object in the list.
 ```javascript
-let head = dList.getHead();
+let head = dList.head();
 console.log(head.getValue()); // n1
 ```
 
@@ -527,7 +527,7 @@ console.log(head.getValue()); // n1
 
 returns the last doublyLinkedListNode object in the list.
 ```javascript
-let tail = dList.getTail();
+let tail = dList.tail();
 console.log(tail.getValue()); // n4
 ```
 
@@ -819,6 +819,8 @@ find all possible shortests paths between two vertices in the graph
 let shortestPath = graph.findShortestPath('v1', 'v5'); // [ ['v1', 'v2', 'v4', 'v3', 'v5'] ]
 ```
 
+**.clear()** 
+
 clears all the nodes from the graph.
 ```javascript
 graph.clear();
@@ -939,6 +941,8 @@ find all possible shortests paths between two vertices in the graph
 ``` javascript
 let shortestPath = dgraph.findShortestPath('v1', 'v5'); // [ ['v1', 'v4', 'v3', 'v5'] ]
 ```
+
+**.clear()** 
 
 clears all the nodes from the graph.
 ```javascript
