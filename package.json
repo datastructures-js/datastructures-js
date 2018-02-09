@@ -1,6 +1,6 @@
 {
   "name": "datastructures-js",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "data structures implementation in javascript",
   "main": "index.js",
   "directories": {
@@ -10,12 +10,15 @@
     "test": "grunt test"
   },
   "keywords": [
-    "javascript",
+    "es6 data structures",
+    "javascript data structures",
     "data structures",
     "data structures javascript",
     "data structures js",
     "stack",
+    "es6 stack",
     "queue",
+    "es6 queue",
     "priority queue",
     "priorityqueue",
     "set",
@@ -26,6 +29,7 @@
     "binary search tree",
     "bst",
     "graph",
+    "es6 graph",
     "directed graph",
     "directedgraph"
   ],
