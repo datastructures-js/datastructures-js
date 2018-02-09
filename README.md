@@ -812,7 +812,7 @@ graph.traverse('v1', (v) => console.log(v), 'dfs');
 // v5
 ```
 
-**findShortestPath(v1, v2)**
+**.findShortestPath(v1, v2)**
 
 find all possible shortests paths between two vertices in the graph
 ``` javascript
@@ -935,7 +935,7 @@ dgraph.traverse('v5', (v) => console.log(v), 'dfs');
 // v5
 ```
 
-**findShortestPath(v1, v2)**
+**.findShortestPath(v1, v2)**
 
 find all possible shortests paths between two vertices in the graph
 ``` javascript
