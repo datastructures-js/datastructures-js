@@ -1,31 +1,35 @@
-'use strict';
+/*!
+ * datastructures-js
+ * Gruntfile
+ * Copyright(c) 2018 Eyas Ranjous <eyas.ranjous@gmail.com>
+ * MIT Licensed
+ */
 
-module.exports = function(grunt) {
+class Gruntfile {
 
+  init(grunt) {
     grunt.initConfig({
-        jshint: {
-            options: {
-                reporter: require('jshint-stylish'),
-                jshintrc: '.jshintrc'
-            },
-            files: ['./lib/**/*.js', './test/**/*.spec.js', './*.js']
+      jshint: {
+        options: {
+          reporter: require('jshint-stylish'),
+          jshintrc: '.jshintrc'
         },
-
-        mochaTest: {
-            files: ['./test/**/*.spec.js']
-        },
-
-        mocha_istanbul: {
-            coverage: {
-                src: 'test',
-                options: {
-                    mask: '**/*.spec.js'
-                }
-            }
+        files: ['./lib/**/*.js', './test/**/*.spec.js', './*.js']
+      },
+      mochaTest: {
+        files: ['./test/**/*.spec.js']
+      },
+      mocha_istanbul: {
+        coverage: {
+          src: 'test',
+          options: {
+            mask: '**/*.spec.js'
+          }
         }
+      }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks("grunt-contrib-jshint");
     grunt.loadNpmTasks('grunt-mocha-test');
     grunt.loadNpmTasks('grunt-mocha-istanbul');
 
@@ -33,4 +37,8 @@ module.exports = function(grunt) {
     grunt.registerTask('test', ['mochaTest']);
     grunt.registerTask('coverage', ['mocha_istanbul']);
     grunt.registerTask('build', ['lint', 'coverage']);
-};
+  }
+
+}
+
+module.exports = (new Gruntfile()).init;

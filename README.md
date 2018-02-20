@@ -371,11 +371,11 @@ catch (e) {
 add a node with newValue before an existing value's node, throws exception if value doesnt exist.
 ```javascript
 try {
-    linkedList.addBefore('n4', 'n3');
-    linkedList.addBefore('n33', 'n3');
+  linkedList.addBefore('n4', 'n3');
+  linkedList.addBefore('n33', 'n3');
 }
 catch (e) {
-    console.log(e.message); // node n33 not found
+  console.log(e.message); // node n33 not found
 }
 ```
 
@@ -480,11 +480,11 @@ dList.addLast('n4');
 add a node with newValue after an existing value's node, throws exception if value doesnt exist.
 ```javascript
 try {
-    dList.addAfter('n1', 'n2');
-    dList.addAfter('n33', 'n2');
+  dList.addAfter('n1', 'n2');
+  dList.addAfter('n33', 'n2');
 }
 catch (e) {
-    console.log(e.message); // node n33 not found
+  console.log(e.message); // node n33 not found
 }
 ```
 
@@ -493,11 +493,11 @@ catch (e) {
 add a node with newValue before an existing value's node, throws exception if value doesnt exist.
 ```javascript
 try {
-    dList.addBefore('n4', 'n3');
-    dList.addBefore('n33', 'n2');
+  dList.addBefore('n4', 'n3');
+  dList.addBefore('n33', 'n2');
 }
 catch (e) {
-    console.log(e.message); // node n33 not found
+  console.log(e.message); // node n33 not found
 }
 ```
 
@@ -656,9 +656,7 @@ bst.traverse((value) => {
 // 90
 
 // preOrder traverse
-bst.traverse((value) => {
-    console.log(value);
-}, 'preOrder');
+bst.traverse((value) => console.log(value), 'preOrder');
 
 // 50
 // 30
@@ -669,9 +667,7 @@ bst.traverse((value) => {
 // 90
 
 // postOrder traverse
-bst.traverse((value) => {
-    console.log(value);
-}, 'postOrder');
+bst.traverse((value) => console.log(value), 'postOrder');
 
 // 20
 // 40
