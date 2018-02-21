@@ -1,6 +1,11 @@
 {
-    "strict": true,
-    "node": true,
-    "esversion": 6,
-    "mocha": true
+  "strict": true,
+  "node": true,
+  "esversion": 6,
+  "mocha": true,
+  "indent": 2,
+  "eqeqeq": true,
+  "quotmark": "single",
+  "undef": true,
+  "unused": true
 }
