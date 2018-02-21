@@ -1,8 +1,8 @@
-/*!
- * datastructures-js
- * Gruntfile
- * Copyright(c) 2018 Eyas Ranjous <eyas.ranjous@gmail.com>
- * MIT Licensed
+/**
+ * datastructures-js/Gruntfile
+ * @class
+ * @copyright 2018 Eyas Ranjous <eyas.ranjous@gmail.com>
+ * @license MIT
  */
 
 class Gruntfile {
@@ -29,7 +29,7 @@ class Gruntfile {
       }
     });
 
-    grunt.loadNpmTasks("grunt-contrib-jshint");
+    grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-mocha-test');
     grunt.loadNpmTasks('grunt-mocha-istanbul');
 
