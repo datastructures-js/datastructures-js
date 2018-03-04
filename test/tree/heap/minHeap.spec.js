@@ -50,14 +50,14 @@ describe('minHeap tests', () => {
       minHeap.remove(2);
       expect(minHeap.min()).to.equal(40);
       expect(minHeap.size()).to.equal(3);
-      minHeap.remove(1);
-      expect(minHeap.min()).to.equal(40);
-      expect(minHeap.size()).to.equal(2);
-      minHeap.remove(1);
-      expect(minHeap.min()).to.equal(40);
-      expect(minHeap.size()).to.equal(1);
-      minHeap.remove(0);
+    });
+  });
+
+  describe('.clear()', () => {
+    it('should clear the heap', () => {
+      minHeap.clear();
       expect(minHeap.min()).to.equal(null);
+      expect(minHeap.extractMin()).to.equal(null);
       expect(minHeap.size()).to.equal(0);
     });
   });

@@ -50,14 +50,14 @@ describe('maxHeap tests', () => {
       maxHeap.remove(2);
       expect(maxHeap.max()).to.equal(60);
       expect(maxHeap.size()).to.equal(3);
-      maxHeap.remove(1);
-      expect(maxHeap.max()).to.equal(60);
-      expect(maxHeap.size()).to.equal(2);
-      maxHeap.remove(1);
-      expect(maxHeap.max()).to.equal(60);
-      expect(maxHeap.size()).to.equal(1);
-      maxHeap.remove(0);
+    });
+  });
+
+  describe('.clear()', () => {
+    it('should clear the heap', () => {
+      maxHeap.clear();
       expect(maxHeap.max()).to.equal(null);
+      expect(maxHeap.extractMax()).to.equal(null);
       expect(maxHeap.size()).to.equal(0);
     });
   });
