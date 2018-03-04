@@ -796,24 +796,24 @@ console.log(maxHeap.max()); // 90
 
 retrieves and remove the min value from the heap
 ```javascript
-console.log(minHeap.extractMax()); // 90
-console.log(minHeap.max()); // 80
+console.log(maxHeap.extractMax()); // 90
+console.log(maxHeap.max()); // 80
 ```
 
 **.remove(index)** 
 
 removes a value at a specific index from the heap
 ```javascript
-minHeap.remove(3); // removed 50
-console.log(minHeap.size()); // 5
+maxHeap.remove(3); // removed 50
+console.log(maxHeap.size()); // 5
 ```
 
 **.clear()** 
 
 clears the heap
 ```javascript
-minHeap.clear();
-console.log(minHeap.size()); // 0
+maxHeap.clear();
+console.log(maxHeap.size()); // 0
 ```
 
 ## Graph
