@@ -794,7 +794,7 @@ console.log(maxHeap.max()); // 90
 
 **.extractMax()** 
 
-retrieves and remove the min value from the heap
+retrieves and remove the max value from the heap
 ```javascript
 console.log(maxHeap.extractMax()); // 90
 console.log(maxHeap.max()); // 80
