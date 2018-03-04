@@ -55,6 +55,18 @@ describe('dsFactory tests', () => {
     });
   });
 
+  describe('.minHeap()', () => {
+    it('should get a minHeap object', function() {
+      expect(dsFactory.minHeap()).to.be.instanceof(ds.MinHeap);
+    });
+  });
+
+  describe('.maxHeap()', () => {
+    it('should get a maxHeap object', function() {
+      expect(dsFactory.maxHeap()).to.be.instanceof(ds.MaxHeap);
+    });
+  });
+
   describe('.graph() / .g()', () => {
     it('should get a graph object', function() {
       expect(dsFactory.graph()).to.be.instanceof(ds.Graph);
