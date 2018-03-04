@@ -24,6 +24,8 @@ let ds = require('datastructures-js');
 - [Linked List](#linkedlist)
 - [Doubly Linked List](#doublylinkedlist)
 - [Binary Search Tree](#binarysearchtree)
+- [Min Heap Tree](#minheap)
+- [Max Heap Tree](#maxheap)
 - [Graph](#graph)
 - [Directed Graph](#directedgraph)
 
@@ -48,25 +50,27 @@ stack.push('test');
 
 returns the top element in the stack.
 ```javascript
-let element = stack.peek(); // test
+console.log(stack.peek()); // test
 ```
 **.pop()** 
 
 pops the top element of the stack.
 ```javascript
-let element = stack.pop(); // test
+console.log(stack.pop()); // test
+console.log(stack.peek()); // null
 ```
+
 **.isEmpty()** 
 
 checks if the stack is empty.
 ```javascript
-let isEmpty = stack.isEmpty(); // true
+console.log(stack.isEmpty()); // true
 ```
 **.length()** 
 
 returns the length length of the stack.
 ```javascript
-let length = stack.length(); // 0
+console.log(stack.length()); // 0
 ```
 
 ## Queue
@@ -91,33 +95,34 @@ queue.enqueue(20);
 
 returns the front element in queue.
 ```javascript
-let front = queue.front(); // 10
+console.log(queue.front()); // 10
 ```
 **.back()** 
 
 returns the back element in the queue.
 ```javascript
-let back = queue.back(); // 20
+console.log(queue.back()); // 20
 ```
 
 **.dequeue()** 
 
 dequeues an element from the queue.
 ```javascript
-let element = queue.dequeue(); // 10
+console.log(queue.dequeue()); // 10
+console.log(queue.front()); // 20
 ```
 
 **.isEmpty()** 
 
 checks if the queue is empty.
 ```javascript
-let isEmpty = queue.isEmpty(); // false
+console.log(queue.isEmpty()); // false
 ```
 **.length()** 
 
 returns the length of the queue
 ```javascript
-var length = queue.length(); // 1
+console.log(queue.length()); // 1
 ```
 
 **.toArray()** 
@@ -127,7 +132,7 @@ converts the queue to an array with front starting at 0
 queue.enqueue(1);
 queue.enqueue(4);
 queue.enqueue(2);
-let elements = queue.toArray(); // [1, 4, 2]
+console.log(queue.toArray()); // [1, 4, 2]
 ```
 
 **.clear()** 
@@ -162,35 +167,36 @@ pQueue.enqueue('patient 2', 1); // higher priority
 
 returns the front element in queue.
 ```javascript
-var front = pQueue.front(); // patient 1
+console.log(pQueue.front()); // patient 1
 ```
 
 **.back()** 
 
 returns the back element in the queue.
 ```javascript
-var back = pQueue.back(); // patient 3
+console.log(pQueue.back()); // patient 3
 ```
 
 **.dequeue()** 
 
 dequeues the highest priority element from the queue.
 ```javascript
-var element = pQueue.dequeue(); // patient 2
+console.log(pQueue.dequeue()); // patient 2
+console.log(pQueue.front()); // patient 1
 ```
 
 **.isEmpty()** 
 
 checks if the queue is empty.
 ```javascript
-var isEmpty = queue.isEmpty(); // false
+console.log(queue.isEmpty()); // false
 ```
 
 **.length()** 
 
 returns the length of the queue.
 ```javascript
-var len = queue.length(); // 1
+console.log(queue.length()); // 1
 ```
 
 converts the queue to an array in the order elements were queued
@@ -198,7 +204,7 @@ converts the queue to an array in the order elements were queued
 queue.enqueue('test 1', 2);
 queue.enqueue('test 2', 3);
 queue.enqueue('test 3', 1);
-let elements = queue.toArray(); // ['test 1', 'test 2', 'test 3']
+console.log(queue.toArray()); // ['test 1', 'test 2', 'test 3']
 ```
 
 **.clear()** 
@@ -206,7 +212,7 @@ let elements = queue.toArray(); // ['test 1', 'test 2', 'test 3']
 clears the queue
 ```javascript
 queue.clear();
-queue.length(); // 0
+console.log(queue.length()); // 0
 ```
 
 ## Set
@@ -230,14 +236,14 @@ set.add('D');
 
 checks if the set is empty.
 ```javascript
-let isEmpty = set.isEmpty(); // false
+console.log(set.isEmpty()); // false
 ```
 
 **.contains(element)** 
 
 checks if the set contains an element
 ```javascript
-let contains = set.contains('C'); // true
+console.log(set.contains('C')); // true
 ```
 
 **.remove(element)** 
@@ -252,7 +258,7 @@ console.log(set.contains('C')); // false
 
 returns the number of elements in the set.
 ```javascript
-let size = set.size(); // 3
+console.log(set.size()); // 3
 ```
 
 **.union(set)** 
@@ -306,15 +312,15 @@ s2.add('B');
 s2.add('G');
 s2.add('D');
 
-let d1 = s2.isSubset(s1); // false
-let d2 = s1.isSubset(s2); // true
+console.log(s2.isSubset(s1)); // false
+console.log(s1.isSubset(s2)); // true
 ```
 
 **.toArray()** 
 
 converts the set into an array.
 ```javascript
-let arr = set.toArray(); // ['A', 'B', 'D']
+console.log(set.toArray()); // ['A', 'B', 'D']
 ```
 
 **.clear()** 
@@ -322,6 +328,7 @@ let arr = set.toArray(); // ['A', 'B', 'D']
 clears the set
 ```javascript
 set.clear(); // set is empty
+console.log(set.size()); // 0  
 ```
 
 ## LinkedList
@@ -402,9 +409,7 @@ console.log(head.getValue()); // n1
 
 traverse the linked list and calls cb for each node
 ```javascript
-linkedList.traverse((value) => {
-    console.log(value);
-});
+linkedList.traverse((value) => { console.log(value); });
 // n1
 // n2   
 // n3
@@ -436,7 +441,7 @@ linkedList.removeLast(); // n4 removed
 
 returns the number of nodes in the list.
 ```javascript
-let length = linkedList.count(); // 1
+console.log(linkedList.count()); // 1
 ```
 
 **.clear()** 
@@ -564,6 +569,7 @@ let length = dList.length();
 clears all the nodes from the list.
 ```javascript
 dList.clear();
+console.log(dList.length()); // 0  
 ```
 
 ## BinarySearchTree
@@ -598,28 +604,28 @@ bst.insert(20);
 
 returns the root node
 ```javascript
-let root = bst.root().getValue(); // 90
+console.log(bst.root().getValue()); // 90
 ```
 
 **.min()** 
 
 returns the min value binaryNode object (most left node value).
 ```javascript
-let min = bst.min().getValue(); // 20
+console.log(bst.min().getValue()); // 20
 ```
 
 **.max()** 
 
 returns the max value binaryNode object (most right node value).
 ```javascript
-let max = bst.max().getValue(); // 90
+console.log(bst.max().getValue()); // 90
 ```
 
 **.count()** 
 
 returns number of nodes in the tree
 ```javascript
-let count = bst.count(); // 7
+console.log(bst.count()); // 7
 ```
 
 **.find(value)** 
@@ -643,9 +649,7 @@ traverse the tree in the defined order and apply a callback on each node.
 
 ```javascript
 // inOrder traverse
-bst.traverse((value) => {
-    console.log(value);
-});
+bst.traverse((value) => { console.log(value); });
 
 // 20
 // 30
@@ -656,7 +660,7 @@ bst.traverse((value) => {
 // 90
 
 // preOrder traverse
-bst.traverse((value) => console.log(value), 'preOrder');
+bst.traverse((value) => { console.log(value) }, 'preOrder');
 
 // 50
 // 30
@@ -667,7 +671,7 @@ bst.traverse((value) => console.log(value), 'preOrder');
 // 90
 
 // postOrder traverse
-bst.traverse((value) => console.log(value), 'postOrder');
+bst.traverse((value) => { console.log(value) }, 'postOrder');
 
 // 20
 // 40
@@ -694,6 +698,122 @@ console.log(n40.getLeft().getValue()); // 20
 clears all the nodes from the tree.
 ```javascript
 bst.clear();
+console.log(bst.count()); // 0
+```
+
+## MinHeap
+<img width="448" alt="minheap" src="https://user-images.githubusercontent.com/6517308/36940955-78f30c82-1f15-11e8-9ed1-6d9414c243c4.png">
+
+node value data type: string, number
+
+**construction**
+```javascript
+let minHeap = ds.minHeap();
+```
+
+**.insert(value)** 
+
+inserts a value into the heap.
+```javascript
+minHeap.insert(50);
+minHeap.insert(80);
+minHeap.insert(30);
+minHeap.insert(90);
+minHeap.insert(60);
+minHeap.insert(40);
+minHeap.insert(20);
+```
+
+**.size()** 
+
+retrieves the size of the heap
+```javascript
+console.log(minHeap.size()); // 7
+```
+
+**.min()** 
+
+retrieves the min value in the heap
+```javascript
+console.log(minHeap.min()); // 20
+```
+
+**.extractMin()** 
+
+retrieves and remove the min value from the heap
+```javascript
+console.log(minHeap.extractMin()); // 20
+console.log(minHeap.min()); // 30
+```
+
+**.remove(index)** 
+
+removes a value at a specific index from the heap
+```javascript
+minHeap.remove(3); // removed 90
+console.log(minHeap.size()); // 5
+```
+
+**.clear()** 
+
+clears the heap
+```javascript
+minHeap.clear();
+console.log(minHeap.size()); // 0
+```
+
+## MaxHeap
+<img width="463" alt="maxheap" src="https://user-images.githubusercontent.com/6517308/36940962-844a7fe8-1f15-11e8-8165-6fd62ba1914f.png">
+
+node value data type: string, number
+
+**construction**
+```javascript
+let maxHeap = ds.maxHeap();
+```
+
+**.insert(value)** 
+
+inserts a value into the heap.
+```javascript
+maxHeap.insert(50);
+maxHeap.insert(80);
+maxHeap.insert(30);
+maxHeap.insert(90);
+maxHeap.insert(60);
+maxHeap.insert(40);
+maxHeap.insert(20);
+```
+
+**.max()** 
+
+retrieves the max value in the heap
+```javascript
+console.log(maxHeap.max()); // 90
+```
+
+**.extractMax()** 
+
+retrieves and remove the min value from the heap
+```javascript
+console.log(minHeap.extractMax()); // 90
+console.log(minHeap.max()); // 80
+```
+
+**.remove(index)** 
+
+removes a value at a specific index from the heap
+```javascript
+minHeap.remove(3); // removed 50
+console.log(minHeap.size()); // 5
+```
+
+**.clear()** 
+
+clears the heap
+```javascript
+minHeap.clear();
+console.log(minHeap.size()); // 0
 ```
 
 ## Graph
