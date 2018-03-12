@@ -67,6 +67,12 @@ describe('dsFactory tests', () => {
     });
   });
 
+  describe('.trie()', () => {
+    it('should get a trie object', function() {
+      expect(dsFactory.trie()).to.be.instanceof(ds.Trie);
+    });
+  });
+
   describe('.graph() / .g()', () => {
     it('should get a graph object', function() {
       expect(dsFactory.graph()).to.be.instanceof(ds.Graph);

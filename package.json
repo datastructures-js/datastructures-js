@@ -1,6 +1,6 @@
 {
   "name": "datastructures-js",
-  "version": "5.1.4",
+  "version": "5.2.0",
   "description": "data structures implementation in javascript",
   "main": "index.js",
   "directories": {
@@ -30,6 +30,7 @@
     "heap",
     "min heap",
     "max heap",
+    "trie",
     "bst",
     "graph",
     "es6 graph",
