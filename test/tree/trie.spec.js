@@ -52,6 +52,18 @@ describe('trie tests', () => {
     });
   });
 
+  describe('.traverse(cb)', () => {
+    it('should traverse the trie', () => {
+      let words = [];
+      trie.traverse((word) => {
+        words.push(word);
+      });
+      expect(words).to.have.lengthOf(8).and.to.have.members([
+        'hi', 'hit', 'hide', 'hello', 'sand', 'safe', 'noun', 'name'
+      ]);
+    });
+  });
+
   describe('.remove(word)', () => {
     it('should remove words from the trie', () => {
       trie.remove('hit');
