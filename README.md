@@ -26,6 +26,7 @@ let ds = require('datastructures-js');
 - [Binary Search Tree](#binarysearchtree)
 - [Min Heap Tree](#minheap)
 - [Max Heap Tree](#maxheap)
+- [Trie](#trie)
 - [Graph](#graph)
 - [Directed Graph](#directedgraph)
 
