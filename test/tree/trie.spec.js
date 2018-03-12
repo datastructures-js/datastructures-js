@@ -96,4 +96,12 @@ describe('trie tests', () => {
     });
   });
 
+  describe('.clear()', () => {
+    trie.insert('test');
+    trie.clear();
+    expect(trie.search('test')).to.equal(null);
+    expect(trie.countNodes()).to.equal(1);
+    expect(trie.countWords()).to.equal(0);    
+  });
+
 });
