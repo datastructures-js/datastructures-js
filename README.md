@@ -880,7 +880,7 @@ removes a word from the trie
 ```javascript
 trie.remove('hit');
 
-console.log(trie.search('abc')); // null
+console.log(trie.search('hit')); // null
 ```
 
 **.countNodes()**
