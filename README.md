@@ -826,6 +826,7 @@ let trie = ds.trie();
 ```
 
 **.insert(word)** 
+
 inserts a word into the trie
 
 ```javascript
@@ -840,6 +841,7 @@ trie.insert('name');
 ```
 
 **.search(word)** 
+
 searches a word in the trie and returns the last char node
 
 returned node is of the type TrieNode or null if word is not found
@@ -855,6 +857,7 @@ console.log(node2); // null
 ```
 
 **.traverse(cb)** 
+
 traverse the trie and calls cb for each found word
 
 ```javascript
@@ -871,6 +874,7 @@ trie.traverse((word) => console.log(word));
 ```
 
 **.remove(word)** 
+
 removes a word from the trie
 
 ```javascript
@@ -879,7 +883,8 @@ trie.remove('hit');
 console.log(trie.search('abc')); // null
 ```
 
-**.countNodes()** 
+**.countNodes()**
+
 gets the count of the characters nodes in the trie
 
 ```javascript
@@ -887,6 +892,7 @@ console.log(trie.countNodes()); // 22
 ```
 
 **.countWords()** 
+
 gets the count of the words in the trie
 
 ```javascript
@@ -894,6 +900,7 @@ console.log(trie.countWords()); // 7
 ```
 
 **.clear()** 
+
 clears the trie
 
 ```javascript
