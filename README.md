@@ -7,7 +7,7 @@
 Javascript implementation of the main data structures. Each data structure object is constructed using a factory function that holds the data structure name.
 
 ## Install
-```
+```shell
 npm install datastructures-js
 ```
 
