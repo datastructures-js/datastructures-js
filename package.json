@@ -1,6 +1,6 @@
 {
   "name": "datastructures-js",
-  "version": "5.2.0",
+  "version": "5.3.0",
   "description": "data structures implementation in javascript",
   "main": "index.js",
   "directories": {
@@ -27,6 +27,7 @@
     "doubly linked list",
     "doublylinkedlist",
     "binary search tree",
+    "avl tree",
     "heap",
     "min heap",
     "max heap",
