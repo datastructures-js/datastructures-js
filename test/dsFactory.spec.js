@@ -55,6 +55,13 @@ describe('dsFactory tests', () => {
     });
   });
 
+  describe('.avlTree() / .avl()', () => {
+    it('should get a avlTree object', function() {
+      expect(dsFactory.avlTree()).to.be.instanceof(ds.AvlTree);
+      expect(dsFactory.avl()).to.be.instanceof(ds.AvlTree);
+    });
+  });
+
   describe('.minHeap()', () => {
     it('should get a minHeap object', function() {
       expect(dsFactory.minHeap()).to.be.instanceof(ds.MinHeap);
