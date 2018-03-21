@@ -704,7 +704,7 @@ console.log(bst.count()); // 0
 ```
 
 ## AvlTree
-<img width="1371" alt="avltree" src="https://user-images.githubusercontent.com/6517308/37691269-299b0b94-2c76-11e8-87f0-e8686a952619.png">
+<img width="1388" alt="avltree" src="https://user-images.githubusercontent.com/6517308/37691434-a89cb5f4-2c77-11e8-8ecf-8035ee7d1679.png">
 
 **construction**
 ```javascript
