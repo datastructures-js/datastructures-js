@@ -706,6 +706,15 @@ console.log(bst.count()); // 0
 ## AvlTree
 <img width="1371" alt="avltree" src="https://user-images.githubusercontent.com/6517308/37691269-299b0b94-2c76-11e8-87f0-e8686a952619.png">
 
+**construction**
+```javascript
+let avlTree = ds.avlTree();
+
+// OR
+
+let avlTree = ds.avl();
+```
+
 Implements the same exact [BinarySearchTree](#binarysearchtree) interface except that it maintains the tree balance automatically upon insertion and deletion.
 
 ## MinHeap
