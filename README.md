@@ -24,6 +24,7 @@ let ds = require('datastructures-js');
 - [Linked List](#linkedlist)
 - [Doubly Linked List](#doublylinkedlist)
 - [Binary Search Tree](#binarysearchtree)
+- [AVL Tree](#avltree)
 - [Min Heap Tree](#minheap)
 - [Max Heap Tree](#maxheap)
 - [Trie](#trie)
@@ -701,6 +702,20 @@ clears all the nodes from the tree.
 bst.clear();
 console.log(bst.count()); // 0
 ```
+
+## AvlTree
+<img width="1387" alt="avltree" src="https://user-images.githubusercontent.com/6517308/37691467-e9c7db8a-2c77-11e8-844a-c6b6c0ff93dd.png">
+
+**construction**
+```javascript
+let avlTree = ds.avlTree();
+
+// OR
+
+let avlTree = ds.avl();
+```
+
+Implements the same exact [BinarySearchTree](#binarysearchtree) interface except that it maintains the tree balance automatically upon insertion and deletion.
 
 ## MinHeap
 <img width="448" alt="minheap" src="https://user-images.githubusercontent.com/6517308/36940955-78f30c82-1f15-11e8-9ed1-6d9414c243c4.png">

@@ -1,11 +1,12 @@
 'use strict';
 
 const expect           = require('chai').expect;
+const BinaryNode       = require('../../lib/tree/binaryNode');
 const BinarySearchTree = require('../../lib/tree/binarySearchTree');
 
 describe('binarySearchTree tests', () => {
 
-  let bst = new BinarySearchTree();
+  let bst = new BinarySearchTree(BinaryNode);
 
   describe('.insert(value)', () => {
     it('should insert nodes to the tree', () => {
