@@ -706,7 +706,7 @@ console.log(bst.count()); // 0
 ## AvlTree
 <img width="1371" alt="avltree" src="https://user-images.githubusercontent.com/6517308/37691269-299b0b94-2c76-11e8-87f0-e8686a952619.png">
 
-Extends the same (#binarysearchtree) interface except that it maintains the tree balance automatically upon insertion and deletion.
+Implements the same exact [BinarySearchTree](#binarysearchtree) interface except that it maintains the tree balance automatically upon insertion and deletion.
 
 ## MinHeap
 <img width="448" alt="minheap" src="https://user-images.githubusercontent.com/6517308/36940955-78f30c82-1f15-11e8-9ed1-6d9414c243c4.png">
