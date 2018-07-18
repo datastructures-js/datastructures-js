@@ -20,7 +20,8 @@
 #### [@datastructures-js/avl-tree](https://github.com/datastructures-js/avl-tree)
 #### [@datastructures-js/graph](https://github.com/datastructures-js/graph)
 
-**While it can still be used in its monolithic form through the following interface:**
+
+### While it can still be used in its monolithic form through the following interface:
 
 ### Usage
 ```
