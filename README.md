@@ -80,3 +80,11 @@ const graph = ds.graph();
 // OR
 const g = ds.graph();
 ```
+
+## Build
+```
+grunt build
+```
+
+## License
+The MIT License. Full License is [here](https://github.com/eyas-ranjous/datastructures-js/blob/master/LICENSE)
