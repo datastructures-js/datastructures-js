@@ -1,4 +1,4 @@
-# datastructures-js
+# [@datastructures-js](https://github.com/datastructures-js)
 
 
 [![build:?](https://travis-ci.org/eyas-ranjous/datastructures-js.svg?branch=master)](https://travis-ci.org/eyas-ranjous/datastructures-js) 
