@@ -20,3 +20,62 @@
 #### [@datastructures-js/avl-tree](https://github.com/datastructures-js/avl-tree)
 #### [@datastructures-js/graph](https://github.com/datastructures-js/graph)
 
+**While it can still be used in its monolithic form through the following interface:**
+
+### Usage
+```
+const ds = require('datastructures-js'); // internally requires all the above repos
+```
+
+### Creating Data Structures
+```js
+// Queue
+const queue = ds.queue();
+// OR
+const q = ds.q();
+
+// Stack
+const stack = ds.stack();
+
+// Set
+const set = ds.set();
+
+// Priority Queue
+const priorityQueue = ds.priorityQueue();
+// OR
+const pq = ds.pq();
+
+// Linked List
+const linkedList = ds.linkedList();
+// OR
+const ll = ds.ll();
+
+// Doubly Linked List
+const doublyLinkedList = ds.doublyLinkedList();
+// OR
+const dll = ds.dll();
+
+// Min Heap
+const minHeap = ds.minHeap();
+
+// Max Heap
+const maxHeap = ds.maxHeap();
+
+// Trie
+const trie = ds.trie();
+
+// Binary Search Tree
+const binarySearchTree = ds.binarySearchTree();
+// OR
+const bst = ds.bst();
+
+// AVL Tree
+const avlTree = ds.avlTree();
+// OR
+const avl = ds.avl();
+
+// Graph
+const graph = ds.graph();
+// OR
+const g = ds.graph();
+```
