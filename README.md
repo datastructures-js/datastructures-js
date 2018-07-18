@@ -78,7 +78,7 @@ const avl = ds.avl();
 // Graph
 const graph = ds.graph();
 // OR
-const g = ds.graph();
+const g = ds.g();
 ```
 
 ## Build
