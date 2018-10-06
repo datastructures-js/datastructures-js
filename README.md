@@ -1,7 +1,7 @@
 # [@datastructures-js](https://github.com/datastructures-js)
 
 
-[![build:?](https://travis-ci.org/eyas-ranjous/datastructures-js.svg?branch=master)](https://travis-ci.org/eyas-ranjous/datastructures-js) 
+[![build:?](https://travis-ci.org/js-shelf/datastructures-js.svg?branch=master)](https://travis-ci.org/js-shelf/datastructures-js) 
 [![npm](https://img.shields.io/npm/v/datastructures-js.svg)](https://www.npmjs.com/package/datastructures-js)
 [![npm](https://img.shields.io/npm/dm/datastructures-js.svg)](https://www.npmjs.com/package/datastructures-js) [![npm](https://img.shields.io/badge/node-%3E=%206.0-blue.svg)](https://www.npmjs.com/package/datastructures-js)
 
@@ -87,4 +87,4 @@ grunt build
 ```
 
 ## License
-The MIT License. Full License is [here](https://github.com/eyas-ranjous/datastructures-js/blob/master/LICENSE)
+The MIT License. Full License is [here](https://github.com/js-shelf/datastructures-js/blob/master/LICENSE)
