@@ -1,6 +1,6 @@
 {
   "name": "datastructures-js",
-  "version": "6.0.1",
+  "version": "6.0.2",
   "description": "data structures implementation in javascript",
   "main": "index.js",
   "directories": {
@@ -40,11 +40,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/eyas-ranjous/datastructures-js.git"
+    "url": "https://github.com/js-shelf/datastructures-js.git"
   },
   "author": "Eyas Ranjous <eyas.ranjous@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/eyas-ranjous/datastructures-js#readme",
+  "homepage": "https://github.com/js-shelf/datastructures-js#readme",
   "devDependencies": {
     "chai": "^4.1.2",
     "eslint": "^4.19.1",
