@@ -1,5 +1,4 @@
-# [@datastructures-js](https://github.com/datastructures-js)
-
+# [datastructures-js](https://github.com/node-work/datastructures-js)
 
 [![build:?](https://travis-ci.org/js-shelf/datastructures-js.svg?branch=master)](https://travis-ci.org/js-shelf/datastructures-js) 
 [![npm](https://img.shields.io/npm/v/datastructures-js.svg)](https://www.npmjs.com/package/datastructures-js)
