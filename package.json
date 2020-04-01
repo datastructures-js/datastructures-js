@@ -40,11 +40,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/node-work/datastructures-js.git"
+    "url": "https://github.com/eyas-ranjous/datastructures-js.git"
   },
   "author": "Eyas Ranjous <eyas.ranjous@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/node-work/datastructures-js#readme",
+  "homepage": "https://github.com/eyas-ranjous/datastructures-js#readme",
   "devDependencies": {
     "chai": "^4.2.0",
     "eslint": "^6.7.2",
