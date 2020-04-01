@@ -5,81 +5,117 @@
 [![npm](https://img.shields.io/npm/v/datastructures-js.svg)](https://www.npmjs.com/package/datastructures-js)
 [![npm](https://img.shields.io/npm/dm/datastructures-js.svg)](https://www.npmjs.com/package/datastructures-js) [![npm](https://img.shields.io/badge/node-%3E=%206.0-blue.svg)](https://www.npmjs.com/package/datastructures-js)
 
-### This repository has been fragmented into independent repositories per each data structure as the following:
+consolidates all data structures of https://github.com/datastructures-js into a single repository.
 
-#### [@datastructures-js/stack](https://github.com/datastructures-js/stack)
-#### [@datastructures-js/queue](https://github.com/datastructures-js/queue)
-#### [@datastructures-js/priority-queue](https://github.com/datastructures-js/priority-queue)
-#### [@datastructures-js/set](https://github.com/datastructures-js/set)
-#### [@datastructures-js/linked-list](https://github.com/datastructures-js/linked-list)
-#### [@datastructures-js/doubly-linked-list](https://github.com/datastructures-js/doubly-linked-list)
-#### [@datastructures-js/min-heap](https://github.com/datastructures-js/min-heap)
-#### [@datastructures-js/max-heap](https://github.com/datastructures-js/max-heap)
-#### [@datastructures-js/trie](https://github.com/datastructures-js/trie)
-#### [@datastructures-js/binary-search-tree](https://github.com/datastructures-js/binary-search-tree)
-#### [@datastructures-js/avl-tree](https://github.com/datastructures-js/avl-tree)
-#### [@datastructures-js/graph](https://github.com/datastructures-js/graph)
+# Table of Contents
+* [Install](#install)
+* [API](#api)
+  * [require](#require)
+  * [import](#import)
+  * [Data Structures](#data-structures)
+    * [Queue](#queue)
+    * [Priority Queue](#priority-queue)
+    * [Stack](#stack)
+    * [Set](#set)
+    * [Linked List](#linked-list)
+    * [Doubly Linked List](#doubly-linked-list)
+    * [Min Heap](#min-heap)
+    * [Max Heap](#max-heap)
+    * [Graph](#graph)
+    * [Directed Graph](#directed-graph)
+    * [Binary Search Tree](#binary-search-tree)
+    * [AVL Tree](#avl-tree)
+    * [Trie](#trie)
+ * [Build](#build)
+ * [License](#license)
 
-
-### While it can still be used in its monolithic form through the following interface:
-
-### Usage
+## install
+```sh
+npm install --save datastructures-js
 ```
-const ds = require('datastructures-js'); // internally requires all the above repos
-```
 
-### Creating Data Structures
+## API
+
+### require
 ```js
-// Queue
-const queue = ds.queue();
-// OR
-const q = ds.q();
-
-// Stack
-const stack = ds.stack();
-
-// Set
-const set = ds.set();
-
-// Priority Queue
-const priorityQueue = ds.priorityQueue();
-// OR
-const pq = ds.pq();
-
-// Linked List
-const linkedList = ds.linkedList();
-// OR
-const ll = ds.ll();
-
-// Doubly Linked List
-const doublyLinkedList = ds.doublyLinkedList();
-// OR
-const dll = ds.dll();
-
-// Min Heap
-const minHeap = ds.minHeap();
-
-// Max Heap
-const maxHeap = ds.maxHeap();
-
-// Trie
-const trie = ds.trie();
-
-// Binary Search Tree
-const binarySearchTree = ds.binarySearchTree();
-// OR
-const bst = ds.bst();
-
-// AVL Tree
-const avlTree = ds.avlTree();
-// OR
-const avl = ds.avl();
-
-// Graph
-const graph = ds.graph();
-// OR
-const g = ds.g();
+// import your required classes
+const {
+  Queue,
+  PriorityQueue,
+  Stack,
+  Set: EnhancedSet, // you can rename it to avoid conflict with es6 Set
+  LinkedList,
+  DoublyLinkedList,
+  MinHeap,
+  MaxHeap,
+  Graph,
+  DirectedGraph,
+  BinarySearchTree,
+  AvlTree,
+  Trie
+} = require('datastructures-js');
 ```
+
+### import
+```js
+// import your required classes
+import {
+  Queue,
+  PriorityQueue,
+  Stack,
+  Set as EnhancedSet, // you can rename it to avoid conflict with es6 Set
+  LinkedList,
+  DoublyLinkedList,
+  MinHeap,
+  MaxHeap,
+  Graph,
+  DirectedGraph,
+  BinarySearchTree,
+  AvlTree,
+  Trie
+} from 'datastructures-js';
+```
+
+### Data Structures
+
+#### Queue
+https://github.com/datastructures-js/queue
+
+#### Priority Queue
+https://github.com/datastructures-js/priority-queue
+
+#### Stack
+https://github.com/datastructures-js/stack
+
+#### Set
+https://github.com/datastructures-js/set
+
+#### Linked List
+https://github.com/datastructures-js/linked-list
+
+#### Doubly Linked List
+https://github.com/datastructures-js/linked-list
+
+#### Min Heap
+https://github.com/datastructures-js/heap
+
+#### Max Heap
+https://github.com/datastructures-js/heap
+
+#### Graph
+https://github.com/datastructures-js/graph
+
+#### Directed Graph
+https://github.com/datastructures-js/graph
+
+#### Binary Search Tree
+https://github.com/datastructures-js/binary-search-tree
+
+#### AVL Tree
+https://github.com/datastructures-js/binary-search-tree
+
+#### Trie
+https://github.com/datastructures-js/trie
 
 ## Build
 ```
