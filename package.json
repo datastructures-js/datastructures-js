@@ -1,7 +1,7 @@
 {
   "name": "datastructures-js",
-  "version": "6.0.2",
-  "description": "data structures implementation in javascript",
+  "version": "7.0.0",
+  "description": "authentic and production-ready data structures implementation in javascript.",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -40,36 +40,32 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/js-shelf/datastructures-js.git"
+    "url": "https://github.com/node-work/datastructures-js.git"
   },
   "author": "Eyas Ranjous <eyas.ranjous@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/js-shelf/datastructures-js#readme",
+  "homepage": "https://github.com/node-work/datastructures-js#readme",
   "devDependencies": {
-    "chai": "^4.1.2",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.12.0",
-    "grunt-eslint": "^20.2.0",
-    "grunt": "^1.0.1",
-    "grunt-contrib-jshint": "^1.1.0",
+    "chai": "^4.2.0",
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.19.1",
+    "grunt": "^1.0.4",
+    "grunt-eslint": "^22.0.0",
     "grunt-mocha-istanbul": "^5.0.2",
     "grunt-mocha-test": "^0.13.3",
     "istanbul": "^0.4.5",
-    "mocha": "^5.0.0"
+    "mocha": "^6.2.2"
   },
   "dependencies": {
-    "@datastructures-js/avl-tree": "^1.0.2",
-    "@datastructures-js/binary-search-tree": "^1.0.9",
-    "@datastructures-js/doubly-linked-list": "^1.0.1",
-    "@datastructures-js/graph": "^1.0.1",
-    "@datastructures-js/linked-list": "^1.0.6",
-    "@datastructures-js/max-heap": "^1.0.2",
-    "@datastructures-js/min-heap": "^1.0.3",
-    "@datastructures-js/priority-queue": "^1.0.1",
-    "@datastructures-js/queue": "^2.0.2",
-    "@datastructures-js/set": "^1.0.1",
-    "@datastructures-js/stack": "^1.0.2",
-    "@datastructures-js/trie": "^1.0.4"
+    "@datastructures-js/binary-search-tree": "^3.1.1",
+    "@datastructures-js/graph": "^3.0.2",
+    "@datastructures-js/heap": "^1.2.0",
+    "@datastructures-js/linked-list": "^2.0.2",
+    "@datastructures-js/priority-queue": "^2.0.0",
+    "@datastructures-js/queue": "^3.1.0",
+    "@datastructures-js/set": "^2.0.0",
+    "@datastructures-js/stack": "^2.0.1",
+    "@datastructures-js/trie": "^2.0.0"
   }
 }
