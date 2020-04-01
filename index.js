@@ -1,5 +1,6 @@
-const { Queue, PriorityQueue } = require('@datastructures-js/queue');
+const Queue = require('@datastructures-js/queue');
 const Stack = require('@datastructures-js/stack');
+const PriorityQueue = require('@datastructures-js/priority-queue');
 const { MinHeap, MaxHeap } = require('@datastructures-js/heap');
 const Set = require('@datastructures-js/set');
 const { LinkedList, DoublyLinkedList } = require('@datastructures-js/linked-list');
