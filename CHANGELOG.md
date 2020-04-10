@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [7.0.1] - 2020-04-10
+### Fixed
+- README
+
 ## [7.0.0] - 2020-04-01
 ### Changed
 - consolidate all new major releases in https://github.com/datastructures-js

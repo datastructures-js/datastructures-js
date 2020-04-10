@@ -11,6 +11,7 @@ consolidates all data structures of https://github.com/datastructures-js into a 
 * [API](#api)
   * [require](#require)
   * [import](#import)
+  * [extend](#extend)
   * [Data Structures](#data-structures)
     * [Queue](#queue)
     * [Priority Queue](#priority-queue)
@@ -73,6 +74,21 @@ import {
   AvlTree,
   Trie
 } from 'datastructures-js';
+```
+
+### extend
+There are sometimes domain-specific use cases for data structures that require either a tweak or additional functionality. Data structures are implemented as a base general purpose classes in ES6. You can always extend any of these classes to override or enhance the functionality in your own code.
+
+#### Example
+
+```js
+const { Graph } = require('datastructures-js');
+
+class BusStationsGraph extends Graph {
+  findShortestPath(srcStationId, destStationId) {
+    // benefit from Graph to implement your own code 
+  }
+}
 ```
 
 ### Data Structures
