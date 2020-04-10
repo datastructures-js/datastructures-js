@@ -77,7 +77,7 @@ import {
 ```
 
 ### extend
-There are always some domain-specific use cases for data structures that require either a tweak or additional functionality. Data structures are implemented as a base general purpose classes and you can extend any of these classes to override or enhance the functionality in your own code.
+There are sometimes domain-specific use cases for data structures that require either a tweak or additional functionality. Data structures are implemented as a base general purpose classes in ES6. You can always extend any of these classes to override or enhance the functionality in your own code.
 
 #### Example
 
