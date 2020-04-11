@@ -1,10 +1,10 @@
-# [datastructures-js](https://github.com/eyas-ranjous/datastructures-js)
+<img width="410" src="https://user-images.githubusercontent.com/6517308/79055948-c84f8200-7c16-11ea-9a9e-be952f13ba45.jpg" />
 
 [![build:?](https://travis-ci.org/eyas-ranjous/datastructures-js.svg?branch=master)](https://travis-ci.org/eyas-ranjous/datastructures-js) 
 [![npm](https://img.shields.io/npm/v/datastructures-js.svg)](https://www.npmjs.com/package/datastructures-js)
 [![npm](https://img.shields.io/npm/dm/datastructures-js.svg)](https://www.npmjs.com/package/datastructures-js) [![npm](https://img.shields.io/badge/node-%3E=%206.0-blue.svg)](https://www.npmjs.com/package/datastructures-js)
 
-consolidates all data structures of https://github.com/datastructures-js into a single repository.
+consolidates all data structures of <a href="https://github.com/datastructures-js">@datastructures-js</a> into a single repository. Data structures are distributed in their own repositories for easier maintenance and usability so that they can be installed and required individually in the code.
 
 # Table of Contents
 * [Install](#install)
@@ -43,7 +43,7 @@ const {
   Queue,
   PriorityQueue,
   Stack,
-  Set: EnhancedSet, // you can rename it to avoid conflict with es6 Set
+  Set: EnhancedSet, // renamed to avoid conflict with es6 Set
   LinkedList,
   DoublyLinkedList,
   MinHeap,
@@ -63,7 +63,7 @@ import {
   Queue,
   PriorityQueue,
   Stack,
-  Set as EnhancedSet, // you can rename it to avoid conflict with es6 Set
+  Set as EnhancedSet, // renamed to avoid conflict with es6 Set
   LinkedList,
   DoublyLinkedList,
   MinHeap,
@@ -77,12 +77,12 @@ import {
 ```
 
 ### extend
-There are sometimes domain-specific use cases for data structures that require either a tweak or additional functionality. Data structures are implemented as a base general purpose classes in ES6. You can always extend any of these classes to override or enhance the functionality in your own code.
+There are sometimes domain-specific use cases for data structures that require either a tweak or additional functionality. Data structures here are implemented as a base general purpose classes in ES6. You can always extend any of these classes to override or enhance the functionality in your own code.
 
 #### Example
 
 ```js
-const { Graph } = require('datastructures-js');
+const { Graph } = require('datastructures-js'); // OR require('@datastructures-js/graph')
 
 class BusStationsGraph extends Graph {
   findShortestPath(srcStationId, destStationId) {
