@@ -43,7 +43,7 @@ const {
   Queue,
   PriorityQueue,
   Stack,
-  Set: EnhancedSet, // you can rename it to avoid conflict with es6 Set
+  Set: EnhancedSet, // renamed to avoid conflict with es6 Set
   LinkedList,
   DoublyLinkedList,
   MinHeap,
@@ -63,7 +63,7 @@ import {
   Queue,
   PriorityQueue,
   Stack,
-  Set as EnhancedSet, // you can rename it to avoid conflict with es6 Set
+  Set as EnhancedSet, // renamed to avoid conflict with es6 Set
   LinkedList,
   DoublyLinkedList,
   MinHeap,
