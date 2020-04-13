@@ -1,6 +1,6 @@
 {
   "name": "datastructures-js",
-  "version": "7.0.3",
+  "version": "8.0.0",
   "description": "authentic and production-ready data structures implementation in javascript.",
   "main": "index.js",
   "directories": {
