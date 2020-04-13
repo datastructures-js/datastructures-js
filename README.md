@@ -14,13 +14,14 @@ consolidates all data structures of <a href="https://github.com/datastructures-j
   * [extend](#extend)
   * [Data Structures](#data-structures)
     * [Queue](#queue)
-    * [Priority Queue](#priority-queue)
     * [Stack](#stack)
     * [Set](#set)
     * [Linked List](#linked-list)
     * [Doubly Linked List](#doubly-linked-list)
     * [Min Heap](#min-heap)
     * [Max Heap](#max-heap)
+    * [Min Priority Queue](#priority-queue)
+    * [Max Priority Queue](#priority-queue)
     * [Graph](#graph)
     * [Directed Graph](#directed-graph)
     * [Binary Search Tree](#binary-search-tree)
@@ -41,13 +42,14 @@ npm install --save datastructures-js
 // import your required classes
 const {
   Queue,
-  PriorityQueue,
   Stack,
   Set: EnhancedSet, // renamed to avoid conflict with es6 Set
   LinkedList,
   DoublyLinkedList,
   MinHeap,
   MaxHeap,
+  MinPriorityQueue,
+  MaxPriorityQueue,
   Graph,
   DirectedGraph,
   BinarySearchTree,
@@ -68,6 +70,8 @@ import {
   DoublyLinkedList,
   MinHeap,
   MaxHeap,
+  MinPriorityQueue,
+  MaxPriorityQueue,
   Graph,
   DirectedGraph,
   BinarySearchTree,
@@ -96,9 +100,6 @@ class BusStationsGraph extends Graph {
 #### Queue
 https://github.com/datastructures-js/queue
 
-#### Priority Queue
-https://github.com/datastructures-js/priority-queue
-
 #### Stack
 https://github.com/datastructures-js/stack
 
@@ -116,6 +117,12 @@ https://github.com/datastructures-js/heap
 
 #### Max Heap
 https://github.com/datastructures-js/heap
+
+#### Min Priority Queue
+https://github.com/datastructures-js/priority-queue
+
+#### Max Priority Queue
+https://github.com/datastructures-js/priority-queue
 
 #### Graph
 https://github.com/datastructures-js/graph
