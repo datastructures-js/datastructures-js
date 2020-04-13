@@ -4,7 +4,7 @@
 [![npm](https://img.shields.io/npm/v/datastructures-js.svg)](https://www.npmjs.com/package/datastructures-js)
 [![npm](https://img.shields.io/npm/dm/datastructures-js.svg)](https://www.npmjs.com/package/datastructures-js) [![npm](https://img.shields.io/badge/node-%3E=%206.0-blue.svg)](https://www.npmjs.com/package/datastructures-js)
 
-consolidates all data structures of <a href="https://github.com/datastructures-js">@datastructures-js</a> into a single repository. Data structures are distributed in their own repositories for easier maintenance and usability so that they can be installed and required individually in the code.
+consolidates all data structures of <a href="https://github.com/datastructures-js">@datastructures-js</a> into a single repository. Data structures are distributed into their own repositories for easier maintenance and usability so that they can be installed and imported individually in the code.
 
 # Table of Contents
 * [Install](#install)
@@ -77,7 +77,7 @@ import {
 ```
 
 ### extend
-There are sometimes domain-specific use cases for data structures that require either a tweak or additional functionality. Data structures here are implemented as a base general purpose classes in ES6. You can always extend any of these classes to override or enhance the functionality in your own code.
+There are sometimes domain-specific use cases for data structures that require either a tweak or additional functionality. Data structures here are implemented as a base general purpose classes in ES6. You can always extend any of these classes to override or extend the functionality in your own code.
 
 #### Example
 
