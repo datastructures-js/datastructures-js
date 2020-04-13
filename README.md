@@ -4,7 +4,7 @@
 [![npm](https://img.shields.io/npm/v/datastructures-js.svg)](https://www.npmjs.com/package/datastructures-js)
 [![npm](https://img.shields.io/npm/dm/datastructures-js.svg)](https://www.npmjs.com/package/datastructures-js) [![npm](https://img.shields.io/badge/node-%3E=%206.0-blue.svg)](https://www.npmjs.com/package/datastructures-js)
 
-consolidates all data structures of <a href="https://github.com/datastructures-js">@datastructures-js</a> into a single repository. Data structures are distributed in their own repositories for easier maintenance and usability so that they can be installed and required individually in the code.
+consolidates all data structures of <a href="https://github.com/datastructures-js">@datastructures-js</a> into a single repository. Data structures are distributed into their own repositories for easier maintenance and usability so that they can be installed and imported individually in the code.
 
 # Table of Contents
 * [Install](#install)
@@ -14,17 +14,18 @@ consolidates all data structures of <a href="https://github.com/datastructures-j
   * [extend](#extend)
   * [Data Structures](#data-structures)
     * [Queue](#queue)
-    * [Priority Queue](#priority-queue)
     * [Stack](#stack)
     * [Set](#set)
     * [Linked List](#linked-list)
     * [Doubly Linked List](#doubly-linked-list)
     * [Min Heap](#min-heap)
     * [Max Heap](#max-heap)
+    * [Min Priority Queue](#min-priority-queue)
+    * [Max Priority Queue](#max-priority-queue)
     * [Graph](#graph)
     * [Directed Graph](#directed-graph)
     * [Binary Search Tree](#binary-search-tree)
-    * [AVL Tree](#avl-tree)
+    * [AVL (Self Balancing) Tree](#avl-tree)
     * [Trie](#trie)
  * [Build](#build)
  * [License](#license)
@@ -41,13 +42,14 @@ npm install --save datastructures-js
 // import your required classes
 const {
   Queue,
-  PriorityQueue,
   Stack,
   Set: EnhancedSet, // renamed to avoid conflict with es6 Set
   LinkedList,
   DoublyLinkedList,
   MinHeap,
   MaxHeap,
+  MinPriorityQueue,
+  MaxPriorityQueue,
   Graph,
   DirectedGraph,
   BinarySearchTree,
@@ -68,6 +70,8 @@ import {
   DoublyLinkedList,
   MinHeap,
   MaxHeap,
+  MinPriorityQueue,
+  MaxPriorityQueue,
   Graph,
   DirectedGraph,
   BinarySearchTree,
@@ -77,7 +81,7 @@ import {
 ```
 
 ### extend
-There are sometimes domain-specific use cases for data structures that require either a tweak or additional functionality. Data structures here are implemented as a base general purpose classes in ES6. You can always extend any of these classes to override or enhance the functionality in your own code.
+There are sometimes domain-specific use cases for data structures that require either a tweak or additional functionality. Data structures here are implemented as a base general purpose classes in ES6. You can always use any of these classes to override or extend the functionality in your own code.
 
 #### Example
 
@@ -96,9 +100,6 @@ class BusStationsGraph extends Graph {
 #### Queue
 https://github.com/datastructures-js/queue
 
-#### Priority Queue
-https://github.com/datastructures-js/priority-queue
-
 #### Stack
 https://github.com/datastructures-js/stack
 
@@ -116,6 +117,12 @@ https://github.com/datastructures-js/heap
 
 #### Max Heap
 https://github.com/datastructures-js/heap
+
+#### Min Priority Queue
+https://github.com/datastructures-js/priority-queue
+
+#### Max Priority Queue
+https://github.com/datastructures-js/priority-queue
 
 #### Graph
 https://github.com/datastructures-js/graph
