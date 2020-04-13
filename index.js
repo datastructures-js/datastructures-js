@@ -1,6 +1,6 @@
 const Queue = require('@datastructures-js/queue');
 const Stack = require('@datastructures-js/stack');
-const PriorityQueue = require('@datastructures-js/priority-queue');
+const { MinPriorityQueue, MaxPriorityQueue } = require('@datastructures-js/priority-queue');
 const { MinHeap, MaxHeap } = require('@datastructures-js/heap');
 const Set = require('@datastructures-js/set');
 const { LinkedList, DoublyLinkedList } = require('@datastructures-js/linked-list');
@@ -10,7 +10,8 @@ const { BinarySearchTree, AvlTree } = require('@datastructures-js/binary-search-
 
 module.exports = {
   Queue,
-  PriorityQueue,
+  MinPriorityQueue,
+  MaxPriorityQueue,
   Stack,
   MinHeap,
   MaxHeap,
