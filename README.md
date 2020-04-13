@@ -25,7 +25,7 @@ consolidates all data structures of <a href="https://github.com/datastructures-j
     * [Graph](#graph)
     * [Directed Graph](#directed-graph)
     * [Binary Search Tree](#binary-search-tree)
-    * [AVL Tree](#avl-tree)
+    * [AVL (Self Balancing) Tree](#avl-tree)
     * [Trie](#trie)
  * [Build](#build)
  * [License](#license)
