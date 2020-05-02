@@ -146,7 +146,7 @@ grunt build
 ```
 
 ## Contribution
-If you'd like to contribute to the project to improve the implemented data structures or add new ones, feel free fork the corresponding data structure repo in your github or get in touch to create a new data structure repo to work on! The code just needs to be consistent with the existing structure and style, as well as tests and README. Once done, please open a PR from development branch of the repo. Thanks 🌠
+If you'd like to contribute to the project to improve the implemented data structures or add new ones, feel free to fork the corresponding data structure repo in your github or get in touch to create a new data structure repo to work on! The code just needs to be consistent with the existing structure and style, as well as tests and README. Once done, please open a PR from development branch of the repo. Thanks 🌠
 
 ## License
 The MIT License. Full License is [here](https://github.com/eyas-ranjous/datastructures-js/blob/master/LICENSE)
