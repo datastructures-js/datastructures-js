@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [8.1.0] - 2020-05-01
+### Added
+- upgrade @datastructures-js/binary-search-tree from 3.1.5 to 3.1.6
+- upgrade @datastructures-js/priority-queue from 4.0.0 to 4.1.0
+- upgrade @datastructures-js/set from 2.0.2 to 2.2.1
+- upgrade @datastructures-js/trie from 3.0.0 to 3.0.1
+
 ## [8.0.0] - 2020-04-13
 ### Changed
 - upgrade to major versions.
