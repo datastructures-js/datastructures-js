@@ -28,6 +28,7 @@ consolidates all data structures of <a href="https://github.com/datastructures-j
     * [AVL (Self Balancing) Tree](#avl-tree)
     * [Trie](#trie)
  * [Build](#build)
+ * [Contribution](#contribution) 🤝
  * [License](#license)
 
 ## install
@@ -143,6 +144,9 @@ https://github.com/datastructures-js/trie
 ```
 grunt build
 ```
+
+## Contribution
+If you'd like to contribute to the project to improve the implemented data structures or add new ones, feel free fork the corresponding data structure repo in your github or get in touch to create a new data structure repo to work on! The code just needs to be consistent with the existing structure and code style, as well as tests and README. Once done, please open a PR from development branch of the repo. Thanks 🌠
 
 ## License
 The MIT License. Full License is [here](https://github.com/eyas-ranjous/datastructures-js/blob/master/LICENSE)
