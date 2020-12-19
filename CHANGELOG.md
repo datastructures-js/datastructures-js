@@ -5,9 +5,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [9.0.0] - 2020-12-19
+### Changed
+- upgrade @datastructures-js/priority-queue from 4.1.0 to 4.1.2
+- upgrade @datastructures-js/set from 2.2.1 to 3.1.0
 
 ## [8.1.0] - 2020-05-01
-### Added
+### Changed
 - upgrade @datastructures-js/binary-search-tree from 3.1.5 to 3.1.6
 - upgrade @datastructures-js/priority-queue from 4.0.0 to 4.1.0
 - upgrade @datastructures-js/set from 2.0.2 to 2.2.1
