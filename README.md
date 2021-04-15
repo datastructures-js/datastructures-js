@@ -13,20 +13,15 @@ consolidates all data structures of <a href="https://github.com/datastructures-j
   * [import](#import)
   * [extend](#extend)
   * [Data Structures](#data-structures)
-    * [Queue](#queue)
     * [Stack](#stack)
-    * [Set](#set)
+    * [Queue](#queue)
     * [Linked List](#linked-list)
-    * [Doubly Linked List](#doubly-linked-list)
-    * [Min Heap](#min-heap)
-    * [Max Heap](#max-heap)
-    * [Min Priority Queue](#min-priority-queue)
-    * [Max Priority Queue](#max-priority-queue)
-    * [Graph](#graph)
-    * [Directed Graph](#directed-graph)
+    * [Set](#set)
+    * [Heap](#max-heap)
+    * [Priority Queue](#min-priority-queue)
     * [Binary Search Tree](#binary-search-tree)
-    * [AVL (Self Balancing) Tree](#avl-tree)
     * [Trie](#trie)
+    * [Graph](#graph)
  * [Build](#build)
  * [License](#license)
 
@@ -39,12 +34,10 @@ npm install --save datastructures-js
 
 ### require
 ```js
-// import your required classes
 const {
- Queue,
-  PriorityQueue,
-
   Stack,
+
+  Queue,
 
   Set as EnhancedSet, // renamed to avoid conflict with es6 Set
 
@@ -59,26 +52,24 @@ const {
   MinPriorityQueue,
   MaxPriorityQueue,
 
-  Graph,
-  DirectedGraph,
-
   BinarySearchTree,
   BinarySearchTreeNode,
   AvlTree,
   AvlTreeNode,
 
-  Trie
+  Trie,
+
+  Graph,
+  DirectedGraph,
 } = require('datastructures-js');
 ```
 
 ### import
 ```js
-// import your required classes
 import {
-  Queue,
-  PriorityQueue,
-
   Stack,
+
+  Queue,
 
   Set as EnhancedSet, // renamed to avoid conflict with es6 Set
 
@@ -93,15 +84,15 @@ import {
   MinPriorityQueue,
   MaxPriorityQueue,
 
-  Graph,
-  DirectedGraph,
-
   BinarySearchTree,
   BinarySearchTreeNode,
   AvlTree,
   AvlTreeNode,
 
-  Trie
+  Trie,
+
+  Graph,
+  DirectedGraph,
 } from 'datastructures-js';
 ```
 
