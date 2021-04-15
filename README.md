@@ -4,7 +4,7 @@
 [![npm](https://img.shields.io/npm/v/datastructures-js.svg)](https://www.npmjs.com/package/datastructures-js)
 [![npm](https://img.shields.io/npm/dm/datastructures-js.svg)](https://www.npmjs.com/package/datastructures-js) [![npm](https://img.shields.io/badge/node-%3E=%206.0-blue.svg)](https://www.npmjs.com/package/datastructures-js)
 
-consolidates all data structures of <a href="https://github.com/datastructures-js">@datastructures-js</a> into a single repository. Data structures are distributed into their own repositories for easier maintenance and usability so that they can be installed and imported individually in the code.
+consolidates all data structures of <a href="https://github.com/datastructures-js">@datastructures-js</a> into a single repository.
 
 # Table of Contents
 * [Install](#install)
@@ -41,19 +41,32 @@ npm install --save datastructures-js
 ```js
 // import your required classes
 const {
-  Queue,
+ Queue,
+  PriorityQueue,
+
   Stack,
-  Set: EnhancedSet, // renamed to avoid conflict with es6 Set
+
+  Set as EnhancedSet, // renamed to avoid conflict with es6 Set
+
   LinkedList,
+  LinkedListNode,
   DoublyLinkedList,
+  DoublyLinkedListNode,
+
   MinHeap,
   MaxHeap,
+
   MinPriorityQueue,
   MaxPriorityQueue,
+
   Graph,
   DirectedGraph,
+
   BinarySearchTree,
+  BinarySearchTreeNode,
   AvlTree,
+  AvlTreeNode,
+
   Trie
 } = require('datastructures-js');
 ```
@@ -64,38 +77,48 @@ const {
 import {
   Queue,
   PriorityQueue,
+
   Stack,
+
   Set as EnhancedSet, // renamed to avoid conflict with es6 Set
+
   LinkedList,
+  LinkedListNode,
   DoublyLinkedList,
+  DoublyLinkedListNode,
+
   MinHeap,
   MaxHeap,
+
   MinPriorityQueue,
   MaxPriorityQueue,
+
   Graph,
   DirectedGraph,
+
   BinarySearchTree,
+  BinarySearchTreeNode,
   AvlTree,
+  AvlTreeNode,
+
   Trie
 } from 'datastructures-js';
 ```
 
 ### extend
-There are sometimes domain-specific use cases for data structures that require either a tweak or additional functionality. Data structures here are implemented as a base general purpose classes in ES6. You can always use any of these classes to override or extend the functionality in your own code.
-
-#### Example
+Data structures are implemented as ES6 classes and for general purposes. You can extend any of these classes to enhance/change functionality in your code.
 
 ```js
 const { Graph } = require('datastructures-js'); // OR require('@datastructures-js/graph')
 
-class BusStationsGraph extends Graph {
-  findShortestPath(srcStationId, destStationId) {
-    // benefit from Graph to implement your own code 
+class CustomGraph extends Graph {
+  findShortestPath(pointA, pointB) {
+    // shortest path from A -> B
   }
 }
 ```
 
-### Data Structures
+### Repositories
 
 #### Queue
 https://github.com/datastructures-js/queue
@@ -106,34 +129,19 @@ https://github.com/datastructures-js/stack
 #### Set
 https://github.com/datastructures-js/set
 
-#### Linked List
+#### Linked List (Single/Doubly)
 https://github.com/datastructures-js/linked-list
 
-#### Doubly Linked List
-https://github.com/datastructures-js/linked-list
-
-#### Min Heap
+#### Heap (Min/Max)
 https://github.com/datastructures-js/heap
 
-#### Max Heap
-https://github.com/datastructures-js/heap
-
-#### Min Priority Queue
+#### Priority Queue (Min/Max)
 https://github.com/datastructures-js/priority-queue
 
-#### Max Priority Queue
-https://github.com/datastructures-js/priority-queue
-
-#### Graph
+#### Graph (Directed/Undirected)
 https://github.com/datastructures-js/graph
 
-#### Directed Graph
-https://github.com/datastructures-js/graph
-
-#### Binary Search Tree
-https://github.com/datastructures-js/binary-search-tree
-
-#### AVL Tree
+#### Binary Search Tree (BST/AVL)
 https://github.com/datastructures-js/binary-search-tree
 
 #### Trie
