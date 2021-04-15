@@ -106,14 +106,14 @@ import {
 ```
 
 ### extend
-Data structures are implemented as ES6 classes and for general purposes. You can extend any of these classes to enhance/change functionality in your code.
+Data structures are implemented as ES6 classes and for general purposes. You can extend any of these classes to add/change any functionality in your code.
 
 ```js
 const { Graph } = require('datastructures-js'); // OR require('@datastructures-js/graph')
 
 class CustomGraph extends Graph {
   findShortestPath(pointA, pointB) {
-    // shortest path from A -> B
+    // code
   }
 }
 ```
