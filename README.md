@@ -15,13 +15,13 @@ consolidates all data structures of <a href="https://github.com/datastructures-j
   * [Data Structures](#data-structures)
     * [Stack](#stack)
     * [Queue](#queue)
-    * [Linked List](#linked-list)
+    * [Linked List (Single/Doubly)](#linked-list-singledoubly)
     * [Set](#set)
-    * [Heap](#max-heap)
-    * [Priority Queue](#min-priority-queue)
-    * [Binary Search Tree](#binary-search-tree)
+    * [Heap (Min/Max)](#heap-minmax)
+    * [Priority Queue (Min/Max)](#priority-queue-minmax)
+    * [Binary Search Tree (BST/AVL)](#binary-search-tree-bstavl)
     * [Trie](#trie)
-    * [Graph](#graph)
+    * [Graph (Directed/Undirected)](#graph-directedundirected)
  * [Build](#build)
  * [License](#license)
 
@@ -111,17 +111,17 @@ class CustomGraph extends Graph {
 
 ### Repositories
 
-#### Queue
-https://github.com/datastructures-js/queue
-
 #### Stack
 https://github.com/datastructures-js/stack
 
-#### Set
-https://github.com/datastructures-js/set
+#### Queue
+https://github.com/datastructures-js/queue
 
 #### Linked List (Single/Doubly)
 https://github.com/datastructures-js/linked-list
+
+#### Set
+https://github.com/datastructures-js/set
 
 #### Heap (Min/Max)
 https://github.com/datastructures-js/heap
@@ -129,14 +129,14 @@ https://github.com/datastructures-js/heap
 #### Priority Queue (Min/Max)
 https://github.com/datastructures-js/priority-queue
 
-#### Graph (Directed/Undirected)
-https://github.com/datastructures-js/graph
-
 #### Binary Search Tree (BST/AVL)
 https://github.com/datastructures-js/binary-search-tree
 
 #### Trie
 https://github.com/datastructures-js/trie
+
+#### Graph (Directed/Undirected)
+https://github.com/datastructures-js/graph
 
 ## Build
 ```
