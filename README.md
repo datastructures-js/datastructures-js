@@ -13,16 +13,16 @@ consolidates all data structures of <a href="https://github.com/datastructures-j
 * [require](#require)
 * [import](#import)
 * [extend](#extend)
-* [Data Structures](#data-structures)
-  * [Stack](#stack)
-  * [Queue](#queue)
-  * [Linked List (Single/Doubly)](#linked-list-singledoubly)
-  * [Set](#set)
-  * [Heap (Min/Max)](#heap-minmax)
-  * [Priority Queue (Min/Max)](#priority-queue-minmax)
-  * [Binary Search Tree (BST/AVL)](#binary-search-tree-bstavl)
-  * [Trie](#trie)
-  * [Graph (Directed/Undirected)](#graph-directedundirected)
+* [repositories]
+  * [Stack](https://github.com/datastructures-js/stack#datastructures-jsstack)
+  * [Queue](https://github.com/datastructures-js/queue#datastructures-jsqueue)
+  * [Linked List (Single/Doubly)](https://github.com/datastructures-js/linked-list#datastrucures-jslinked-list)
+  * [Set](https://github.com/datastructures-js/set#datastructures-jssett)
+  * [Heap (Min/Max)](https://github.com/datastructures-js/heap#datastructures-jsheap)
+  * [Priority Queue (Min/Max)](https://github.com/datastructures-js/priority-queue#datastructures-jspriority-queue)
+  * [Binary Search Tree (BST/AVL)](https://github.com/datastructures-js/binary-search-tree#datastructures-jsbinary-search-tree)
+  * [Trie](https://github.com/datastructures-js/trie#datastructures-jstrie)
+  * [Graph (Directed/Undirected)](https://github.com/datastructures-js/graph#datastructures-jsgraph)
  * [Build](#build)
  * [License](#license)
 
@@ -112,35 +112,6 @@ class CustomGraph extends Graph {
   }
 }
 ```
-
-## Data Structures
-
-#### Stack
-<a hre="https://github.com/datastructures-js/stack#datastructures-jsstack">@datastructures-js/stack</a>
-
-#### Queue
-<a hre="https://github.com/datastructures-js/queue#datastructures-jsqueue">@datastructures-js/queue</a>
-
-#### Linked List (Single/Doubly)
-<a hre="https://github.com/datastructures-js/linked-list#datastrucures-jslinked-list">@datastructures-js/linked-list</a>
-
-#### Set
-<a hre="https://github.com/datastructures-js/set#datastructures-jssett">@datastructures-js/set</a>
-
-#### Heap (Min/Max)
-<a hre="https://github.com/datastructures-js/heap#datastructures-jsheap">@datastructures-js/heap</a>
-
-#### Priority Queue (Min/Max)
-<a hre="https://github.com/datastructures-js/priority-queue#datastructures-jspriority-queue">@datastructures-js/priority-queue</a>
-
-#### Binary Search Tree (BST/AVL)
-<a hre="https://github.com/datastructures-js/binary-search-tree#datastructures-jsbinary-search-tree">@datastructures-js/binary-search-tree</a>
-
-#### Trie
-<a hre="https://github.com/datastructures-js/trie#datastructures-jstrie">@datastructures-js/trie</a>
-
-#### Graph (Directed/Undirected)
-<a hre="https://github.com/datastructures-js/graph#datastructures-jsgraph">@datastructures-js/graph</a>
 
 ## Build
 ```
