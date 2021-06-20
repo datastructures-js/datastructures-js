@@ -116,31 +116,31 @@ class CustomGraph extends Graph {
 ## Data Structures
 
 #### Stack
-https://github.com/datastructures-js/stack
+<a hre="https://github.com/datastructures-js/stack#datastructures-jsstack">@datastructures-js/stack</a>
 
 #### Queue
-https://github.com/datastructures-js/queue
+<a hre="https://github.com/datastructures-js/queue#datastructures-jsqueue">@datastructures-js/queue</a>
 
 #### Linked List (Single/Doubly)
-https://github.com/datastructures-js/linked-list
+<a hre="https://github.com/datastructures-js/linked-list#datastrucures-jslinked-list">@datastructures-js/linked-list</a>
 
 #### Set
-https://github.com/datastructures-js/set
+<a hre="https://github.com/datastructures-js/set#datastructures-jssett">@datastructures-js/set</a>
 
 #### Heap (Min/Max)
-https://github.com/datastructures-js/heap
+<a hre="https://github.com/datastructures-js/heap#datastructures-jsheap">@datastructures-js/heap</a>
 
 #### Priority Queue (Min/Max)
-https://github.com/datastructures-js/priority-queue
+<a hre="https://github.com/datastructures-js/priority-queue#datastructures-jspriority-queue">@datastructures-js/priority-queue</a>
 
 #### Binary Search Tree (BST/AVL)
-https://github.com/datastructures-js/binary-search-tree
+<a hre="https://github.com/datastructures-js/binary-search-tree#datastructures-jsbinary-search-tree">@datastructures-js/binary-search-tree</a>
 
 #### Trie
-https://github.com/datastructures-js/trie
+<a hre="https://github.com/datastructures-js/trie#datastructures-jstrie">@datastructures-js/trie</a>
 
 #### Graph (Directed/Undirected)
-https://github.com/datastructures-js/graph
+<a hre="https://github.com/datastructures-js/graph#datastructures-jsgraph">@datastructures-js/graph</a>
 
 ## Build
 ```
