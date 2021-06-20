@@ -6,22 +6,23 @@
 
 consolidates all data structures of <a href="https://github.com/datastructures-js">@datastructures-js</a> into a single repository.
 
-# Table of Contents
+<img src="https://user-images.githubusercontent.com/6517308/121813242-859a9700-cc6b-11eb-99c0-49e5bb63005b.jpg">
+
+# Contents
 * [Install](#install)
-* [API](#api)
-  * [require](#require)
-  * [import](#import)
-  * [extend](#extend)
-  * [Data Structures](#data-structures)
-    * [Stack](#stack)
-    * [Queue](#queue)
-    * [Linked List (Single/Doubly)](#linked-list-singledoubly)
-    * [Set](#set)
-    * [Heap (Min/Max)](#heap-minmax)
-    * [Priority Queue (Min/Max)](#priority-queue-minmax)
-    * [Binary Search Tree (BST/AVL)](#binary-search-tree-bstavl)
-    * [Trie](#trie)
-    * [Graph (Directed/Undirected)](#graph-directedundirected)
+* [require](#require)
+* [import](#import)
+* [extend](#extend)
+* [Data Structures](#data-structures)
+  * [Stack](#stack)
+  * [Queue](#queue)
+  * [Linked List (Single/Doubly)](#linked-list-singledoubly)
+  * [Set](#set)
+  * [Heap (Min/Max)](#heap-minmax)
+  * [Priority Queue (Min/Max)](#priority-queue-minmax)
+  * [Binary Search Tree (BST/AVL)](#binary-search-tree-bstavl)
+  * [Trie](#trie)
+  * [Graph (Directed/Undirected)](#graph-directedundirected)
  * [Build](#build)
  * [License](#license)
 
@@ -30,8 +31,6 @@ consolidates all data structures of <a href="https://github.com/datastructures-j
 npm install --save datastructures-js
 ```
 
-## API
-
 ### require
 ```js
 const {
@@ -39,7 +38,7 @@ const {
 
   Queue,
 
-  Set as EnhancedSet, // renamed to avoid conflict with es6 Set
+  EnhancedSet,
 
   LinkedList,
   LinkedListNode,
@@ -58,6 +57,7 @@ const {
   AvlTreeNode,
 
   Trie,
+  TrieNode,
 
   Graph,
   DirectedGraph,
@@ -71,7 +71,7 @@ import {
 
   Queue,
 
-  Set as EnhancedSet, // renamed to avoid conflict with es6 Set
+  EnhancedSet,
 
   LinkedList,
   LinkedListNode,
@@ -80,6 +80,7 @@ import {
 
   MinHeap,
   MaxHeap,
+  HeapNode,
 
   MinPriorityQueue,
   MaxPriorityQueue,
@@ -90,6 +91,7 @@ import {
   AvlTreeNode,
 
   Trie,
+  TrieNode,
 
   Graph,
   DirectedGraph,
@@ -97,7 +99,7 @@ import {
 ```
 
 ### extend
-Data structures are implemented here as ES6 classes for general purposes. You can extend any of these classes to add/change any functionality in your code.
+Data structures are implemented here as ES6 classes (with types definitions) for general purposes. They can be extended for additional functionality and custom requirements.
 
 ```js
 const { Graph } = require('datastructures-js'); // OR require('@datastructures-js/graph')
@@ -109,7 +111,7 @@ class CustomGraph extends Graph {
 }
 ```
 
-### Repositories
+## Data Structures
 
 #### Stack
 https://github.com/datastructures-js/stack

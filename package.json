@@ -1,7 +1,7 @@
 {
   "name": "datastructures-js",
-  "version": "10.0.0",
-  "description": "authentic and production-ready data structures implementation in javascript.",
+  "version": "10.1.0",
+  "description": "production-ready data structures implementation in javascript & typescript.",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -10,6 +10,7 @@
     "test": "grunt test"
   },
   "keywords": [
+    "data structures typescript",
     "es6 data structures",
     "javascript data structures",
     "data structures",
@@ -58,14 +59,14 @@
     "mocha": "^6.2.2"
   },
   "dependencies": {
-    "@datastructures-js/binary-search-tree": "^4.0.0",
-    "@datastructures-js/graph": "^5.0.1",
-    "@datastructures-js/heap": "^3.0.1",
-    "@datastructures-js/linked-list": "^5.0.1",
-    "@datastructures-js/priority-queue": "^5.0.2",
-    "@datastructures-js/queue": "^4.0.0",
-    "@datastructures-js/set": "^4.0.0",
-    "@datastructures-js/stack": "^3.0.0",
-    "@datastructures-js/trie": "^4.0.1"
+    "@datastructures-js/binary-search-tree": "^4.2.0",
+    "@datastructures-js/graph": "^5.1.0",
+    "@datastructures-js/heap": "^3.1.0",
+    "@datastructures-js/linked-list": "^5.1.0",
+    "@datastructures-js/priority-queue": "^5.1.0",
+    "@datastructures-js/queue": "^4.1.1",
+    "@datastructures-js/set": "^4.1.0",
+    "@datastructures-js/stack": "^3.1.1",
+    "@datastructures-js/trie": "^4.1.0"
   }
 }
