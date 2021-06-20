@@ -99,7 +99,7 @@ import {
 ```
 
 ### extend
-Data structures are implemented here as ES6 classes for general purposes. They can be extended for additional functionality and custom requirements.
+Data structures are implemented here as ES6 classes (with types definitions) for general purposes. They can be extended for additional functionality and custom requirements.
 
 ```js
 const { Graph } = require('datastructures-js'); // OR require('@datastructures-js/graph')
