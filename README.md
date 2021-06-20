@@ -80,8 +80,10 @@ import {
 
   MinHeap,
   MaxHeap,
-  HeapNode,
+  HeapNode, // interface
 
+  PriorityQueueOptions, // interface
+  PriorityQueueItem, // interface
   MinPriorityQueue,
   MaxPriorityQueue,
 
