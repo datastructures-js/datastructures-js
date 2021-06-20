@@ -13,7 +13,7 @@ consolidates all data structures of <a href="https://github.com/datastructures-j
 * [require](#require)
 * [import](#import)
 * [extend](#extend)
-* [repositories]
+* [repositories](#repositories)
   * [Stack](https://github.com/datastructures-js/stack#datastructures-jsstack)
   * [Queue](https://github.com/datastructures-js/queue#datastructures-jsqueue)
   * [Linked List (Single/Doubly)](https://github.com/datastructures-js/linked-list#datastrucures-jslinked-list)
