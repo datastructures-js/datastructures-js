@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - @datastructures-js/deque to v1.0.1
 
-### Changed
+### Fixed
 - upgrade @datastructures-js/heap to v3.2.0
 - upgrade @datastructures-js/priority-queue to v5.3.0
 - upgrade @datastructures-js/trie to v4.2.0
