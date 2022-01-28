@@ -16,6 +16,7 @@ consolidates all data structures of <a href="https://github.com/datastructures-j
 * [repositories](#repositories)
   * [Stack](https://github.com/datastructures-js/stack#datastructures-jsstack)
   * [Queue](https://github.com/datastructures-js/queue#datastructures-jsqueue)
+  * [Deque](https://github.com/datastructures-js/deque#datastructures-jsdeque)
   * [Linked List (Single/Doubly)](https://github.com/datastructures-js/linked-list#datastrucures-jslinked-list)
   * [Set](https://github.com/datastructures-js/set#datastructures-jssett)
   * [Heap (Min/Max)](https://github.com/datastructures-js/heap#datastructures-jsheap)
@@ -37,6 +38,8 @@ const {
   Stack,
 
   Queue,
+
+  Deque,
 
   EnhancedSet,
 
@@ -70,6 +73,8 @@ import {
   Stack,
 
   Queue,
+
+  Deque,
 
   EnhancedSet,
 
