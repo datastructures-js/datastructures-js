@@ -8,25 +8,6 @@ consolidates all data structures of <a href="https://github.com/datastructures-j
 
 <img src="https://user-images.githubusercontent.com/6517308/121813242-859a9700-cc6b-11eb-99c0-49e5bb63005b.jpg">
 
-# Contents
-* [Install](#install)
-* [require](#require)
-* [import](#import)
-* [extend](#extend)
-* [repositories](#repositories)
-  * [Stack](https://github.com/datastructures-js/stack#datastructures-jsstack)
-  * [Queue](https://github.com/datastructures-js/queue#datastructures-jsqueue)
-  * [Deque](https://github.com/datastructures-js/deque#datastructures-jsdeque)
-  * [Linked List (Single/Doubly)](https://github.com/datastructures-js/linked-list#datastrucures-jslinked-list)
-  * [Set](https://github.com/datastructures-js/set#datastructures-jssett)
-  * [Heap (Min/Max)](https://github.com/datastructures-js/heap#datastructures-jsheap)
-  * [Priority Queue (Min/Max)](https://github.com/datastructures-js/priority-queue#datastructures-jspriority-queue)
-  * [Binary Search Tree (BST/AVL)](https://github.com/datastructures-js/binary-search-tree#datastructures-jsbinary-search-tree)
-  * [Trie](https://github.com/datastructures-js/trie#datastructures-jstrie)
-  * [Graph (Directed/Undirected)](https://github.com/datastructures-js/graph#datastructures-jsgraph)
- * [Build](#build)
- * [License](#license)
-
 ## install
 ```sh
 npm install --save datastructures-js
