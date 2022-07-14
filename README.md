@@ -17,23 +17,14 @@ npm install --save datastructures-js
 ```js
 const {
   Stack,
-
   Queue,
-
   Deque,
-
   EnhancedSet,
-
   LinkedList, LinkedListNode, DoublyLinkedList, DoublyLinkedListNode,
-
   MinHeap, MaxHeap,
-
   MinPriorityQueue, MaxPriorityQueue,
-
   BinarySearchTree, BinarySearchTreeNode, AvlTree, AvlTreeNode,
-
   Trie, TrieNode,
-
   Graph, DirectedGraph,
 } = require('datastructures-js');
 ```
@@ -42,23 +33,14 @@ const {
 ```js
 import {
   Stack,
-
   Queue,
-
   Deque,
-
   EnhancedSet,
-
   LinkedList, LinkedListNode, DoublyLinkedList, DoublyLinkedListNode,
-
   MinHeap, MaxHeap,
-
   MinPriorityQueue, MaxPriorityQueue,
-
   BinarySearchTree, BinarySearchTreeNode, AvlTree, AvlTreeNode,
-
   Trie, TrieNode,
-
   Graph, DirectedGraph,
 } from 'datastructures-js';
 ```
