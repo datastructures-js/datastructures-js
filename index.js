@@ -2,9 +2,9 @@ const { Queue } = require('@datastructures-js/queue');
 const { Stack } = require('@datastructures-js/stack');
 const { Deque } = require('@datastructures-js/deque');
 
-const { MinPriorityQueue, MaxPriorityQueue } = require('@datastructures-js/priority-queue');
+const { PriorityQueue, MinPriorityQueue, MaxPriorityQueue } = require('@datastructures-js/priority-queue');
 
-const { MinHeap, MaxHeap } = require('@datastructures-js/heap');
+const { Heap, MinHeap, MaxHeap } = require('@datastructures-js/heap');
 
 const { EnhancedSet } = require('@datastructures-js/set');
 
@@ -32,8 +32,11 @@ exports.Stack = Stack;
 
 exports.Deque = Deque;
 
+exports.PriorityQueue = PriorityQueue;
 exports.MinPriorityQueue = MinPriorityQueue;
 exports.MaxPriorityQueue = MaxPriorityQueue;
+
+exports.Heap = Heap;
 exports.MinHeap = MinHeap;
 exports.MaxHeap = MaxHeap;
 
