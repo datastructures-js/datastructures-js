@@ -1,12 +1,11 @@
 import { Queue } from'@datastructures-js/queue';
 import { Stack } from'@datastructures-js/stack';
+import { Deque } from'@datastructures-js/deque';
 import {
-  PriorityQueueOptions,
-  PriorityQueueItem,
   MinPriorityQueue,
   MaxPriorityQueue
 } from'@datastructures-js/priority-queue';
-import { MinHeap, MaxHeap, HeapNode } from'@datastructures-js/heap';
+import { MinHeap, MaxHeap } from'@datastructures-js/heap';
 import { EnhancedSet } from'@datastructures-js/set';
 import {
   LinkedList,
@@ -25,6 +24,7 @@ import {
 
 export { Stack }
 export { Queue }
+export { Deque }
 export { LinkedList }
 export { LinkedListNode }
 export { DoublyLinkedList }
@@ -32,9 +32,6 @@ export { DoublyLinkedListNode }
 export { EnhancedSet }
 export { MinHeap }
 export { MaxHeap }
-export { HeapNode }
-export { PriorityQueueOptions }
-export { PriorityQueueItem }
 export { MinPriorityQueue }
 export { MaxPriorityQueue }
 export { BinarySearchTree }

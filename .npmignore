@@ -1,5 +1,4 @@
 .git*
-.travis.yml
 .gitignore
 .eslintrc
 Gruntfile.js
