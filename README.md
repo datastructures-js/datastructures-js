@@ -24,27 +24,17 @@ const {
 
   EnhancedSet,
 
-  LinkedList,
-  LinkedListNode,
-  DoublyLinkedList,
-  DoublyLinkedListNode,
+  LinkedList, LinkedListNode, DoublyLinkedList, DoublyLinkedListNode,
 
-  MinHeap,
-  MaxHeap,
+  MinHeap, MaxHeap,
 
-  MinPriorityQueue,
-  MaxPriorityQueue,
+  MinPriorityQueue, MaxPriorityQueue,
 
-  BinarySearchTree,
-  BinarySearchTreeNode,
-  AvlTree,
-  AvlTreeNode,
+  BinarySearchTree, BinarySearchTreeNode, AvlTree, AvlTreeNode,
 
-  Trie,
-  TrieNode,
+  Trie, TrieNode,
 
-  Graph,
-  DirectedGraph,
+  Graph, DirectedGraph,
 } = require('datastructures-js');
 ```
 
@@ -59,30 +49,17 @@ import {
 
   EnhancedSet,
 
-  LinkedList,
-  LinkedListNode,
-  DoublyLinkedList,
-  DoublyLinkedListNode,
+  LinkedList, LinkedListNode, DoublyLinkedList, DoublyLinkedListNode,
 
-  MinHeap,
-  MaxHeap,
-  HeapNode, // interface
+  MinHeap, MaxHeap,
 
-  PriorityQueueOptions, // interface
-  PriorityQueueItem, // interface
-  MinPriorityQueue,
-  MaxPriorityQueue,
+  MinPriorityQueue, MaxPriorityQueue,
 
-  BinarySearchTree,
-  BinarySearchTreeNode,
-  AvlTree,
-  AvlTreeNode,
+  BinarySearchTree, BinarySearchTreeNode, AvlTree, AvlTreeNode,
 
-  Trie,
-  TrieNode,
+  Trie, TrieNode,
 
-  Graph,
-  DirectedGraph,
+  Graph, DirectedGraph,
 } from 'datastructures-js';
 ```
 
@@ -94,7 +71,7 @@ const { Graph } = require('datastructures-js'); // OR require('@datastructures-j
 
 class CustomGraph extends Graph {
   findShortestPath(pointA, pointB) {
-    // code
+    // more stuff
   }
 }
 ```
