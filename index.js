@@ -2,7 +2,11 @@ const { Queue } = require('@datastructures-js/queue');
 const { Stack } = require('@datastructures-js/stack');
 const { Deque } = require('@datastructures-js/deque');
 
-const { PriorityQueue, MinPriorityQueue, MaxPriorityQueue } = require('@datastructures-js/priority-queue');
+const {
+  PriorityQueue,
+  MinPriorityQueue,
+  MaxPriorityQueue
+} = require('@datastructures-js/priority-queue');
 
 const { Heap, MinHeap, MaxHeap } = require('@datastructures-js/heap');
 
