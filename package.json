@@ -1,6 +1,6 @@
 {
   "name": "datastructures-js",
-  "version": "11.0.0",
+  "version": "12.0.0",
   "description": "production-ready data structures implementation in javascript & typescript.",
   "main": "index.js",
   "directories": {
@@ -54,7 +54,7 @@
     "grunt-eslint": "^22.0.0"
   },
   "dependencies": {
-    "@datastructures-js/binary-search-tree": "^4.3.2",
+    "@datastructures-js/binary-search-tree": "^5.0.0",
     "@datastructures-js/deque": "^1.0.3",
     "@datastructures-js/graph": "^5.1.4",
     "@datastructures-js/heap": "^4.1.0",
