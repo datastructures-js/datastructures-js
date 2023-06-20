@@ -45,14 +45,14 @@ import {
 ```
 
 ### extend
-Data structures are implemented here as ES6 classes (with types definitions) for general purposes. They can be extended for additional functionality and custom requirements.
+Data structures are implemented as ES6 classes (with types definitions) for general purposes. They can be extended for additional functionality and custom requirements.
 
 ```js
 const { Graph } = require('datastructures-js'); // OR require('@datastructures-js/graph')
 
 class CustomGraph extends Graph {
   findShortestPath(pointA, pointB) {
-    // more stuff
+    // more code
   }
 }
 ```
@@ -63,4 +63,4 @@ grunt build
 ```
 
 ## License
-The MIT License. Full License is [here](https://github.com/eyas-ranjous/datastructures-js/blob/master/LICENSE)
+The MIT License. Full License is [here](https://github.com/datastructures-js/datastructures-js/blob/master/LICENSE)
