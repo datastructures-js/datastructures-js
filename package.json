@@ -1,6 +1,6 @@
 {
   "name": "datastructures-js",
-  "version": "12.0.0",
+  "version": "13.0.0",
   "description": "production-ready data structures implementation in javascript & typescript.",
   "main": "index.js",
   "directories": {
