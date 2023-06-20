@@ -41,11 +41,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/eyas-ranjous/datastructures-js.git"
+    "url": "https://github.com/datastructures-js/datastructures-js.git"
   },
   "author": "Eyas Ranjous <eyas.ranjous@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/eyas-ranjous/datastructures-js#readme",
+  "homepage": "https://github.com/datastructures-js/datastructures-js#readme",
   "devDependencies": {
     "eslint": "^6.7.2",
     "eslint-config-airbnb-base": "^14.0.0",
@@ -54,15 +54,15 @@
     "grunt-eslint": "^22.0.0"
   },
   "dependencies": {
-    "@datastructures-js/binary-search-tree": "^5.0.0",
-    "@datastructures-js/deque": "^1.0.3",
-    "@datastructures-js/graph": "^5.1.4",
-    "@datastructures-js/heap": "^4.1.0",
-    "@datastructures-js/linked-list": "^5.2.2",
-    "@datastructures-js/priority-queue": "^6.1.1",
-    "@datastructures-js/queue": "^4.2.1",
-    "@datastructures-js/set": "^4.2.0",
-    "@datastructures-js/stack": "^3.1.3",
-    "@datastructures-js/trie": "^4.2.1"
+    "@datastructures-js/binary-search-tree": "^5.3.1",
+    "@datastructures-js/deque": "^1.0.4",
+    "@datastructures-js/graph": "^5.3.0",
+    "@datastructures-js/heap": "^4.3.2",
+    "@datastructures-js/linked-list": "^6.1.0",
+    "@datastructures-js/priority-queue": "^6.3.0",
+    "@datastructures-js/queue": "^4.2.3",
+    "@datastructures-js/set": "^4.2.1",
+    "@datastructures-js/stack": "^3.1.4",
+    "@datastructures-js/trie": "^4.2.2"
   }
 }
